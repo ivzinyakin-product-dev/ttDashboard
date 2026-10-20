@@ -1,0 +1,36 @@
+name: Update ITTF Tashkent 2026 Scores
+
+on:
+  schedule:
+    - cron: '*/10 * * * *' # Каждые 10 минут
+  workflow_dispatch:      # Кнопка ручного запуска
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Fetch latest scores from ITTF Results
+        run: python scripts/fetch_ittf.py
+
+      - name: Commit and push updated data.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git diff --staged --quiet || (git commit -m "chore: auto-update ITTF Tashkent 2026 scores" && git push)
