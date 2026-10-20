@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Чемпионат Азии по настольному теннису — Ташкент 2026 | Сетка и счёт</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+    }
+    .panel {
+      background: rgba(30, 41, 59, 0.78);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-teal-500 selection:text-white">
+
+  <!-- Minimal Header + Two Switches (Category & Gender) -->
+  <header class="bg-slate-900/95 border-b border-slate-800 sticky top-0 z-30 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-4 py-3.5 flex flex-col gap-3">
+      
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <div class="flex items-center gap-2.5">
+          <span class="text-xl">🏓</span>
+          <h1 class="text-base sm:text-lg font-extrabold tracking-tight text-white">
+            Чемпионат Азии 2026 • Ташкент
+          </h1>
+          <span class="text-xs px-2 py-0.5 rounded-md bg-teal-500/15 text-teal-300 border border-teal-500/30 font-medium">
+            19–25 окт
+          </span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span id="liveSyncStatus" class="inline-flex items-center gap-1.5 text-[11px] text-slate-400" title="Автоматический опрос data.json каждые 60 сек.">
+            <span id="liveSyncDot" class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span id="liveSyncText">Автообновление: 60с</span>
+          </span>
+          <a href="https://results.ittf.com/ittf-web-results/html/TTE3474/results.html" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-teal-300 transition">
+            ITTF Протокол ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Controls Row: Only Category Switch & Gender Switch -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pt-1">
+        
+        <!-- Category Switch -->
+        <div class="inline-flex flex-wrap items-center gap-1 bg-slate-950 p-1 rounded-xl border border-slate-800" id="categoryTabs">
+          <button type="button" data-cat="TEAM" class="cat-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-teal-500 text-slate-950">
+            Команды
+          </button>
+          <button type="button" data-cat="SINGLES" class="cat-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition text-slate-300 hover:text-white">
+            Одиночный
+          </button>
+          <button type="button" data-cat="DOUBLES" class="cat-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition text-slate-300 hover:text-white">
+            Парный
+          </button>
+          <button type="button" data-cat="MIXED" class="cat-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition text-slate-300 hover:text-white">
+            Микст
+          </button>
+        </div>
+
+        <!-- Gender Switch (Men / Women) -->
+        <div class="inline-flex items-center gap-1 bg-slate-950 p-1 rounded-xl border border-slate-800 self-start sm:self-auto" id="genderTabs">
+          <button type="button" data-gender="M" class="gender-btn px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-blue-500 text-white">
+            Мужчины
+          </button>
+          <button type="button" data-gender="W" class="gender-btn px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition text-slate-300 hover:text-white">
+            Женщины
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content: Only Bracket & Match Scores -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-5 space-y-6">
+
+    <!-- Active Event Title Bar -->
+    <div class="flex items-center justify-between">
+      <h2 id="activeDivisionTitle" class="text-lg sm:text-xl font-bold text-white">
+        Мужские команды
+      </h2>
+      <span id="activeDivisionCount" class="text-xs text-slate-400"></span>
+    </div>
+
+    <!-- SECTION 1: VISUAL BRACKET (СЕТКА ПЛЕЙ-ОФФ) -->
+    <section class="space-y-2.5">
+      <div class="text-xs font-bold uppercase tracking-wider text-slate-400">
+        Сетка плей-офф (1/4 → 1/2 → Финал)
+      </div>
+      <div id="bracketContainer" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- SECTION 2: ALL MATCHES & SCORES BY STAGE (МАТЧИ И СЧЁТ) -->
+    <section class="space-y-3">
+      <div class="text-xs font-bold uppercase tracking-wider text-slate-400">
+        Все матчи и счёт по стадиям
+      </div>
+      <div id="matchesByStageContainer" class="space-y-4">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const BRACKETS = {
+      MT: {
+        title: 'Мужские команды',
+        qf: [
+          { label: '1/4 финала • Ср 21.10, 15:00 • Стол 1', a: '🇨🇳 Китай (CHN)', b: 'Победитель KAZ / IRQ', scoreA: '0', scoreB: '0' },
+          { label: '1/4 финала • Ср 21.10, 10:00 • Стол 1', a: '🇭🇰 Гонконг (HKG)', b: '🇹🇼 Китайский Тайбэй (TPE)', scoreA: '0', scoreB: '0' },
+          { label: '1/4 финала • Ср 21.10, 10:00 • Стол 2', a: '🇰🇷 Южная Корея (KOR)', b: '🇮🇳 Индия (IND)', scoreA: '0', scoreB: '0' },
+          { label: '1/4 финала • Ср 21.10, 15:00 • Стол 2', a: 'Победитель IRI / SGP', b: '🇯🇵 Япония (JPN)', scoreA: '0', scoreB: '0' }
+        ],
+        sf: [
+          { label: '1/2 финала • Чт 22.10, 12:00 • Стол 1', a: 'Победитель ЧФ 1 (CHN / KAZ / IRQ)', b: 'Победитель ЧФ 2 (HKG / TPE)', scoreA: '—', scoreB: '—' },
+          { label: '1/2 финала • Чт 22.10, 14:00 • Стол 1', a: 'Победитель ЧФ 3 (KOR / IND)', b: 'Победитель ЧФ 4 (IRI / SGP / JPN)', scoreA: '—', scoreB: '—' }
+        ],
+        final: [
+          { label: '🥇 ФИНАЛ • Пт 23.10, 19:00 • Стол 1', a: 'Победитель ПФ 1', b: 'Победитель ПФ 2', scoreA: '—', scoreB: '—' }
+        ]
+      },
+      WT: {
+        title: 'Женские команды',
+        qf: [
+          { label: '1/4 финала • Ср 21.10, 12:00 • Стол 2', a: '🇨🇳 Китай (CHN)', b: '🇹🇭 Таиланд (THA)', scoreA: '0', scoreB: '0' },
+          { label: '1/4 финала • Ср 21.10, 17:00 • Стол 1', a: 'Победитель TPE / IRI', b: '🇰🇷 Южная Корея (KOR)', scoreA: '0', scoreB: '0' },
+          { label: '1/4 финала • Ср 21.10, 17:00 • Стол 2', a: '🇭🇰 Гонконг (HKG)', b: 'Победитель MAS / IND', scoreA: '0', scoreB: '0' },
+          { label: '1/4 финала • Ср 21.10, 12:00 • Стол 1', a: '🇸🇬 Сингапур (SGP)', b: '🇯🇵 Япония (JPN)', scoreA: '0', scoreB: '0' }
+        ],
+        sf: [
+          { label: '1/2 финала • Чт 22.10, 10:00 • Стол 1', a: 'Победитель ЧФ 1 (CHN / THA)', b: 'Победитель ЧФ 2 (TPE / IRI / KOR)', scoreA: '—', scoreB: '—' },
+          { label: '1/2 финала • Чт 22.10, 10:00 • Стол 2', a: 'Победитель ЧФ 3 (HKG / MAS / IND)', b: 'Победитель ЧФ 4 (SGP / JPN)', scoreA: '—', scoreB: '—' }
+        ],
+        final: [
+          { label: '🥇 ФИНАЛ • Чт 22.10, 19:00 • Стол 1', a: 'Победитель ПФ 1', b: 'Победитель ПФ 2', scoreA: '—', scoreB: '—' }
+        ]
+      },
+      MS: {
+        title: 'Мужской одиночный разряд',
+        qf: [
+          { label: '1/4 финала • Сб 24.10, 14:00 • Стол 1', a: 'Четвертьфинал 1 (Верхняя сетка)', b: 'Четвертьфинал 1 (Верхняя сетка)', scoreA: '—', scoreB: '—' },
+          { label: '1/4 финала • Сб 24.10, 14:45 • Стол 1', a: 'Четвертьфинал 2 (Сетка 2)', b: 'Четвертьфинал 2 (Сетка 2)', scoreA: '—', scoreB: '—' },
+          { label: '1/4 финала • Сб 24.10, 15:30 • Стол 1', a: 'Четвертьфинал 3 (Сетка 3)', b: 'Четвертьфинал 3 (Сетка 3)', scoreA: '—', scoreB: '—' },
+          { label: '1/4 финала • Сб 24.10, 16:15 • Стол 1', a: 'Четвертьфинал 4 (Нижняя сетка)', b: 'Четвертьфинал 4 (Нижняя сетка)', scoreA: '—', scoreB: '—' }
+        ],
+        sf: [
+          { label: '1/2 финала • Вс 25.10, 11:30 • Стол 1', a: 'Победитель ЧФ 1', b: 'Победитель ЧФ 2', scoreA: '—', scoreB: '—' },
+          { label: '1/2 финала • Вс 25.10, 12:15 • Стол 1', a: 'Победитель ЧФ 3', b: 'Победитель ЧФ 4', scoreA: '—', scoreB: '—' }
+        ],
+        final: [
+          { label: '🥇 ФИНАЛ • Вс 25.10, 17:30 • Стол 1', a: 'Победитель ПФ 1', b: 'Победитель ПФ 2', scoreA: '—', scoreB: '—' }
+        ]
+      },
+      WS: {
+        title: 'Женский одиночный разряд',
+        qf: [
+          { label: '1/4 финала • Сб 24.10, 14:00 • Стол 2', a: 'Четвертьфинал 1 (Харимото / Ши Сюньяо)', b: 'Четвертьфинал 1 (Хасимото / Камалова / Куай Мань)', scoreA: '—', scoreB: '—' },
+          { label: '1/4 финала • Сб 24.10, 14:45 • Стол 2', a: 'Четвертьфинал 2 (Хаята / Еркебаева)', b: 'Четвертьфинал 2 (Чэнь И / Цинь Юйсюань)', scoreA: '—', scoreB: '—' },
+          { label: '1/4 финала • Сб 24.10, 15:30 • Стол 2', a: 'Четвертьфинал 3 (Одо / Чэнь Сы-Юй)', b: 'Четвертьфинал 3 (Ван Иди / Элмуродова)', scoreA: '—', scoreB: '—' },
+          { label: '1/4 финала • Сб 24.10, 16:15 • Стол 2', a: 'Четвертьфинал 4 (Нижняя сетка)', b: 'Четвертьфинал 4 (Нижняя сетка)', scoreA: '—', scoreB: '—' }
+        ],
+        sf: [
+          { label: '1/2 финала • Вс 25.10, 10:00 • Стол 1', a: 'Победитель ЧФ 1', b: 'Победитель ЧФ 2', scoreA: '—', scoreB: '—' },
+          { label: '1/2 финала • Вс 25.10, 10:45 • Стол 1', a: 'Победитель ЧФ 3', b: 'Победитель ЧФ 4', scoreA: '—', scoreB: '—' }
+        ],
+        final: [
+          { label: '🥇 ФИНАЛ • Вс 25.10, 16:00 • Стол 1', a: 'Победитель ПФ 1', b: 'Победитель ПФ 2', scoreA: '—', scoreB: '—' }
+        ]
+      },
+      MD: {
+        title: 'Мужской парный разряд',
+        qf: [
+          { label: '1/4 финала • Пт 23.10, 16:00 • Стол 1', a: 'Пара ЧФ 1 (Кан/Лим / Лам/Йиу)', b: 'Пара ЧФ 2 (Аламиан/Аламиян / Ахмедов/Толиев)', scoreA: '—', scoreB: '—' },
+          { label: '1/4 финала • Пт 23.10, 16:00 • Стол 2', a: 'Пара ЧФ 3 (Дилшодов/Искандаров / KSA)', b: 'Пара ЧФ 4 (Кенжигулов/Жубанов / Ким/Пак)', scoreA: '—', scoreB: '—' },
+          { label: '1/4 финала • Пт 23.10, 16:30 • Стол 1', a: 'Пара ЧФ 5 (Сюй/Хун / Вон/Чун)', b: 'Пара ЧФ 6 (Гаффари/Фараджи)', scoreA: '—', scoreB: '—' },
+          { label: '1/4 финала • Пт 23.10, 16:30 • Стол 2', a: 'Пара ЧФ 7', b: 'Пара ЧФ 8', scoreA: '—', scoreB: '—' }
+        ],
+        sf: [
+          { label: '1/2 финала • Сб 24.10, 11:00 • Стол 1', a: 'Победитель ЧФ 1', b: 'Победитель ЧФ 2', scoreA: '—', scoreB: '—' },
+          { label: '1/2 финала • Сб 24.10, 11:40 • Стол 1', a: 'Победитель ЧФ 3', b: 'Победитель ЧФ 4', scoreA: '—', scoreB: '—' }
+        ],
+        final: [
+          { label: '🥇 ФИНАЛ • Сб 24.10, 19:30 • Стол 1', a: 'Победитель ПФ 1', b: 'Победитель ПФ 2', scoreA: '—', scoreB: '—' }
+        ]
+      },
+      WD: {
+        title: 'Женский парный разряд',
+        qf: [
+          { label: '1/4 финала • Пт 23.10, 17:00 • Стол 1', a: 'Пара ЧФ 1 (Шахсавари / Ярисераджи)', b: 'Пара ЧФ 2 (Камалова / Гулимова / INA)', scoreA: '—', scoreB: '—' },
+          { label: '1/4 финала • Пт 23.10, 17:00 • Стол 2', a: 'Пара ЧФ 3 (Аштари / Илухани)', b: 'Пара ЧФ 4 (Фадол / Гудес)', scoreA: '—', scoreB: '—' },
+          { label: '1/4 финала • Пт 23.10, 17:30 • Стол 1', a: 'Пара ЧФ 5 (Аязбекова / Кудусова)', b: 'Пара ЧФ 6', scoreA: '—', scoreB: '—' },
+          { label: '1/4 финала • Пт 23.10, 17:30 • Стол 2', a: 'Пара ЧФ 7', b: 'Пара ЧФ 8', scoreA: '—', scoreB: '—' }
+        ],
+        sf: [
+          { label: '1/2 финала • Сб 24.10, 12:20 • Стол 1', a: 'Победитель ЧФ 1', b: 'Победитель ЧФ 2', scoreA: '—', scoreB: '—' },
+          { label: '1/2 финала • Сб 24.10, 13:00 • Стол 1', a: 'Победитель ЧФ 3', b: 'Победитель ЧФ 4', scoreA: '—', scoreB: '—' }
+        ],
+        final: [
+          { label: '🥇 ФИНАЛ • Вс 25.10, 14:30 • Стол 1', a: 'Победитель ПФ 1', b: 'Победитель ПФ 2', scoreA: '—', scoreB: '—' }
+        ]
+      },
+      XD: {
+        title: 'Смешанный парный разряд (Микст)',
+        qf: [
+          { label: '1/4 финала • Чт 22.10, 16:00 • Стол 1', a: 'Верхняя сетка (Квек/Лой / Пак/Пак)', b: 'Верхняя сетка (Искандаров/Камалова / Го/Е)', scoreA: '—', scoreB: '—' },
+          { label: '1/4 финала • Чт 22.10, 16:00 • Стол 2', a: 'Сетка 2 (Кенжигулов/Акашева / Якупбаев/Абдимиталипова)', b: 'Сетка 2 (Дилшодов/Хасанова / Мак/Сик)', scoreA: '—', scoreB: '—' },
+          { label: '1/4 финала • Чт 22.10, 16:40 • Стол 1', a: 'Сетка 3', b: 'Сетка 3', scoreA: '—', scoreB: '—' },
+          { label: '1/4 финала • Чт 22.10, 16:40 • Стол 2', a: 'Нижняя сетка', b: 'Нижняя сетка', scoreA: '—', scoreB: '—' }
+        ],
+        sf: [
+          { label: '1/2 финала • Пт 23.10, 15:00 • Стол 1', a: 'Победитель ЧФ 1', b: 'Победитель ЧФ 2', scoreA: '—', scoreB: '—' },
+          { label: '1/2 финала • Пт 23.10, 15:40 • Стол 1', a: 'Победитель ЧФ 3', b: 'Победитель ЧФ 4', scoreA: '—', scoreB: '—' }
+        ],
+        final: [
+          { label: '🥇 ФИНАЛ • Сб 24.10, 18:00 • Стол 1', a: 'Победитель ПФ 1', b: 'Победитель ПФ 2', scoreA: '—', scoreB: '—' }
+        ]
+      }
+    };
+
+    const MATCHES = [
+      // ==========================================
+      // MEN'S TEAMS (MT)
+      // ==========================================
+      { ev: 'MT', stage: '1/4 финала (21 октября)', time: '21.10 • 10:00', table: 'Стол 1', a: '🇭🇰 Гонконг, Китай (HKG)', b: '🇹🇼 Китайский Тайбэй (TPE)', score: '0 : 0', done: false },
+      { ev: 'MT', stage: '1/4 финала (21 октября)', time: '21.10 • 10:00', table: 'Стол 2', a: '🇰🇷 Республика Корея (KOR)', b: '🇮🇳 Индия (IND)', score: '0 : 0', done: false },
+      { ev: 'MT', stage: '1/4 финала (21 октября)', time: '21.10 • 15:00', table: 'Стол 1', a: '🇨🇳 Китай (CHN)', b: 'Победитель Казахстан / Ирак', score: '0 : 0', done: false },
+      { ev: 'MT', stage: '1/4 финала (21 октября)', time: '21.10 • 15:00', table: 'Стол 2', a: 'Победитель Иран / Сингапур', b: '🇯🇵 Япония (JPN)', score: '0 : 0', done: false },
+
+      { ev: 'MT', stage: 'Предварительный раунд 3 — за выход в 1/4 финала (21 октября)', time: '21.10 • 10:00', table: 'Стол 3', a: '🇰🇿 Казахстан (KAZ)', b: '🇮🇶 Ирак (IRQ)', score: '0 : 0', done: false },
+      { ev: 'MT', stage: 'Предварительный раунд 3 — за выход в 1/4 финала (21 октября)', time: '21.10 • 10:00', table: 'Стол 4', a: '🇮🇷 Иран (IRI)', b: '🇸🇬 Сингапур (SGP)', score: '0 : 0', done: false },
+
+      { ev: 'MT', stage: 'Предварительный раунд 2 (20 октября)', time: '20.10 • М1', table: 'Олимп. городок', a: '🇲🇾 Малайзия (MAS)', b: '🇰🇿 Казахстан (KAZ)', score: '0 : 3', done: true },
+      { ev: 'MT', stage: 'Предварительный раунд 2 (20 октября)', time: '20.10 • М2', table: 'Олимп. городок', a: '🇮🇶 Ирак (IRQ)', b: '🇹🇭 Таиланд (THA)', score: '3 : 2', done: true },
+      { ev: 'MT', stage: 'Предварительный раунд 2 (20 октября)', time: '20.10 • М3', table: 'Олимп. городок', a: '🇮🇷 Иран (IRI)', b: '🇸🇦 Саудовская Аравия (KSA)', score: '3 : 1', done: true },
+      { ev: 'MT', stage: 'Предварительный раунд 2 (20 октября)', time: '20.10 • М4', table: 'Олимп. городок', a: '🇸🇬 Сингапур (SGP)', b: '🇧🇭 Бахрейн (BRN)', score: '3 : 0', done: true },
+
+      { ev: 'MT', stage: 'Предварительный раунд 1 (20 октября)', time: '20.10 • R1', table: 'Олимп. городок', a: '🇺🇿 Узбекистан (UZB)', b: '🇹🇭 Таиланд (THA)', score: '1 : 3', done: true },
+      { ev: 'MT', stage: 'Предварительный раунд 1 (20 октября)', time: '20.10 • R1', table: 'Олимп. городок', a: '🇲🇾 Малайзия (MAS)', b: '🇮🇩 Индонезия (INA)', score: '3 : 1', done: true },
+      { ev: 'MT', stage: 'Предварительный раунд 1 (20 октября)', time: '20.10 • R1', table: 'Олимп. городок', a: '🇯🇴 Иордания (JOR)', b: '🇮🇶 Ирак (IRQ)', score: '2 : 3', done: true },
+      { ev: 'MT', stage: 'Предварительный раунд 1 (20 октября)', time: '20.10 • R1', table: 'Олимп. городок', a: '🇮🇷 Иран (IRI)', b: '🇲🇴 Макао, Китай (MAC)', score: '3 : 0', done: true },
+      { ev: 'MT', stage: 'Предварительный раунд 1 (20 октября)', time: '20.10 • R1', table: 'Олимп. городок', a: '🇸🇦 Саудовская Аравия (KSA)', b: '🇵🇭 Филиппины (PHI)', score: '3 : 1', done: true },
+      { ev: 'MT', stage: 'Предварительный раунд 1 (20 октября)', time: '20.10 • R1', table: 'Олимп. городок', a: '🇰🇬 Кыргызстан (KGZ)', b: '🇧🇭 Бахрейн (BRN)', score: '0 : 3', done: true },
+
+      { ev: 'MT', stage: 'Групповой этап (19 октября)', time: '19.10 • 10:00', table: 'Стол 1', a: '🇺🇿 Узбекистан (UZB)', b: '🇹🇲 Туркменистан (TKM)', score: '3 : 0', done: true },
+      { ev: 'MT', stage: 'Групповой этап (19 октября)', time: '19.10 • 10:00', table: 'Стол 2', a: '🇰🇿 Казахстан (KAZ)', b: '🇵🇭 Филиппины (PHI)', score: '3 : 0', done: true },
+      { ev: 'MT', stage: 'Групповой этап (19 октября)', time: '19.10 • 13:30', table: 'Стол 2', a: '🇰🇿 Казахстан (KAZ)', b: '🇱🇰 Шри-Ланка (SRI)', score: '3 : 1', done: true },
+      { ev: 'MT', stage: 'Групповой этап (19 октября)', time: '19.10 • 17:00', table: 'Стол 1', a: '🇺🇿 Узбекистан (UZB)', b: '🇸🇦 Саудовская Аравия (KSA)', score: '0 : 3', done: true },
+
+      // ==========================================
+      // WOMEN'S TEAMS (WT)
+      // ==========================================
+      { ev: 'WT', stage: '1/4 финала (21 октября)', time: '21.10 • 12:00', table: 'Стол 1', a: '🇸🇬 Сингапур (SGP)', b: '🇯🇵 Япония (JPN)', score: '0 : 0', done: false },
+      { ev: 'WT', stage: '1/4 финала (21 октября)', time: '21.10 • 12:00', table: 'Стол 2', a: '🇨🇳 Китай (CHN)', b: '🇹🇭 Таиланд (THA)', score: '0 : 0', done: false },
+      { ev: 'WT', stage: '1/4 финала (21 октября)', time: '21.10 • 17:00', table: 'Стол 1', a: 'Победитель TPE / IRI', b: '🇰🇷 Республика Корея (KOR)', score: '0 : 0', done: false },
+      { ev: 'WT', stage: '1/4 финала (21 октября)', time: '21.10 • 17:00', table: 'Стол 2', a: '🇭🇰 Гонконг, Китай (HKG)', b: 'Победитель MAS / IND', score: '0 : 0', done: false },
+
+      { ev: 'WT', stage: 'Предварительный раунд 3 — за выход в 1/4 финала (21 октября)', time: '21.10 • 12:00', table: 'Стол 3', a: '🇹🇼 Китайский Тайбэй (TPE)', b: '🇮🇷 Иран (IRI)', score: '0 : 0', done: false },
+      { ev: 'WT', stage: 'Предварительный раунд 3 — за выход в 1/4 финала (21 октября)', time: '21.10 • 12:00', table: 'Стол 4', a: '🇲🇾 Малайзия (MAS)', b: '🇮🇳 Индия (IND)', score: '0 : 0', done: false },
+
+      { ev: 'WT', stage: 'Предварительный раунд 2 (20 октября)', time: '20.10 • М1', table: 'Олимп. городок', a: '🇵🇭 Филиппины (PHI)', b: '🇹🇼 Китайский Тайбэй (TPE)', score: '1 : 3', done: true },
+      { ev: 'WT', stage: 'Предварительный раунд 2 (20 октября)', time: '20.10 • М2', table: 'Олимп. городок', a: '🇮🇷 Иран (IRI)', b: '🇮🇩 Индонезия (INA)', score: '3 : 0', done: true },
+      { ev: 'WT', stage: 'Предварительный раунд 2 (20 октября)', time: '20.10 • М3', table: 'Олимп. городок', a: '🇰🇿 Казахстан (KAZ)', b: '🇲🇾 Малайзия (MAS)', score: '1 : 3', done: true },
+      { ev: 'WT', stage: 'Предварительный раунд 2 (20 октября)', time: '20.10 • М4', table: 'Олимп. городок', a: '🇺🇿 Узбекистан (UZB)', b: '🇮🇳 Индия (IND)', score: '1 : 3', done: true },
+
+      { ev: 'WT', stage: 'Предварительный раунд 1 (20 октября)', time: '20.10 • R1', table: 'Олимп. городок', a: '🇰🇿 Казахстан (KAZ)', b: '🇲🇳 Монголия (MGL)', score: '3 : 0', done: true },
+      { ev: 'WT', stage: 'Предварительный раунд 1 (20 октября)', time: '20.10 • R1', table: 'Олимп. городок', a: '🇲🇴 Макао, Китай (MAC)', b: '🇮🇩 Индонезия (INA)', score: '0 : 3', done: true },
+
+      { ev: 'WT', stage: 'Групповой этап (19 октября)', time: '19.10 • 11:45', table: 'Стол 1', a: '🇺🇿 Узбекистан (UZB)', b: '🇯🇴 Иордания (JOR)', score: '3 : 0', done: true },
+      { ev: 'WT', stage: 'Групповой этап (19 октября)', time: '19.10 • 11:45', table: 'Стол 3', a: '🇰🇿 Казахстан (KAZ)', b: '🇲🇻 Мальдивы (MDV)', score: '3 : 0', done: true },
+      { ev: 'WT', stage: 'Групповой этап (19 октября)', time: '19.10 • 15:00', table: 'Стол 1', a: '🇺🇿 Узбекистан (UZB)', b: '🇲🇴 Макао, Китай (MAC)', score: '3 : 0', done: true },
+      { ev: 'WT', stage: 'Групповой этап (19 октября)', time: '19.10 • 15:15', table: 'Стол 3', a: '🇰🇿 Казахстан (KAZ)', b: '🇮🇷 Иран (IRI)', score: '2 : 3', done: true },
+      { ev: 'WT', stage: 'Групповой этап (19 октября)', time: '19.10 • 18:30', table: 'Стол 1', a: '🇺🇿 Узбекистан (UZB)', b: '🇹🇯 Таджикистан (TJK)', score: '3 : 0', done: true },
+
+      // ==========================================
+      // MEN'S SINGLES (MS) — ALL 59 MATCHES WITH BOTH OPPONENTS
+      // ==========================================
+      // 21 October (Upcoming / Today's schedule)
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 17:00', table: 'Стол 5', a: '🇰🇼 Абдулла Альбахрани (KUW)', b: '🇰🇷 Пак Гюхён (KOR)', score: '0 : 3 (WO)', done: true },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 17:00', table: 'Стол 6', a: '🇰🇷 Пак Ганхён (KOR)', b: '🇵🇭 Эдуард Валенет (PHI)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 17:00', table: 'Стол 7', a: '🇱🇰 Чанул Кулаппуваваду (SRI)', b: '🇶🇦 Мохаммед Абдулваххаб (QAT)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 17:00', table: 'Стол 8', a: '🇮🇩 Аффан Пратама (INA)', b: '🇴🇲 Билал Аль-Рашди (OMA)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 17:00', table: 'Стол 9', a: '🇲🇴 Чань Чи Инь (MAC)', b: '🇹🇼 Сюй Сянь-Цзя (TPE)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 17:00', table: 'Стол 10', a: '🇮🇷 Беньямин Фараджи (IRI)', b: '🇰🇼 Мешал Алькандери (KUW)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 17:30', table: 'Стол 4', a: '🇰🇿 Санжар Жубанов (KAZ)', b: '🇧🇩 Мохутасин Ридой (BAN)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 17:30', table: 'Стол 5', a: '🇲🇳 Усухбаяр Тувшинджаргал (MGL)', b: '🇦🇪 Мохаммед Альмусайеби (UAE)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 17:30', table: 'Стол 6', a: '🇺🇿 Мусобек Толиев (UZB)', b: '🇮🇶 Пирес Хуссейн (IRQ)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 17:30', table: 'Стол 7', a: '🇸🇦 Абдулрахман Аль-Тахер (KSA)', b: '🇯🇵 Хирото Синодзука (JPN)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 17:30', table: 'Стол 8', a: '🇹🇼 Фэн И-Синь (TPE)', b: '🇵🇭 Элайджа Ямсон (PHI)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 17:30', table: 'Стол 9', a: '🇹🇯 Мустафо Алиев (TJK)', b: '🇰🇿 Айдос Кенжигулов (KAZ)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 17:30', table: 'Стол 10', a: '🇯🇴 Таки Аль-Дин Аль-Наджадат (JOR)', b: '🇴🇲 Ахмед Аль-Риями (OMA)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 18:00', table: 'Стол 5', a: '🇲🇴 Мак Тин Иан (MAC)', b: '🇯🇵 Юта Танака (JPN)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 18:00', table: 'Стол 6', a: '🇸🇬 Айзек Квек (SGP)', b: '🇸🇦 Абдулазиз Бу Шулайби (KSA)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 18:00', table: 'Стол 7', a: '🇲🇻 Мохамед Исмаил (MDV)', b: '🇹🇭 Пхакпум Сангуансин (THA)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 18:00', table: 'Стол 8', a: '🇮🇩 Мухаммад Негара (INA)', b: '🇰🇬 Тилек Молдалиев (KGZ)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 18:00', table: 'Стол 9', a: '🇰🇼 Мешал Алотаиби (KUW)', b: '🇭🇰 Болдуин Чань (HKG)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 18:00', table: 'Стол 10', a: '🇨🇳 Хуан Ючжэн (CHN)', b: '🇮🇷 Мохаммад Хабиби (IRI)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 18:30', table: 'Стол 5', a: '🇮🇶 Анвер Хамид (IRQ)', b: '🇱🇰 Нувантха Кахаватхтха (SRI)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 18:30', table: 'Стол 6', a: '🇲🇳 Тэмуулэн Мяндал (MGL)', b: '🇰🇼 Абдулла Альмкими (KUW)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 18:30', table: 'Стол 7', a: '🇦🇪 Ахмед Альмусайеби (UAE)', b: '🇮🇳 Хармит Десаи (IND)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 18:30', table: 'Стол 8', a: '🇰🇷 Ким Минхёк (KOR)', b: '🇺🇿 Кутбидилло Тешабоев (UZB)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 18:30', table: 'Стол 9', a: '🇧🇭 Али Салех (BRN)', b: '🇹🇲 Ыляс Алланазаров (TKM)', score: '0 : 0', done: false },
+      { ev: 'MS', stage: '1/64 финала (Round of 128 • 21 октября)', time: '21.10 • 18:30', table: 'Стол 10', a: '🇲🇾 Им Цзинь Чжэнь (MAS)', b: '🇭🇰 Квань Мань Хо (HKG)', score: '0 : 0', done: false },
+
+      // 20 October (Completed Round of 128 matches)
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М2', table: 'Олимп. городок', a: '🇱🇰 Сенура Силва (SRI)', b: '🇺🇿 Шохрух Искандаров (UZB)', score: '3 : 2', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М3', table: 'Олимп. городок', a: '🇲🇳 Тарвачинбо Буян (MGL)', b: '🇰🇬 Азамат Эргешов (KGZ)', score: '3 : 1', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М5', table: 'Олимп. городок', a: '🇭🇰 Йиу Кван То (HKG)', b: '🇮🇷 Нима Аламиан (IRI)', score: '3 : 0', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М6', table: 'Олимп. городок', a: '🇲🇾 Джавен Чун (MAS)', b: '🇮🇶 Мохаммед Тахер (IRQ)', score: '3 : 2', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М7', table: 'Олимп. городок', a: '🇵🇭 Джон Мисал (PHI)', b: '🇧🇭 Мохамед Салех (BRN)', score: '3 : 2', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М8', table: 'Олимп. городок', a: '🇸🇦 Али Альхадрави (KSA)', b: '🇨🇳 Ли Тяньян (CHN)', score: '1 : 3', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М9', table: 'Олимп. городок', a: '🇮🇳 Манав Тхаккар (IND)', b: '🇲🇴 Ван Чун (MAC)', score: '3 : 0', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М10', table: 'Олимп. городок', a: '🇮🇩 Мухаммад Джуниндра (INA)', b: '🇵🇭 Элджей Тормис (PHI)', score: '3 : 0', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М13', table: 'Олимп. городок', a: '🇹🇼 Хун Цзин-Кай (TPE)', b: '🇹🇭 Тхапани Причаянь (THA)', score: '3 : 0', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М14', table: 'Олимп. городок', a: '🇹🇯 Рустамджон Фузайли (TJK)', b: '🇹🇲 Дортгулы Алланазаров (TKM)', score: '2 : 3', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М15', table: 'Олимп. городок', a: '🇾🇪 Эбрахим Губран (YEM)', b: '🇺🇿 Хуршид Ахмедов (UZB)', score: '1 : 3', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М16', table: 'Олимп. городок', a: '🇦🇪 Юсеф Альхаваи (UAE)', b: '🇨🇳 Сян Пэн (CHN)', score: '0 : 3', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М17', table: 'Олимп. городок', a: '🇯🇵 Сюнсукэ Тогами (JPN)', b: '🇹🇭 Навачет Прасонгпол (THA)', score: '3 : 0', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М18', table: 'Олимп. городок', a: '🇲🇻 Имран Мухаммад (MDV)', b: '🇱🇰 Чамира Гиниге (SRI)', score: '0 : 3', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М19', table: 'Олимп. городок', a: '🇴🇲 Нассер Аль-Балуши (OMA)', b: '🇹🇯 Абдулло Абдукодиров (TJK)', score: '1 : 3', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М20', table: 'Олимп. городок', a: '🇲🇴 Чжэн Хун Вай (MAC)', b: '🇰🇿 Алан Курмангалиев (KAZ)', score: '0 : 3', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М21', table: 'Олимп. городок', a: '🇮🇷 Ношад Аламиян (IRI)', b: '🇰🇬 Алишер Якупбаев (KGZ)', score: '3 : 0', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М22', table: 'Олимп. городок', a: '🇺🇿 Диёрбек Дилшодов (UZB)', b: '🇮🇩 Тауфик Зикри (INA)', score: '2 : 3', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М23', table: 'Олимп. городок', a: '🇯🇴 Заид Або Яман (JOR)', b: '🇰🇷 Лим Юно (KOR)', score: '1 : 3', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М24', table: 'Олимп. городок', a: '🇸🇬 Николас Тань (SGP)', b: '🇹🇼 Го Гуань-Хун (TPE)', score: '0 : 3', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М25', table: 'Олимп. городок', a: '🇭🇰 Вон Чунь Тин (HKG)', b: '🇦🇪 Нассер Альмарри (UAE)', score: '3 : 0', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М26', table: 'Олимп. городок', a: '🇰🇼 Абдулла Альхадад (KUW)', b: '🇧🇩 Мд Джавед Ахмед (BAN)', score: '3 : 2', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М27', table: 'Олимп. городок', a: '🇴🇲 Муханнад Аль-Балуши (OMA)', b: '🇶🇦 Абдулла Абдулваххаб (QAT)', score: '0 : 3', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М28', table: 'Олимп. городок', a: '🇹🇲 Вепа Мередов (TKM)', b: '🇸🇬 Джош Чуа (SGP)', score: '0 : 3', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М29', table: 'Олимп. городок', a: '🇰🇷 Кан Донсу (KOR)', b: '🇸🇦 Юсуф Ханифа (KSA)', score: '3 : 0', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М30', table: 'Олимп. городок', a: '🇧🇭 Рашед Рашед (BRN)', b: '🇹🇭 Навин Мекампорн (THA)', score: '3 : 1', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М31', table: 'Олимп. городок', a: '🇵🇭 Джанн Мари Найре (PHI)', b: '🇲🇾 Яп Жуй Чжэ (MAS)', score: '2 : 3', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М34', table: 'Олимп. городок', a: '🇮🇷 Арьян Гаффари (IRI)', b: '🇲🇾 Вон Ци Шэнь (MAS)', score: '1 : 3', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М35', table: 'Олимп. городок', a: '🇹🇲 Мукам Артыков (TKM)', b: '🇧🇩 Рамхимлиан Бавм (BAN)', score: '0 : 3', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М36', table: 'Олимп. городок', a: '🇹🇭 Сарают Танчароен (THA)', b: '🇭🇰 Лам Сиу Хан (HKG)', score: '2 : 3', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М37', table: 'Олимп. городок', a: '🇮🇳 Паяс Джайн (IND)', b: '🇸🇬 Кларенс Чу (SGP)', score: '1 : 3', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М38', table: 'Олимп. городок', a: '🇧🇭 Салман Абухамда (BRN)', b: '🇸🇦 Салем Альсувайлем (KSA)', score: '3 : 0', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М39', table: 'Олимп. городок', a: '🇯🇴 Зейад Алдмаиси (JOR)', b: '🇰🇬 Талгат Сагындыков (KGZ)', score: '3 : 1', done: true },
+      { ev: 'MS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М40', table: 'Олимп. городок', a: '🇹🇼 Цай Тянь-Юй (TPE)', b: '🇰🇿 Кирилл Герасименко (KAZ)', score: '1 : 3', done: true },
+
+      // ==========================================
+      // WOMEN'S SINGLES (WS) — ALL 66 MATCHES
+      // ==========================================
+      // 21 October (Round of 64 — 15:00, 15:30, 16:00, 16:30)
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 15:00', table: 'Стол 4', a: '🇯🇵 Мива Харимото (JPN)', b: '🇲🇳 Болор-Эрдэнэ Батмунх (MGL)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 15:00', table: 'Стол 6', a: '🇮🇩 Алмайра Небучаднеззар (INA)', b: '🇭🇰 Нг Вин Лам (HKG)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 15:00', table: 'Стол 5', a: '🇲🇾 Карен Лайн (MAS)', b: '🇮🇷 Неда Шахсавари (IRI)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 15:00', table: 'Стол 3', a: '🇰🇿 Сарвиноз Миркадирова (KAZ)', b: '🇸🇬 Цзэн Цзянь (SGP)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 15:00', table: 'Стол 7', a: '🇹🇭 Ораван Парананг (THA)', b: '🇱🇰 Биманди Бандара (SRI)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 15:00', table: 'Стол 8', a: '🇺🇿 Аделина Хасанова (UZB)', b: '🇹🇼 У Ин-Сюань (TPE)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 15:00', table: 'Стол 9', a: '🇰🇷 Ли Даын (KOR)', b: '🇭🇰 Кон Цзы Лам (HKG)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 15:00', table: 'Стол 10', a: '🇵🇭 Алтея Гудес (PHI)', b: '🇨🇳 Ши Сюньяо (CHN)', score: '0 : 0', done: false },
+
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 15:30', table: 'Стол 4', a: '🇯🇵 Хонока Хасимото (JPN)', b: '🇺🇿 Аружан Камалова (UZB)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 15:30', table: 'Стол 10', a: '🇰🇿 Ангелина Романовская (KAZ)', b: '🇸🇬 Тань Чжао Юнь (SGP)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 15:30', table: 'Стол 5', a: '🇰🇷 Пак Гахён (KOR)', b: '🇰🇬 Нуркыз Аязбекова (KGZ)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 15:30', table: 'Стол 6', a: '🇧🇩 Садия Моу (BAN)', b: '🇭🇰 Ду Хой Кем (HKG)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 15:30', table: 'Стол 7', a: '🇹🇼 Пэн Юй-Хань (TPE)', b: '🇸🇬 Хлоя Лай (SGP)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 15:30', table: 'Стол 8', a: '🇮🇷 Фатеме Ярисераджи (IRI)', b: '🇮🇳 Синдрела Дас (IND)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 15:30', table: 'Стол 9', a: '🇲🇾 Ти Ай Синь (MAS)', b: '🇵🇭 Кришиен Сантильян (PHI)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 15:30', table: 'Стол 3', a: '🇹🇭 Сутхасини Саветтабут (THA)', b: '🇨🇳 Куай Мань (CHN)', score: '0 : 0', done: false },
+
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 16:00', table: 'Стол 3', a: '🇯🇵 Хина Хаята (JPN)', b: '🇺🇿 Асель Еркебаева (UZB)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 16:00', table: 'Стол 4', a: '🇧🇩 Сай Кхой (BAN)', b: '🇮🇳 Свастика Гхош (IND)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 16:00', table: 'Стол 5', a: '🇭🇰 Су Цзы Тун (HKG)', b: '🇰🇷 Ю Сиу (KOR)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 16:00', table: 'Стол 6', a: '🇲🇾 Им Ли Ин (MAS)', b: '🇯🇵 Мию Нагасаки (JPN)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 16:00', table: 'Стол 7', a: '🇨🇳 Цинь Юйсюань (CHN)', b: '🇹🇭 Пхатсарапхон Вонглакхон (THA)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 16:00', table: 'Стол 8', a: '🇰🇿 Жанерке Кошкумбаева (KAZ)', b: '🇸🇬 Лой Мин Ин (SGP)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 16:00', table: 'Стол 9', a: '🇹🇼 Цзянь Тун-Чуань (TPE)', b: '🇵🇭 Кит Круз (PHI)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 16:00', table: 'Стол 10', a: '🇮🇷 Сетаеш Илухани (IRI)', b: '🇨🇳 Чэнь И (CHN)', score: '0 : 0', done: false },
+
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 16:30', table: 'Стол 3', a: '🇯🇵 Сацуки Одо (JPN)', b: '🇵🇭 Анджелу Джойс Лауде (PHI)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 16:30', table: 'Стол 4', a: '🇹🇼 Чэнь Сы-Юй (TPE)', b: '🇰🇿 Зауреш Акашева (KAZ)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 16:30', table: 'Стол 5', a: '🇲🇾 Чан Ли Сиань (MAS)', b: '🇺🇿 Мафтуна Элмуродова (UZB)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 16:30', table: 'Стол 7', a: '🇹🇼 Е И-Тянь (TPE)', b: '🇱🇰 М. Густигхгха Ваду (SRI)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 16:30', table: 'Стол 9', a: '🇸🇬 Сер Линь Цянь (SGP)', b: '🇮🇷 Махшид Аштари (IRI)', score: '0 : 0', done: false },
+      { ev: 'WS', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 16:30', table: 'Стол 10', a: '🇭🇰 Ли Хой Мань (HKG)', b: '🇨🇳 Ван Иди (CHN)', score: '0 : 0', done: false },
+
+      // 20 October (Completed Round of 128 matches)
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М2', table: 'Олимп. городок', a: '🇺🇿 Мафтуна Гулимова (UZB)', b: '🇲🇳 Болор-Эрдэнэ Батмунх (MGL)', score: '0 : 3', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М3', table: 'Олимп. городок', a: '🇶🇦 Аиша Мохамед (QAT)', b: '🇮🇩 Алмайра Небучаднеззар (INA)', score: '0 : 3', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М4', table: 'Олимп. городок', a: '🇹🇭 Джиннипа Саветтабут (THA)', b: '🇭🇰 Нг Вин Лам (HKG)', score: '2 : 3', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М6', table: 'Олимп. городок', a: '🇮🇷 Неда Шахсавари (IRI)', b: '🇲🇴 Сик Хуэй Ли (MAC)', score: '3 : 0', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М7', table: 'Олимп. городок', a: '🇰🇿 Сарвиноз Миркадирова (KAZ)', b: '🇹🇯 Динара Исмаилова (TJK)', score: '3 : 1', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М10', table: 'Олимп. городок', a: '🇹🇯 Нилуфар Азизова (TJK)', b: '🇱🇰 Биманди Бандара (SRI)', score: '0 : 3', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М11', table: 'Олимп. городок', a: '🇯🇴 Зейна Садака (JOR)', b: '🇺🇿 Аделина Хасанова (UZB)', score: '1 : 3', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М14', table: 'Олимп. городок', a: '🇰🇬 Раяна Абдимиталипова (KGZ)', b: '🇭🇰 Кон Цзы Лам (HKG)', score: '0 : 3', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М15', table: 'Олимп. городок', a: '🇰🇼 Менва Альшаммари (KUW)', b: '🇵🇭 Алтея Гудес (PHI)', score: '0 : 3', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М18', table: 'Олимп. городок', a: '🇺🇿 Аружан Камалова (UZB)', b: '🇲🇻 Аишат Нафиз (MDV)', score: '3 : 1', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М19', table: 'Олимп. городок', a: '🇰🇿 Ангелина Романовская (KAZ)', b: '🇵🇭 Роуз Джин Фадол (PHI)', score: '3 : 1', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М22', table: 'Олимп. городок', a: '🇲🇴 Чон Иок Тэн (MAC)', b: '🇰🇬 Нуркыз Аязбекова (KGZ)', score: '0 : 3', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М23', table: 'Олимп. городок', a: '🇹🇯 Хадича Саидбекова (TJK)', b: '🇧🇩 Садия Моу (BAN)', score: '1 : 3', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М26', table: 'Олимп. городок', a: '🇸🇬 Хлоя Лай (SGP)', b: '🇮🇩 Команг Сударнита (INA)', score: '3 : 1', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М27', table: 'Олимп. городок', a: '🇲🇳 Анхмаа Сер-Од (MGL)', b: '🇮🇷 Фатеме Ярисераджи (IRI)', score: '0 : 3', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М29', table: 'Олимп. городок', a: '🇲🇾 Ти Ай Синь (MAS)', b: '🇱🇰 Тамади Алагияваду (SRI)', score: '3 : 0', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М30', table: 'Олимп. городок', a: '🇵🇭 Кришиен Сантильян (PHI)', b: '🇹🇲 Энеджан Баллыева (TKM)', score: '3 : 0', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М31', table: 'Олимп. городок', a: '🇰🇼 Марьям Абдулрахим (KUW)', b: '🇹🇭 Сутхасини Саветтабут (THA)', score: '0 : 3', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М34', table: 'Олимп. городок', a: '🇺🇿 Асель Еркебаева (UZB)', b: '🇲🇴 Хуан Чон Лэн (MAC)', score: '3 : 0', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М35', table: 'Олимп. городок', a: '🇹🇯 Паричехра Шарипова (TJK)', b: '🇧🇩 Сай Кхой (BAN)', score: '1 : 3', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М36', table: 'Олимп. городок', a: '🇰🇼 Джуمانа Абедали (KUW)', b: '🇮🇳 Свастика Гхош (IND)', score: '0 : 3', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М38', table: 'Олимп. городок', a: '🇯🇴 Рин ад Эль-Хасани (JOR)', b: '🇰🇷 Ю Сиу (KOR)', score: '0 : 3', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М39', table: 'Олимп. городок', a: '🇮🇩 Чинтия Расми (INA)', b: '🇲🇾 Им Ли Ин (MAS)', score: '2 : 3', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М42', table: 'Олимп. городок', a: '🇹🇭 Пхатсарапхон Вонглакхон (THA)', b: '🇲🇳 Энхжин Тувшинбаяр (MGL)', score: '3 : 2', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М43', table: 'Олимп. городок', a: '🇰🇬 Саида Кудусова (KGZ)', b: '🇰🇿 Жанерке Кошкумбаева (KAZ)', score: '0 : 3', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М46', table: 'Олимп. городок', a: '🇵🇭 Кит Круз (PHI)', b: '🇱🇰 Шамалша Халаватхаге (SRI)', score: '3 : 0', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М47', table: 'Олимп. городок', a: '🇲🇻 Мишка Ибрагим (MDV)', b: '🇮🇷 Сетаеш Илухани (IRI)', score: '0 : 3', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М50', table: 'Олимп. городок', a: '🇵🇭 Анджелу Джойс Лауде (PHI)', b: '🇲🇻 Малаак Мохамед (MDV)', score: '3 : 0', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М51', table: 'Олимп. городок', a: '🇹🇼 Чэнь Сы-Юй (TPE)', b: '🇲🇴 Леон И Нам (MAC)', score: '3 : 0', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М54', table: 'Олимп. городок', a: '🇺🇿 Мафтуна Элмуродова (UZB)', b: '🇯🇴 Бараа Хадер (JOR)', score: '3 : 2', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М55', table: 'Олимп. городок', a: '🇹🇭 Кулапхасср Виджитвириягул (THA)', b: '🇮🇷 Элина Рахими (IRI)', score: '3 : 1', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М58', table: 'Олимп. городок', a: '🇱🇰 М. Густигхгха Ваду (SRI)', b: '🇹🇯 Манижа Самадова (TJK)', score: '3 : 2', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М59', table: 'Олимп. городок', a: '🇰🇷 Ли Сион (KOR)', b: '🇮🇩 Сити Амина (INA)', score: '3 : 0', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М61', table: 'Олимп. городок', a: '🇸🇬 Сер Линь Цянь (SGP)', b: '🇧🇩 Сонам Сома (BAN)', score: '3 : 0', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М62', table: 'Олимп. городок', a: '🇸🇦 Нахла Алькахтани (KSA)', b: '🇮🇷 Махшид Аштари (IRI)', score: '0 : 3 (WO)', done: true },
+      { ev: 'WS', stage: '1/64 финала — Результаты (Round of 128 • 20 октября)', time: '20.10 • М63', table: 'Олимп. городок', a: '🇰🇬 Рамиля Мураталиева (KGZ)', b: '🇭🇰 Ли Хой Мань (HKG)', score: '0 : 3', done: true },
+
+      // ==========================================
+      // MEN'S DOUBLES (MD)
+      // ==========================================
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 12:00', table: 'Стол 5', a: '🇰🇷 Кан Донсу / Лим Юно (KOR)', b: '🇧🇩 Рамхимлиан Бавм / Мохутасин Ридой (BAN)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 12:00', table: 'Стол 6', a: '🇮🇩 Аффан Пратама / Брейдон Сусило (INA)', b: '🇹🇲 Ыляс Алланазаров / Вепа Мередов (TKM)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 12:00', table: 'Стол 7', a: '🇶🇦 Абдулла Абдулваххаб / Мохаммед Абдулваххаб (QAT)', b: '🇭🇰 Лам Сиу Хан / Йиу Кван То (HKG)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 12:00', table: 'Стол 8', a: '🇰🇬 Азамат Эргешов / Алишер Якупбаев (KGZ)', b: '🇮🇶 Анвер Хамид / Мохаммед Тахер (IRQ)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 12:00', table: 'Стол 9', a: '🇰🇼 Абдулла Альхадад / Мешал Алотаиби (KUW)', b: '🇲🇴 Мак Тин Иан / Ван Чун (MAC)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 12:30', table: 'Стол 5', a: '🇴🇲 Гассан Аль-Гассани / Билал Аль-Рашди (OMA)', b: '🇹🇯 Мустафо Алиев / Некруз Одинаев (TJK)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 12:30', table: 'Стол 6', a: '🇱🇰 Чамира Гиниге / Нувантха Кахаватхтха (SRI)', b: '🇧🇭 Салман Абухамда / Али Салех (BRN)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 12:30', table: 'Стол 7', a: '🇵🇭 Элджей Тормис / Эдуард Валенет (PHI)', b: '🇲🇾 Вон Ци Шэнь / Джавен Чун (MAS)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 12:30', table: 'Стол 8', a: '🇮🇷 Нима Аламиан / Ношад Аламиян (IRI)', b: '🇸🇦 Абдулрахман Аль-Тахер / Салем Альсувайлем (KSA)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 12:30', table: 'Стол 9', a: '🇲🇻 Мохамед Исмаил / Имран Мухаммад (MDV)', b: '🇺🇿 Хуршид Ахмедов / Мусобек Толиев (UZB)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 12:30', table: 'Стол 10', a: '🇲🇳 Усухбаяр Тувшинджаргал / Тарвачинбо Буян (MGL)', b: '🇹🇼 Сюй Сянь-Цзя / Хун Цзин-Кай (TPE)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 13:00', table: 'Стол 5', a: '🇦🇪 Ахмед Альмусайеби / Мохаммед Альмусайеби (UAE)', b: '🇹🇭 Навачет Прасонгпол / Навин Мекампорн (THA)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 13:00', table: 'Стол 6', a: '🇮🇩 Мухаммад Джуниндра / Мухаммад Негара (INA)', b: '🇰🇬 Тилек Молдалиев / Талгат Сагындыков (KGZ)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 13:00', table: 'Стол 7', a: '🇱🇰 Сенура Силва / Чанул Кулаппуваваду (SRI)', b: '🇲🇴 Чжэн Хун Вай / Чань Чи Инь (MAC)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 13:00', table: 'Стол 8', a: '🇺🇿 Диёрбек Дилшодов / Шохрух Искандаров (UZB)', b: '🇸🇦 Али Альхадрави / Абдулазиз Бу Шулайби (KSA)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 13:00', table: 'Стол 9', a: '🇰🇼 Абдулла Альмкими / Мешал Алькандери (KUW)', b: '🇦🇪 Юсеф Альхаваи / Нассер Альмарри (UAE)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 13:30', table: 'Стол 5', a: '🇮🇷 Арьян Гаффари / Беньямин Фараджи (IRI)', b: '🇹🇯 Абдулло Абдукодиров / Рустамджон Фузайли (TJK)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 13:30', table: 'Стол 6', a: '🇰🇿 Айдос Кенжигулов / Санжар Жубанов (KAZ)', b: '🇴🇲 Муханнад Аль-Балуши / Ахмед Аль-Риями (OMA)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 13:30', table: 'Стол 7', a: '🇲🇾 Им Цзинь Чжэнь / Яп Жуй Чжэ (MAS)', b: '🇯🇴 Заид Або Яман / Зейад Алдмаиси (JOR)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 13:30', table: 'Стол 8', a: '🇰🇷 Ким Минхёк / Пак Гюхён (KOR)', b: '🇹🇭 Пхакпум Сангуансин / Сарают Танчароен (THA)', score: '0 : 0', done: false },
+      { ev: 'MD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 13:30', table: 'Стол 9', a: '🇹🇲 Дортгулы Алланазаров / Мукам Артыков (TKM)', b: '🇧🇭 Рашед Рашед / Мохамед Салех (BRN)', score: '0 : 0', done: false },
+
+      // ==========================================
+      // WOMEN'S DOUBLES (WD)
+      // ==========================================
+      { ev: 'WD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 10:00', table: 'Стол 5', a: '🇮🇷 Неда Шахсавари / Фатеме Ярисераджи (IRI)', b: '🇲🇴 Чон Иок Тэн / Леон И Нам (MAC)', score: '0 : 0', done: false },
+      { ev: 'WD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 10:00', table: 'Стол 6', a: '🇺🇿 Аружан Камалова / Мафтуна Гулимова (UZB)', b: '🇮🇩 Команг Сударнита / Алисия Малика (INA)', score: '0 : 0', done: false },
+      { ev: 'WD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 10:00', table: 'Стол 7', a: '🇱🇰 Биманди Бандара / Тамади Алагияваду (SRI)', b: '🇲🇻 Аишат Нафиз / Мишка Ибрагим (MDV)', score: '0 : 0', done: false },
+      { ev: 'WD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 10:00', table: 'Стол 8', a: '🇹🇯 Манижа Самадова / Паричехра Шарипова (TJK)', b: '🇮🇷 Махшид Аштари / Сетаеш Илухани (IRI)', score: '0 : 0', done: false },
+      { ev: 'WD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 10:30', table: 'Стол 5', a: '🇱🇰 М. Густигхгха Ваду / Ш. Халаватхаге (SRI)', b: '🇲🇴 Сик Хуэй Ли / Хуан Чон Лэн (MAC)', score: '0 : 0', done: false },
+      { ev: 'WD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 10:30', table: 'Стол 6', a: '🇰🇬 Нуркыз Аязбекова / Саида Кудусова (KGZ)', b: '🇧🇩 Садия Моу / Сонам Сома (BAN)', score: '0 : 0', done: false },
+      { ev: 'WD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 10:30', table: 'Стол 7', a: '🇮🇩 Алмайра Небучаднеззар / Сити Амина (INA)', b: '🇲🇳 Энхжин Тувшинбаяр / Анхмаа Сер-Од (MGL)', score: '0 : 0', done: false },
+      { ev: 'WD', stage: '1/32 финала (Round of 64 • 21 октября)', time: '21.10 • 10:30', table: 'Стол 8', a: '🇰🇼 Марьям Абдулрахим / Менва Альшаммари (KUW)', b: '🇵🇭 Роуз Джин Фадол / Алтея Гудес (PHI)', score: '0 : 0', done: false },
+
+      // ==========================================
+      // MIXED DOUBLES (XD) — ALL 17 COMPLETED ROUND OF 64 MATCHES
+      // ==========================================
+      { ev: 'XD', stage: '1/32 финала — Результаты (Round of 64 • 20 октября)', time: '20.10 • М2', table: 'Олимп. городок', a: '🇱🇰 Ч. Кулаппуваваду / Т. Алагияваду (SRI)', b: '🇮🇷 Беньямин Фараджи / Сетаеш Илухани (IRI)', score: '1 : 3', done: true },
+      { ev: 'XD', stage: '1/32 финала — Результаты (Round of 64 • 20 октября)', time: '20.10 • М3', table: 'Олимп. городок', a: '🇶🇦 Мохаммед Абдулваххаб / Аиша Мохамед (QAT)', b: '🇰🇬 Азамат Эргешов / Саида Кудусова (KGZ)', score: '3 : 2', done: true },
+      { ev: 'XD', stage: '1/32 финала — Результаты (Round of 64 • 20 октября)', time: '20.10 • М4', table: 'Олимп. городок', a: '🇮🇩 М. Джуниндра / А. Небучаднеззар (INA)', b: '🇸🇬 Айзек Квек / Лой Мин Ин (SGP)', score: '0 : 3', done: true },
+      { ev: 'XD', stage: '1/32 финала — Результаты (Round of 64 • 20 октября)', time: '20.10 • М6', table: 'Олимп. городок', a: '🇹🇲 Ыляс Алланазаров / Энеджан Баллыева (TKM)', b: '🇰🇷 Пак Гюхён / Пак Гахён (KOR)', score: '0 : 3', done: true },
+      { ev: 'XD', stage: '1/32 финала — Результаты (Round of 64 • 20 октября)', time: '20.10 • М7', table: 'Олимп. городок', a: '🇰🇼 Мешал Алькандери / Марьям Абдулрахим (KUW)', b: '🇲🇾 Джавен Чун / Карен Лайн (MAS)', score: '0 : 3', done: true },
+      { ev: 'XD', stage: '1/32 финала — Результаты (Round of 64 • 20 октября)', time: '20.10 • М10', table: 'Олимп. городок', a: '🇺🇿 Шохрух Искандаров / Аружан Камалова (UZB)', b: '🇲🇴 Чжэн Хун Вай / Хуан Чон Лэн (MAC)', score: '3 : 2', done: true },
+      { ev: 'XD', stage: '1/32 финала — Результаты (Round of 64 • 20 октября)', time: '20.10 • М11', table: 'Олимп. городок', a: '🇹🇼 Го Гуань-Хун / Е И-Тянь (TPE)', b: '🇲🇳 У. Тувшинджаргал / Э. Тувшинбаяр (MGL)', score: '3 : 0', done: true },
+      { ev: 'XD', stage: '1/32 финала — Результаты (Round of 64 • 20 октября)', time: '20.10 • М14', table: 'Олимп. городок', a: '🇲🇻 Мохамед Исмаил / Аишат Нафиз (MDV)', b: '🇵🇭 Джон Мисал / Кит Круз (PHI)', score: '0 : 3', done: true },
+      { ev: 'XD', stage: '1/32 финала — Результаты (Round of 64 • 20 октября)', time: '20.10 • М15', table: 'Олимп. городок', a: '🇯🇴 Заид Або Яман / Ринад Эль-Хасани (JOR)', b: '🇹🇯 Мустафо Алиев / Динара Исмаилова (TJK)', score: '3 : 1', done: true },
+      { ev: 'XD', stage: '1/32 финала — Результаты (Round of 64 • 20 октября)', time: '20.10 • М18', table: 'Стол 3', a: '🇯🇴 Зейад Алдмаиси / Зейна Садака (JOR)', b: '🇮🇩 Мухаммад Негара / Чинтия Расми (INA)', score: '0 : 3', done: true },
+      { ev: 'XD', stage: '1/32 финала — Результаты (Round of 64 • 20 октября)', time: '20.10 • М19', table: 'Олимп. городок', a: '🇲🇻 Имран Мухаммад / Мишка Ибрагим (MDV)', b: '🇲🇳 Тарвачинбо Буян / Болор-Эрдэнэ Батмунх (MGL)', score: '0 : 3', done: true },
+      { ev: 'XD', stage: '1/32 финала — Результаты (Round of 64 • 20 октября)', time: '20.10 • М22', table: 'Олимп. городок', a: '🇱🇰 Сенура Силва / Биманди Бандара (SRI)', b: '🇹🇭 Сарают Танчароен / Джиннипа Саветтабут (THA)', score: '1 : 3', done: true },
+      { ev: 'XD', stage: '1/32 финала — Результаты (Round of 64 • 20 октября)', time: '20.10 • М23', table: 'Олимп. городок', a: '🇰🇿 Айдос Кенжигулов / Зауреш Акашева (KAZ)', b: '🇧🇩 Мохутасин Ридой / Садия Моу (BAN)', score: '3 : 0 (WO)', done: true },
+      { ev: 'XD', stage: '1/32 финала — Результаты (Round of 64 • 20 октября)', time: '20.10 • М26', table: 'Олимп. городок', a: '🇰🇬 Алишер Якупбаев / Раяна Абдимиталипова (KGZ)', b: '🇮🇷 Арьян Гаффари / Махшид Аштари (IRI)', score: '3 : 0', done: true },
+      { ev: 'XD', stage: '1/32 финала — Результаты (Round of 64 • 20 октября)', time: '20.10 • М27', table: 'Олимп. городок', a: '🇸🇦 Абдулрахман Аль-Тахер / Нахла Алькахтани (KSA)', b: '🇵🇭 Элайджа Ямсон / Кришиен Сантильян (PHI)', score: '0 : 3 (WO)', done: true },
+      { ev: 'XD', stage: '1/32 финала — Результаты (Round of 64 • 20 октября)', time: '20.10 • М30', table: 'Олимп. городок', a: '🇺🇿 Диёрбек Дилшодов / Аделина Хасанова (UZB)', b: '🇹🇯 Абдулло Абдукодиров / Манижа Самадова (TJK)', score: '3 : 0', done: true },
+      { ev: 'XD', stage: '1/32 финала — Результаты (Round of 64 • 20 октября)', time: '20.10 • М31', table: 'Олимп. городок', a: '🇰🇼 Абдулла Альмкими / Менва Альшаммари (KUW)', b: '🇲🇴 Мак Тин Иан / Сик Хуэй Ли (MAC)', score: '0 : 3', done: true }
+    ];
+
+    const state = {
+      category: 'TEAM', // TEAM | SINGLES | DOUBLES | MIXED
+      gender: 'M'       // M | W
+    };
+
+    function getActiveEventCode() {
+      if (state.category === 'MIXED') return 'XD';
+      if (state.category === 'TEAM') return state.gender === 'M' ? 'MT' : 'WT';
+      if (state.category === 'SINGLES') return state.gender === 'M' ? 'MS' : 'WS';
+      if (state.category === 'DOUBLES') return state.gender === 'M' ? 'MD' : 'WD';
+      return 'MT';
+    }
+
+    function updateControlsUI() {
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        const c = btn.getAttribute('data-cat');
+        if (c === state.category) {
+          btn.className = 'cat-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-teal-500 text-slate-950 shadow';
+        } else {
+          btn.className = 'cat-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition text-slate-300 hover:text-white';
+        }
+      });
+
+      const genderContainer = document.getElementById('genderTabs');
+      if (state.category === 'MIXED') {
+        genderContainer.classList.add('opacity-40', 'pointer-events-none');
+      } else {
+        genderContainer.classList.remove('opacity-40', 'pointer-events-none');
+      }
+
+      document.querySelectorAll('.gender-btn').forEach(btn => {
+        const g = btn.getAttribute('data-gender');
+        if (g === state.gender) {
+          btn.className = 'gender-btn px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-blue-500 text-white shadow';
+        } else {
+          btn.className = 'gender-btn px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition text-slate-300 hover:text-white';
+        }
+      });
+    }
+
+    function renderBracketNode(match) {
+      return `
+        <div class="panel rounded-xl p-3 space-y-2">
+          <div class="flex items-center justify-between text-[11px] text-slate-400">
+            <span>${match.label}</span>
+          </div>
+          <div class="space-y-1.5">
+            <div class="flex items-center justify-between gap-2 bg-slate-900/90 px-2.5 py-1.5 rounded-lg border border-slate-800">
+              <span class="text-xs sm:text-sm font-semibold text-white">${match.a}</span>
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-slate-800 text-teal-300 shrink-0">${match.scoreA}</span>
+            </div>
+            <div class="flex items-center justify-between gap-2 bg-slate-900/90 px-2.5 py-1.5 rounded-lg border border-slate-800">
+              <span class="text-xs sm:text-sm font-semibold text-white">${match.b}</span>
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-slate-800 text-teal-300 shrink-0">${match.scoreB}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderView() {
+      const code = getActiveEventCode();
+      const bracketData = BRACKETS[code];
+      const eventMatches = MATCHES.filter(m => m.ev === code);
+
+      document.getElementById('activeDivisionTitle').textContent = bracketData.title;
+      document.getElementById('activeDivisionCount').textContent = `Матчей в списке: ${eventMatches.length}`;
+
+      // Render Bracket Columns (1/4 -> 1/2 -> Final)
+      const bracketContainer = document.getElementById('bracketContainer');
+      bracketContainer.innerHTML = `
+        <div class="space-y-2.5">
+          <div class="text-xs font-semibold text-teal-300 px-1">1/4 финала</div>
+          <div class="space-y-2.5">
+            ${bracketData.qf.map(renderBracketNode).join('')}
+          </div>
+        </div>
+        <div class="space-y-2.5 flex flex-col justify-center">
+          <div class="text-xs font-semibold text-blue-300 px-1">1/2 финала</div>
+          <div class="space-y-4">
+            ${bracketData.sf.map(renderBracketNode).join('')}
+          </div>
+        </div>
+        <div class="space-y-2.5 flex flex-col justify-center">
+          <div class="text-xs font-semibold text-amber-300 px-1">Финал</div>
+          <div>
+            ${bracketData.final.map(renderBracketNode).join('')}
+          </div>
+        </div>
+      `;
+
+      // Group matches by stage
+      const stagesMap = new Map();
+      eventMatches.forEach(m => {
+        if (!stagesMap.has(m.stage)) stagesMap.set(m.stage, []);
+        stagesMap.get(m.stage).push(m);
+      });
+
+      const matchesContainer = document.getElementById('matchesByStageContainer');
+      matchesContainer.innerHTML = '';
+
+      stagesMap.forEach((list, stageName) => {
+        const block = document.createElement('div');
+        block.className = 'panel rounded-xl overflow-hidden';
+
+        const rowsHtml = list.map(m => {
+          const scoreBadgeClass = m.done
+            ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
+            : 'bg-slate-800 text-slate-300 border-slate-700';
+
+          return `
+            <div class="px-3.5 py-2.5 flex flex-col md:flex-row md:items-center justify-between gap-2 hover:bg-slate-800/40 transition">
+              <div class="flex items-center gap-2 text-xs text-slate-400 md:w-44 shrink-0">
+                <span class="font-medium text-slate-300">${m.time}</span>
+                <span>•</span>
+                <span>${m.table}</span>
+              </div>
+              <div class="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-slate-900/60 px-3 py-2 rounded-lg border border-slate-800/80">
+                <div class="flex-1 text-xs sm:text-sm font-semibold text-white sm:text-right break-words">${m.a}</div>
+                <div class="flex justify-center shrink-0 my-1 sm:my-0 sm:mx-3">
+                  <span class="px-2.5 py-0.5 rounded text-xs font-bold border ${scoreBadgeClass} whitespace-nowrap">${m.score}</span>
+                </div>
+                <div class="flex-1 text-xs sm:text-sm font-semibold text-white break-words">${m.b}</div>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        block.innerHTML = `
+          <div class="px-3.5 py-2.5 bg-slate-900/95 border-b border-slate-800 flex items-center justify-between">
+            <span class="text-xs sm:text-sm font-bold text-teal-300">${stageName}</span>
+            <span class="text-xs text-slate-400">Матчей: ${list.length}</span>
+          </div>
+          <div class="divide-y divide-slate-800/70">
+            ${rowsHtml}
+          </div>
+        `;
+        matchesContainer.appendChild(block);
+      });
+    }
+
+    // Динамическая подгрузка свежих данных из ./data.json (для GitHub Pages)
+    const DATA_JSON_URL = './data.json';
+    const REFRESH_INTERVAL_MS = 60000;
+
+    async function syncLiveScores() {
+      const dotEl = document.getElementById('liveSyncDot');
+      const textEl = document.getElementById('liveSyncText');
+      try {
+        const response = await fetch(DATA_JSON_URL + '?t=' + Date.now(), { cache: 'no-store' });
+        if (!response.ok) return;
+        const payload = await response.json();
+        if (payload && payload.brackets && Array.isArray(payload.matches)) {
+          Object.assign(BRACKETS, payload.brackets);
+          MATCHES.length = 0;
+          MATCHES.push(...payload.matches);
+          renderView();
+          if (dotEl) dotEl.className = 'w-2 h-2 rounded-full bg-emerald-400 animate-pulse';
+          if (textEl) {
+            const now = new Date();
+            const hh = String(now.getHours()).padStart(2, '0');
+            const mm = String(now.getMinutes()).padStart(2, '0');
+            textEl.textContent = 'Обновлено в ' + hh + ':' + mm;
+          }
+        }
+      } catch (err) {
+        // В локальном превью или до первого создания data.json используем встроенные данные
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      updateControlsUI();
+      renderView();
+      syncLiveScores();
+      setInterval(syncLiveScores, REFRESH_INTERVAL_MS);
+
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          state.category = btn.getAttribute('data-cat');
+          updateControlsUI();
+          renderView();
+        });
+      });
+
+      document.querySelectorAll('.gender-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          state.gender = btn.getAttribute('data-gender');
+          updateControlsUI();
+          renderView();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
