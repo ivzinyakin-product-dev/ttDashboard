@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T08:45:00+05:00",
+  "updatedAt": "2026-10-21T04:17:26.876834+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -3289,5 +3289,14 @@
       "score": "0 : 3",
       "done": true
     }
+  ],
+  "lastDomCardsCount": 25,
+  "fetchedDays": [],
+  "fetchedBrackets": [
+    "MS",
+    "WS",
+    "MD",
+    "WD",
+    "XD"
   ]
 }
