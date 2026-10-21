@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T09:59:35.694020+00:00",
+  "updatedAt": "2026-10-21T10:26:43.277667+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -1936,7 +1936,7 @@
       "table": "Стол 6",
       "a": "🇮🇩 Алмайра Небучаднеззар (INA)",
       "b": "🇭🇰 Нг Вин Лам (HKG)",
-      "score": "0 : 0",
+      "score": "1 : 2 (LIVE)",
       "done": false
     },
     {
@@ -1946,7 +1946,7 @@
       "table": "Стол 5",
       "a": "🇲🇾 Карен Лайн (MAS)",
       "b": "🇮🇷 Неда Шахсавари (IRI)",
-      "score": "0 : 0",
+      "score": "2 : 1 (LIVE)",
       "done": false
     },
     {
@@ -1956,8 +1956,8 @@
       "table": "Стол 3",
       "a": "🇰🇿 Сарвиноз Миркадирова (KAZ)",
       "b": "🇸🇬 Цзэн Цзянь (SGP)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "WS",
@@ -1966,7 +1966,7 @@
       "table": "Стол 7",
       "a": "🇹🇭 Ораван Парананг (THA)",
       "b": "🇱🇰 Биманди Бандара (SRI)",
-      "score": "0 : 0",
+      "score": "2 : 0 (LIVE)",
       "done": false
     },
     {
@@ -1976,8 +1976,8 @@
       "table": "Стол 8",
       "a": "🇺🇿 Аделина Хасанова (UZB)",
       "b": "🇹🇼 У Ин-Сюань (TPE)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "WS",
@@ -1986,8 +1986,8 @@
       "table": "Стол 9",
       "a": "🇰🇷 Ли Даын (KOR)",
       "b": "🇭🇰 Кон Цзы Лам (HKG)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "WS",
@@ -1996,8 +1996,8 @@
       "table": "Стол 10",
       "a": "🇵🇭 Алтея Гудес (PHI)",
       "b": "🇨🇳 Ши Сюньяо (CHN)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "WS",
@@ -3320,6 +3320,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 674,
-  "lastUpdatedMatchesCount": 674
+  "lastScrapedMatchesCount": 677,
+  "lastUpdatedMatchesCount": 677
 }
