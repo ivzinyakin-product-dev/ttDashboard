@@ -2,8 +2,9 @@ name: Update ITTF Tashkent 2026 Scores
 
 on:
   schedule:
-    - cron: '*/10 * * * *' # Каждые 10 минут
-  workflow_dispatch:      # Кнопка ручного запуска
+    # Запускается каждые 10 минут во время турнира
+    - cron: '*/10 * * * *'
+  workflow_dispatch: # Позволяет запускать обновление вручную кнопкой Run workflow
 
 permissions:
   contents: write
