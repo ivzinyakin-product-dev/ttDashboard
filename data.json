@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T14:59:18.006169+00:00",
+  "updatedAt": "2026-10-21T15:26:22.666147+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -409,6 +409,236 @@
     }
   },
   "matches": [
+    {
+      "ev": "WD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 15:00",
+      "table": "Стол 8",
+      "a": "🇯🇴 EL-HASANI Rinad / SADAQA Zeina (JOR)",
+      "b": "🇭🇰 KONG Tsz Lam / SU Tsz Tung (HKG)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 15:00",
+      "table": "Стол 7",
+      "a": "🇵🇭 CRUZ Kheith / LAUDE Angelou Joyce (PHI)",
+      "b": "🇲🇾 CHANG Li Sian / LI YING Im (MAS)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 15:00",
+      "table": "Стол 6",
+      "a": "🇰🇿 ROMANOVSKAYA Angelina / ZHAXYLYKOVA Albina (KAZ)",
+      "b": "🇰🇷 LEE Daeun / PARK Gahyeon (KOR)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 15:00",
+      "table": "Стол 5",
+      "a": "🇹🇭 PARANANG Orawan / SAWETTABUT Suthasini (THA)",
+      "b": "🇱🇰 GUSTHIGHGHA WADU Maneesha Shalindi / HALAWATHAGE Shamalsha (SRI)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 15:00",
+      "table": "Стол 4",
+      "a": "🇮🇩 NEBUCHADNEZZAR Almaira / AMINAH Siti (INA)",
+      "b": "🇸🇬 LOY Ming Ying / SER Lin Qian (SGP)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 15:00",
+      "table": "Стол 2",
+      "a": "🇰🇬 AIAZBEKOVA Nurkyz / KUDUSOVA Saida (KGZ)",
+      "b": "🇨🇳 KUAI Man / WANG Yidi (CHN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 15:00",
+      "table": "Стол 1",
+      "a": "🇹🇼 CHEN Szu-Yu / WU Ying Syuan (TPE)",
+      "b": "🇺🇿 ERKEBAEVA Asel / KHASANOVA Adelina (UZB)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 14:30",
+      "table": "Стол 8",
+      "a": "🇵🇭 FADOL Rose Jean / GUDES Althea (PHI)",
+      "b": "🇭🇰 DOO Hoi Kem / NG Wing Lam (HKG)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 14:30",
+      "table": "Стол 7",
+      "a": "🇲🇾 LYNE Karen / TEE Ai Xin (MAS)",
+      "b": "🇰🇿 AKASHEVA Zauresh / MIRKADIROVA Sarvinoz (KAZ)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 14:30",
+      "table": "Стол 6",
+      "a": "🇰🇬 ABDIMITALIPOVA Ramida / MURATALIEVA Raiana (KGZ)",
+      "b": "🇹🇼 CHIEN Tung-Chuan / PENG Yu-Han (TPE)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 14:30",
+      "table": "Стол 5",
+      "a": "🇨🇳 CHEN Yi / JIANG Yiyi (CHN)",
+      "b": "🇱🇰 BANDARA Bimandee / ALAGIYAWADU Tamadi Kavindya (SRI)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 14:30",
+      "table": "Стол 4",
+      "a": "🇮🇩 SUDARNITA Komang / MALIQA Alisya (INA)",
+      "b": "🇮🇳 GHORPADE Yashaswini / GHOSH Swastika (IND)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 14:30",
+      "table": "Стол 3",
+      "a": "🇰🇷 LEE Zion / YOO Siwoo (KOR)",
+      "b": "🇹🇭 VIJITVIRIYAGUL Kulapassr / WONGLAKHON Phatsaraphon (THA)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 14:30",
+      "table": "Стол 2",
+      "a": "🇯🇵 HARIMOTO Miwa / HAYATA Hina (JPN)",
+      "b": "🇮🇷 SHAHSAVARI Neda / YARISERAJI Fatemeh (IRI)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 14:30",
+      "table": "Стол 1",
+      "a": "🇹🇯 AZIZOVA Nargis / ISMAILOVA Dinara (TJK)",
+      "b": "🇸🇬 LAI Chloe / TAN Zhao Yun (SGP)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 13:30",
+      "table": "Стол 4",
+      "a": "🇲🇴 MAK Tin Ian / WANG Chun (MAC)",
+      "b": "🇯🇵 HARIMOTO Tomokazu / SHINOZUKA Hiroto (JPN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "XD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "22.10 • 12:30",
+      "table": "Стол 8",
+      "a": "🇰🇷 PARK Gyuhyeon / PARK Gahyeon (KOR)",
+      "b": "🇲🇾 CHOONG Javen / LYNE Karen (MAS)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "XD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "22.10 • 12:30",
+      "table": "Стол 7",
+      "a": "🇭🇰 YIU Kwan To / NG Wing Lam (HKG)",
+      "b": "🇨🇳 YUAN Licen / WANG Yidi (CHN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "XD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "22.10 • 12:30",
+      "table": "Стол 6",
+      "a": "🇸🇬 PANG Koen / SER Lin Qian (SGP)",
+      "b": "🇰🇷 PARK Ganghyeon / LEE Daeun (KOR)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "XD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "22.10 • 12:30",
+      "table": "Стол 4",
+      "a": "🇹🇭 PREECHAYAN Thitaphat / VIJITVIRIYAGUL Kulapassr (THA)",
+      "b": "🇨🇳 HUANG Youzheng / CHEN Yi (CHN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "XD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "22.10 • 12:30",
+      "table": "Стол 3",
+      "a": "🇮🇳 JAIN Payas / DAS Syndrela (IND)",
+      "b": "🇹🇼 KUO Guan-Hong / YEH Yi-Tian (TPE)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "XD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "22.10 • 12:30",
+      "table": "Стол 2",
+      "a": "🇺🇿 DILSHODOV Diyorbek / KHASANOVA Adelina (UZB)",
+      "b": "🇯🇵 MATSUSHIMA Sora / HARIMOTO Miwa (JPN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "XD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "22.10 • 12:30",
+      "table": "Стол 1",
+      "a": "🇭🇰 WONG Chun Ting / DOO Hoi Kem (HKG)",
+      "b": "🇸🇬 QUEK Izaac / LOY Ming Ying (SGP)",
+      "score": "0 : 0",
+      "done": false
+    },
     {
       "ev": "WT",
       "stage": "Матчи (22 октября)",
@@ -2906,8 +3136,8 @@
       "table": "Стол 9",
       "a": "🇰🇼 Абдулла Альхадад / Мешал Алотаиби (KUW)",
       "b": "🇲🇴 Мак Тин Иан / Ван Чун (MAC)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "MD",
@@ -3216,8 +3446,8 @@
       "table": "Стол 1",
       "a": "🇭🇰 Вон Чунь Тин / Ду Хой Кем (HKG)",
       "b": "🇮🇷 Беньямин Фараджи / Сетаеш Илухани (IRI)",
-      "score": "1 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "XD",
@@ -3226,8 +3456,8 @@
       "table": "Стол 2",
       "a": "🇶🇦 Мохаммед Абдулваххаб / Аиша Мохамед (QAT)",
       "b": "🇸🇬 Айзек Квек / Лой Мин Ин (SGP)",
-      "score": "0 : 3",
-      "done": true
+      "score": "1 : 0 (LIVE)",
+      "done": false
     },
     {
       "ev": "XD",
@@ -3236,8 +3466,8 @@
       "table": "Стол 3",
       "a": "🇰🇿 Искендер Харки / Сарвиноз Миркадирова (KAZ)",
       "b": "🇰🇷 Пак Гюхён / Пак Гахён (KOR)",
-      "score": "0 : 1 (LIVE)",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "XD",
@@ -3246,8 +3476,8 @@
       "table": "Стол 4",
       "a": "🇲🇾 Джавен Чун / Карен Лайн (MAS)",
       "b": "🇯🇵 Сюнсукэ Тогами / Хина Хаята (JPN)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "XD",
@@ -3256,8 +3486,8 @@
       "table": "Стол 5",
       "a": "🇮🇳 Паяс Джайн / Синдрела Дас (IND)",
       "b": "🇺🇿 Шохрух Искандаров / Аружан Камалова (UZB)",
-      "score": "2 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "XD",
@@ -3266,8 +3496,8 @@
       "table": "Стол 6",
       "a": "🇹🇼 Го Гуань-Хун / Е И-Тянь (TPE)",
       "b": "🇧🇩 Мд Джавед Ахмед / Сай Кхой (BAN)",
-      "score": "1 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "XD",
@@ -3326,8 +3556,8 @@
       "table": "Стол 4",
       "a": "🇰🇿 Айдос Кенжигулов / Зауреш Акашева (KAZ)",
       "b": "🇰🇷 Пак Ганхён / Ли Даын (KOR)",
-      "score": "0 : 1 (LIVE)",
-      "done": false
+      "score": "1 : 3",
+      "done": true
     },
     {
       "ev": "XD",
@@ -3336,8 +3566,8 @@
       "table": "Стол 5",
       "a": "🇭🇰 Йиу Кван То / Нг Вин Лам (HKG)",
       "b": "🇰🇬 Алишер Якупбаев / Раяна Абдимиталипова (KGZ)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "XD",
@@ -3356,8 +3586,8 @@
       "table": "Стол 7",
       "a": "🇲🇾 Яп Жуй Чжэ / Ти Ай Синь (MAS)",
       "b": "🇺🇿 Диёрбек Дилшодов / Аделина Хасанова (UZB)",
-      "score": "1 : 2 (LIVE)",
-      "done": false
+      "score": "2 : 3",
+      "done": true
     },
     {
       "ev": "XD",
@@ -3540,6 +3770,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 315,
-  "lastUpdatedMatchesCount": 315
+  "lastScrapedMatchesCount": 406,
+  "lastUpdatedMatchesCount": 406
 }
