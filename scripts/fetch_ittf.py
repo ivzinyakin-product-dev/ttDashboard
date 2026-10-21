@@ -2,13 +2,16 @@
 Автоматический парсер расписания и результатов Чемпионата Азии (Ташкент 2026)
 с официального портала ITTF: https://results.ittf.com/ittf-web-results/html/TTE3474/results.html
 
-Особенности работы:
-1. Переходит по маршрутам всех дней (#/results/2026-10-19 ... #/results/2026-10-25 и #/live).
-2. Корректно разбирает как многострочный формат карточек командных матчей в Chromium
-   (где команда 1, счёт 1, счёт 2 и команда 2 идут на отдельных строках innerText),
-   так и однострочный формат, а также карточки одиночных и парных разрядов.
-3. Обновляет как нижний список матчей (matches), так и верхнюю сетку плей-офф (brackets: qf, sf, final),
-   автоматически продвигая победителей завершённых встреч в следующие стадии вместо «Победитель ...».
+Ключевые исправления для командных разрядов (MT и WT):
+1. Нормализация табуляций (\t): в DOM портала ITTF карточки командных матчей склеивают
+   заголовок и город ("Men's Teams - Quarterfinals - Match 2\tOlympic Town, Tashkent"),
+   время и стол ("Wed 21, 10:00\tTable 1"), а также команды и счёт ("Chinese Taipei\t3\t0\tHong Kong, China")
+   через символ табуляции \t. Теперь скрипт разбивает \t на отдельные строки перед разбором.
+2. Привязка сетки плей-офф (1/4 и 1/2 финала) строго по номеру матча ("Quarterfinals - Match 1..4" -> qf[0..3],
+   "Semifinals - Match 1..2" -> sf[0..1]), а не только по номеру стола (так как Match 1 и Match 4 или Match 2 и Match 3
+   часто меняются столами).
+3. Принудительное обновление участников матча (a и b) по данным протокола ITTF даже в том случае,
+   если в data.json ранее стояла другая пара команд после предварительной жеребьёвки.
 """
 import json
 import os
@@ -85,9 +88,16 @@ STAGE_RU = [
     ("Quarter-finals", "1/4 финала"),
     ("Semifinals", "1/2 финала"),
     ("Semi-finals", "1/2 финала"),
-    ("Preliminary Round 3", "Предварительный раунд 3"),
+    ("Preliminary Round 3", "Предварительный раунд 3 — за выход в 1/4 финала"),
     ("Preliminary Round 2", "Предварительный раунд 2"),
     ("Preliminary Round 1", "Предварительный раунд 1"),
+    ("Positional 5-8", "Матчи за 5–8 места"),
+    ("Positions 5-8", "Матчи за 5–8 места"),
+    ("Position 5-8", "Матчи за 5–8 места"),
+    ("Positional 9-12", "Матчи за 9–12 места"),
+    ("Positions 9-12", "Матчи за 9–12 места"),
+    ("Positional 13-16", "Матчи за 13–16 места"),
+    ("Positions 13-16", "Матчи за 13–16 места"),
     ("Group", "Групповой этап"),
     ("Final", "Финал"),
 ]
@@ -128,6 +138,12 @@ def detect_stage_ru(header_line, day_num):
     return f"Матчи ({day_num} октября)"
 
 
+def extract_match_number(header_line):
+    """Извлекает номер матча из заголовка, например 'Men's Teams - Quarterfinals - Match 2' -> 2."""
+    m = re.search(r"Match\s+(\d+)", header_line or "", flags=re.IGNORECASE)
+    return int(m.group(1)) if m else None
+
+
 def resolve_team_code_and_ru(eng_name):
     clean = re.sub(r"^WIN\s+", "", (eng_name or "").strip(), flags=re.IGNORECASE).strip()
     upper = clean.upper()
@@ -156,12 +172,12 @@ def format_player_or_pair_ru(lines_with_code):
 
 def parse_team_content_lines(content_lines):
     """
-    Разбирает строки командного матча как в многострочном формате Chromium innerText:
+    Разбирает строки командного матча как в многострочном формате:
         Chinese Taipei
         3
         0
         Hong Kong, China
-    так и в однострочном формате:
+    так и в однострочном формате (включая табуляции):
         Chinese Taipei 3 0 Hong Kong, China
     """
     cleaned = [
@@ -197,17 +213,34 @@ def parse_team_content_lines(content_lines):
     return None
 
 
+def normalize_ittf_text(page_text):
+    """
+    В Chromium innerText карточки ITTF разделяют элементы одной строки символом табуляции (\t):
+      "Men's Teams - Quarterfinals - Match 2\tOlympic Town, Tashkent"
+      "Wed 21, 10:00\tTable 1"
+      "Chinese Taipei\t3\t0\tHong Kong, China"
+    Превращаем табуляции перед 'Olympic Town' и 'Table N' в переносы строк, а остальные \t — в пробелы.
+    """
+    text = page_text or ""
+    text = re.sub(r"\t+(?=Olympic Town|Table\s+\d+)", "\n", text, flags=re.IGNORECASE)
+    text = text.replace("\t", " ")
+    return text
+
+
 def parse_match_blocks_from_text(page_text):
     """
     Разбирает текстовое содержимое страницы результатов ITTF на отдельные карточки матчей.
-    Поддерживает и многострочный, и однострочный рендеринг innerText в Chromium.
     """
-    lines = [ln.strip() for ln in (page_text or "").splitlines() if ln.strip()]
+    norm_text = normalize_ittf_text(page_text)
+    lines = [ln.strip() for ln in norm_text.splitlines() if ln.strip()]
     header_pattern = re.compile(
         r"^(Men's Teams|Women's Teams|Men's Singles|Women's Singles|Men's Doubles|Women's Doubles|Mixed Doubles)\s*-\s*(.+)$",
         re.IGNORECASE,
     )
-    time_pattern = re.compile(r"^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+(\d{1,2}),\s*(\d{1,2}:\d{2})$", re.IGNORECASE)
+    time_pattern = re.compile(
+        r"^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+(\d{1,2})(?:,\s*(\d{1,2}:\d{2}))?$",
+        re.IGNORECASE,
+    )
     table_pattern = re.compile(r"^Table\s+(\d+)$", re.IGNORECASE)
     player_line_pattern = re.compile(r"^(?:WIN\s+)?[A-Za-z\s\-'.()]+\s+[A-Z]{3}$")
     numbers_line_pattern = re.compile(r"^(?:\d+\s*)+$")
@@ -222,8 +255,9 @@ def parse_match_blocks_from_text(page_text):
             i += 1
             continue
 
-        header_line = lines[i]
+        header_line = re.sub(r"\s+Olympic Town.*$", "", lines[i], flags=re.IGNORECASE).strip()
         ev_code = detect_event_code(header_line)
+        match_num = extract_match_number(header_line)
         i += 1
 
         block = []
@@ -235,15 +269,24 @@ def parse_match_blocks_from_text(page_text):
             continue
 
         day_num = "21"
+        day_abbr_ru = "Ср"
+        time_only = "TBD"
         time_str = "TBD"
         table_ru = "Олимп. городок"
         content_lines = []
 
+        day_map_ru = {
+            "MON": "Пн", "TUE": "Вт", "WED": "Ср", "THU": "Чт",
+            "FRI": "Пт", "SAT": "Сб", "SUN": "Вс"
+        }
+
         for bl in block:
             tm = time_pattern.match(bl)
             if tm:
-                day_num = tm.group(1).zfill(2)
-                time_str = f"{day_num}.10 • {tm.group(2)}"
+                day_abbr_ru = day_map_ru.get(tm.group(1).upper(), "")
+                day_num = tm.group(2).zfill(2)
+                time_only = tm.group(3) or "TBD"
+                time_str = f"{day_num}.10 • {time_only}"
                 continue
             tbm = table_pattern.match(bl)
             if tbm:
@@ -266,7 +309,11 @@ def parse_match_blocks_from_text(page_text):
                 parsed_matches.append({
                     "ev": ev_code,
                     "header": header_line,
+                    "matchNum": match_num,
                     "stage": stage_ru,
+                    "dayAbbrRu": day_abbr_ru,
+                    "dayNum": day_num,
+                    "timeOnly": time_only,
                     "time": time_str,
                     "table": table_ru,
                     "codeA": code1,
@@ -280,7 +327,6 @@ def parse_match_blocks_from_text(page_text):
             continue
 
         # 2. Одиночные и парные разряды (MS, WS, MD, WD, XD)
-        # Поддерживает как однострочные очки ("8 11 6 11 11 3"), так и многострочные ("8\n11\n6\n11\n11\n3")
         expected_players_per_side = 2 if ev_code in ("MD", "WD", "XD") else 1
         sides = []
         curr_players = []
@@ -295,7 +341,6 @@ def parse_match_blocks_from_text(page_text):
             if player_line_pattern.match(cl):
                 if cl.startswith("WIN "):
                     has_win_marker = True
-                # Если предыдущая сторона уже укомплектована игроками и очками (или без очков при 0:0), закрываем её
                 if len(curr_players) >= expected_players_per_side and (curr_nums or len(sides) == 0):
                     if curr_nums or len(curr_players) == expected_players_per_side:
                         games_won = curr_nums[-1] if curr_nums else 0
@@ -321,7 +366,11 @@ def parse_match_blocks_from_text(page_text):
             parsed_matches.append({
                 "ev": ev_code,
                 "header": header_line,
+                "matchNum": match_num,
                 "stage": stage_ru,
+                "dayAbbrRu": day_abbr_ru,
+                "dayNum": day_num,
+                "timeOnly": time_only,
                 "time": time_str,
                 "table": table_ru,
                 "codeA": code1,
@@ -405,7 +454,14 @@ def apply_scraped_matches(payload, scraped_matches):
         if target:
             m_cA = extract_code(target.get("a", ""))
             m_cB = extract_code(target.get("b", ""))
-            if m_cA == codeB and m_cB == codeA and codeA != codeB:
+            if ev in ("MT", "WT"):
+                # Для командных разрядов всегда синхронизируем названия команд и порядок с официальным протоколом ITTF
+                target["a"] = sm["a"]
+                target["b"] = sm["b"]
+                target["time"] = time_str
+                target["table"] = table_ru
+                final_sA, final_sB = sA, sB
+            elif m_cA == codeB and m_cB == codeA and codeA != codeB:
                 final_sA, final_sB = sB, sA
             else:
                 final_sA, final_sB = sA, sB
@@ -442,36 +498,83 @@ def apply_scraped_matches(payload, scraped_matches):
         if ev in brackets:
             b_ev = brackets[ev]
             hdr_lower = sm["header"].lower()
+            stage_label_prefix = None
             b_list = None
             if "quarterfinal" in hdr_lower:
                 b_list = b_ev.get("qf", [])
+                stage_label_prefix = "1/4 финала"
             elif "semifinal" in hdr_lower:
                 b_list = b_ev.get("sf", [])
+                stage_label_prefix = "1/2 финала"
             elif "final" in hdr_lower and "quarter" not in hdr_lower and "semi" not in hdr_lower:
                 b_list = b_ev.get("final", [])
+                stage_label_prefix = "🥇 ФИНАЛ"
 
             if b_list:
-                time_part = time_str.split("•")[-1].strip()
-                for node in b_list:
-                    lbl = node.get("label", "")
-                    n_cA = extract_code(node.get("a", ""))
-                    n_cB = extract_code(node.get("b", ""))
-                    matched_node = (
-                        (time_part in lbl and table_ru in lbl)
-                        or (codeA and codeB and {n_cA, n_cB} == {codeA, codeB})
-                    )
-                    if matched_node:
+                m_num = sm.get("matchNum")
+                target_node = None
+                # Приоритет 1: Точный номер матча в сетке (Match 1 -> индекс 0, Match 2 -> индекс 1 и т.д.)
+                if m_num is not None and 1 <= m_num <= len(b_list):
+                    target_node = b_list[m_num - 1]
+                else:
+                    # Приоритет 2: Совпадение по времени и столу или кодам стран
+                    time_part = sm.get("timeOnly", "")
+                    for node in b_list:
+                        lbl = node.get("label", "")
+                        n_cA = extract_code(node.get("a", ""))
+                        n_cB = extract_code(node.get("b", ""))
+                        if (time_part and time_part in lbl and table_ru in lbl) or (
+                            codeA and codeB and {n_cA, n_cB} == {codeA, codeB}
+                        ):
+                            target_node = node
+                            break
+
+                if target_node is not None:
+                    if ev in ("MT", "WT"):
+                        target_node["a"] = sm["a"]
+                        target_node["b"] = sm["b"]
+                        target_node["scoreA"] = str(sA)
+                        target_node["scoreB"] = str(sB)
+                        if stage_label_prefix and sm.get("dayNum"):
+                            day_prefix = f"{sm['dayAbbrRu']} " if sm.get("dayAbbrRu") else ""
+                            target_node["label"] = (
+                                f"{stage_label_prefix} • {day_prefix}{sm['dayNum']}.10, {sm['timeOnly']} • {table_ru}"
+                            )
+                    else:
+                        n_cA = extract_code(target_node.get("a", ""))
+                        n_cB = extract_code(target_node.get("b", ""))
                         if n_cA == codeB and n_cB == codeA and codeA != codeB:
-                            node["scoreA"] = str(sB)
-                            node["scoreB"] = str(sA)
+                            target_node["scoreA"] = str(sB)
+                            target_node["scoreB"] = str(sA)
                         else:
-                            node["scoreA"] = str(sA)
-                            node["scoreB"] = str(sB)
-                            if "Победитель" in node.get("a", "") or "Четвертьфинал" in node.get("a", ""):
-                                node["a"] = sm["a"]
-                            if "Победитель" in node.get("b", "") or "Четвертьфинал" in node.get("b", ""):
-                                node["b"] = sm["b"]
-                        break
+                            target_node["scoreA"] = str(sA)
+                            target_node["scoreB"] = str(sB)
+                            if "Победитель" in target_node.get("a", "") or "Четвертьфинал" in target_node.get("a", ""):
+                                target_node["a"] = sm["a"]
+                            if "Победитель" in target_node.get("b", "") or "Четвертьфинал" in target_node.get("b", ""):
+                                target_node["b"] = sm["b"]
+
+                    # Для завершённых четвертьфиналов команд сразу записываем победителя в соответствующий слот 1/2 финала
+                    if ev in ("MT", "WT") and "quarterfinal" in hdr_lower and done and m_num in (1, 2, 3, 4):
+                        sf_list = b_ev.get("sf", [])
+                        winner_ru = sm["a"] if sA > sB else sm["b"]
+                        if m_num == 1 and len(sf_list) >= 1:
+                            sf_list[0]["a"] = winner_ru
+                        elif m_num == 2 and len(sf_list) >= 1:
+                            sf_list[0]["b"] = winner_ru
+                        elif m_num == 3 and len(sf_list) >= 2:
+                            sf_list[1]["a"] = winner_ru
+                        elif m_num == 4 and len(sf_list) >= 2:
+                            sf_list[1]["b"] = winner_ru
+
+                    # Для завершённых полуфиналов команд сразу записываем победителя в Финал
+                    if ev in ("MT", "WT") and "semifinal" in hdr_lower and done and m_num in (1, 2):
+                        fin_list = b_ev.get("final", [])
+                        winner_ru = sm["a"] if sA > sB else sm["b"]
+                        if m_num == 1 and len(fin_list) >= 1:
+                            fin_list[0]["a"] = winner_ru
+                        elif m_num == 2 and len(fin_list) >= 1:
+                            fin_list[0]["b"] = winner_ru
 
     return updated_count
 
