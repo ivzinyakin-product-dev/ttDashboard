@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T11:58:11.062866+00:00",
+  "updatedAt": "2026-10-21T12:25:58.455834+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -409,6 +409,146 @@
     }
   },
   "matches": [
+    {
+      "ev": "MD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 14:00",
+      "table": "Стол 8",
+      "a": "🇹🇼 HSU Hsien-Chia / HUNG Jing-Kai (TPE)",
+      "b": "🇨🇳 WEN Ruibo / YUAN Licen (CHN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 14:00",
+      "table": "Стол 7",
+      "a": "🇰🇷 KIM Minhyeok / PARK Gyuhyeon (KOR)",
+      "b": "🇧🇭 RASHED Rashed / SALEH Mohamed (BRN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 14:00",
+      "table": "Стол 6",
+      "a": "🇲🇾 IM Jin Zhen / YAP Rui Zhe (MAS)",
+      "b": "🇸🇬 CHEW Clarence / CHUA Josh (SGP)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 14:00",
+      "table": "Стол 5",
+      "a": "🇮🇳 JAIN Payas / THAKKAR Manav (IND)",
+      "b": "🇰🇿 KENZHIGULOV Aidos / ZHUBANOV Sanzhar (KAZ)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 14:00",
+      "table": "Стол 4",
+      "a": "🇮🇷 GHAFFARI Aryan / FARAJI Benyamin (IRI)",
+      "b": "🇯🇵 MATSUSHIMA Sora / TOGAMI Shunsuke (JPN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 14:00",
+      "table": "Стол 3",
+      "a": "🇵🇭 MISAL John Russel / NAYRE Jann Mari (PHI)",
+      "b": "🇰🇼 ALMKEEMY Abdullah / ALKANDERI Meshal (KUW)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 14:00",
+      "table": "Стол 2",
+      "a": "🇲🇴 ZHENG Hong Wai / CHAN Chi In (MAC)",
+      "b": "🇸🇦 ALKHADRAWI Ali / BU SHULAYBI Abdulaziz (KSA)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 13:30",
+      "table": "Стол 8",
+      "a": "🇹🇭 PRASONGPOL Nawachet / MEKAMPORN Nawin (THA)",
+      "b": "🇸🇬 PANG Koen / QUEK Izaac (SGP)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 13:30",
+      "table": "Стол 7",
+      "a": "🇮🇷 ALAMIAN Nima / ALAMIYAN Noshad (IRI)",
+      "b": "🇺🇿 AKHMEDOV Khurshid / TOLIEV Musobek (UZB)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 13:30",
+      "table": "Стол 6",
+      "a": "🇧🇭 ABUHAMDA Salman / SALEH Ali (BRN)",
+      "b": "🇲🇾 WONG Qi Shen / CHOONG Javen (MAS)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 13:30",
+      "table": "Стол 5",
+      "a": "🇹🇼 FENG Yi-Hsin / KUO Guan-Hong (TPE)",
+      "b": "🇴🇲 AL GHASSANI Ghassan / AL RASHDI Bilal (OMA)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 13:30",
+      "table": "Стол 3",
+      "a": "🇰🇿 GERASSIMENKO Kirill / KURMANGALIYEV Alan (KAZ)",
+      "b": "🇮🇶 HAMEED Anwer / TAHER Mohammed (IRQ)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 13:30",
+      "table": "Стол 2",
+      "a": "🇮🇩 PRATAMA Affan / SUSILO Braydon (INA)",
+      "b": "🇭🇰 LAM Siu Hang / YIU Kwan To (HKG)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/16 финала (Round of 32 • 22 октября)",
+      "time": "22.10 • 13:30",
+      "table": "Стол 1",
+      "a": "🇨🇳 LIN Shidong / HUANG Youzheng (CHN)",
+      "b": "🇰🇷 KANG Dongsoo / LIM Yunoh (KOR)",
+      "score": "0 : 0",
+      "done": false
+    },
     {
       "ev": "MS",
       "stage": "1/64 финала (Round of 128 • 20 октября)",
@@ -1146,7 +1286,7 @@
       "table": "Стол 5",
       "a": "🇰🇼 Абдулла Альбахрани (KUW)",
       "b": "🇰🇷 Пак Гюхён (KOR)",
-      "score": "0 : 0",
+      "score": "0 : 3",
       "done": true
     },
     {
@@ -1156,8 +1296,8 @@
       "table": "Стол 6",
       "a": "🇰🇷 Пак Ганхён (KOR)",
       "b": "🇵🇭 Эдуард Валенет (PHI)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1166,8 +1306,8 @@
       "table": "Стол 7",
       "a": "🇱🇰 Чанул Кулаппуваваду (SRI)",
       "b": "🇶🇦 Мохаммед Абдулваххаб (QAT)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1176,8 +1316,8 @@
       "table": "Стол 8",
       "a": "🇮🇩 Аффан Пратама (INA)",
       "b": "🇴🇲 Билал Аль-Рашди (OMA)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1186,8 +1326,8 @@
       "table": "Стол 9",
       "a": "🇲🇴 Чань Чи Инь (MAC)",
       "b": "🇹🇼 Сюй Сянь-Цзя (TPE)",
-      "score": "0 : 0",
-      "done": false
+      "score": "1 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1196,8 +1336,8 @@
       "table": "Стол 10",
       "a": "🇮🇷 Беньямин Фараджи (IRI)",
       "b": "🇰🇼 Мешал Алькандери (KUW)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1216,7 +1356,7 @@
       "table": "Стол 5",
       "a": "🇲🇳 Усухбаяр Тувшинджаргал (MGL)",
       "b": "🇦🇪 Мохаммед Альмусайеби (UAE)",
-      "score": "0 : 0",
+      "score": "0 : 1 (LIVE)",
       "done": false
     },
     {
@@ -3320,6 +3460,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 674,
-  "lastUpdatedMatchesCount": 674
+  "lastScrapedMatchesCount": 278,
+  "lastUpdatedMatchesCount": 278
 }
