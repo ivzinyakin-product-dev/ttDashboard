@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T15:26:22.666147+00:00",
+  "updatedAt": "2026-10-21T16:02:13.571030+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -3456,8 +3456,8 @@
       "table": "Стол 2",
       "a": "🇶🇦 Мохаммед Абдулваххаб / Аиша Мохамед (QAT)",
       "b": "🇸🇬 Айзек Квек / Лой Мин Ин (SGP)",
-      "score": "1 : 0 (LIVE)",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "XD",
@@ -3770,6 +3770,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 406,
-  "lastUpdatedMatchesCount": 406
+  "lastScrapedMatchesCount": 409,
+  "lastUpdatedMatchesCount": 409
 }
