@@ -419,6 +419,52 @@ def promote_winner_in_placeholders(payload, ev, codeA, codeB, winner_code, winne
                 node[side_key] = update_val(node.get(side_key, ""))
 
 
+def get_stage_prefix(stage_str):
+    s = (stage_str or "").split("(")[0].split("—")[0].strip()
+    return s
+
+
+def get_stage_weight(stage_str):
+    t = (stage_str or "").lower()
+    if t.startswith("финал"):
+        return 10
+    if t.startswith("1/2 финала"):
+        return 20
+    if t.startswith("1/4 финала"):
+        return 30
+    if "5–8" in t or "5-8" in t:
+        return 35
+    if "9–12" in t or "9-12" in t:
+        return 36
+    if "13–16" in t or "13-16" in t:
+        return 37
+    if t.startswith("1/8 финала"):
+        return 40
+    if t.startswith("1/16 финала"):
+        return 50
+    if t.startswith("1/32 финала"):
+        return 60
+    if t.startswith("1/64 финала"):
+        return 70
+    if "предварительный раунд 3" in t:
+        return 80
+    if "предварительный раунд 2" in t:
+        return 85
+    if "предварительный раунд 1" in t:
+        return 90
+    if "групповой" in t:
+        return 100
+    return 95
+
+
+def resolve_canonical_stage(matches, ev, raw_stage):
+    prefix = get_stage_prefix(raw_stage)
+    for m in matches:
+        if m.get("ev") == ev and get_stage_prefix(m.get("stage", "")) == prefix:
+            return m["stage"]
+    return raw_stage
+
+
 def apply_scraped_matches(payload, scraped_matches):
     matches = payload.get("matches", [])
     brackets = payload.get("brackets", {})
@@ -431,25 +477,40 @@ def apply_scraped_matches(payload, scraped_matches):
         sA, sB = sm["scoreA"], sm["scoreB"]
         done = sm["done"]
         codeA, codeB = sm["codeA"], sm["codeB"]
+        stage_prefix = get_stage_prefix(sm["stage"])
+        canonical_stage = resolve_canonical_stage(matches, ev, sm["stage"])
+        sm["stage"] = canonical_stage
 
         # 1. Ищем существующий матч в списке matches по (ev, time, table)
         target = None
-        for m in matches:
-            if m.get("ev") == ev and m.get("time") == time_str and m.get("table") == table_ru:
-                target = m
-                break
-
-        # Запасной поиск по (ev, стадия, коды стран)
-        if not target and codeA and codeB:
-            stage_prefix = sm["stage"].split("(")[0].strip()
+        if "TBD" not in time_str:
             for m in matches:
-                if m.get("ev") != ev or stage_prefix not in m.get("stage", ""):
+                if m.get("ev") == ev and m.get("time") == time_str and m.get("table") == table_ru:
+                    target = m
+                    break
+
+        # 2. Запасной поиск по (ev, стадия, коды стран)
+        if not target and codeA and codeB:
+            for m in matches:
+                if m.get("ev") != ev or get_stage_prefix(m.get("stage", "")) != stage_prefix:
                     continue
                 m_cA = extract_code(m.get("a", ""))
                 m_cB = extract_code(m.get("b", ""))
                 if {m_cA, m_cB} == {codeA, codeB}:
                     target = m
                     break
+
+        # 3. Если в этой стадии стоят плейсхолдеры "Победитель ...", сопоставляем по номеру матча (Match N)
+        if not target and sm.get("matchNum"):
+            stage_matches = [
+                m for m in matches
+                if m.get("ev") == ev and get_stage_prefix(m.get("stage", "")) == stage_prefix
+            ]
+            idx = sm["matchNum"] - 1
+            if 0 <= idx < len(stage_matches):
+                cand = stage_matches[idx]
+                if "Победитель" in cand.get("a", "") or "Победитель" in cand.get("b", ""):
+                    target = cand
 
         if target:
             m_cA = extract_code(target.get("a", ""))
@@ -469,6 +530,10 @@ def apply_scraped_matches(payload, scraped_matches):
                     target["a"] = sm["a"]
                 if "Победитель" in target.get("b", "") or "Сетка" in target.get("b", ""):
                     target["b"] = sm["b"]
+            if "TBD" in target.get("time", "") and "TBD" not in time_str:
+                target["time"] = time_str
+            if ("1–" in target.get("table", "") or "Олимп" in target.get("table", "")) and "Стол" in table_ru:
+                target["table"] = table_ru
 
             live_suffix = " (LIVE)" if (not done and (final_sA > 0 or final_sB > 0)) else ""
             target["score"] = f"{final_sA} : {final_sB}{live_suffix}"
@@ -608,6 +673,8 @@ def main():
     scraped_matches = scrape_all_days_with_playwright()
     updated_count = apply_scraped_matches(payload, scraped_matches)
 
+    ev_order = {"MT": 1, "WT": 2, "MS": 3, "WS": 4, "MD": 5, "WD": 6, "XD": 7}
+    payload["matches"].sort(key=lambda m: (ev_order.get(m.get("ev"), 99), get_stage_weight(m.get("stage", ""))))
     payload["updatedAt"] = datetime.now(timezone.utc).isoformat()
     payload["lastScrapedMatchesCount"] = len(scraped_matches)
     payload["lastUpdatedMatchesCount"] = updated_count
