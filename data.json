@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T11:12:05.737523+00:00",
+  "updatedAt": "2026-10-22T11:46:44.503268+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -113,7 +113,7 @@
           "a": "🇨🇳 Китай (CHN)",
           "b": "🇯🇵 Япония (JPN)",
           "scoreA": "0",
-          "scoreB": "0"
+          "scoreB": "1"
         }
       ]
     },
@@ -666,7 +666,7 @@
       "table": "Стол 1",
       "a": "🇨🇳 Китай (CHN)",
       "b": "🇯🇵 Япония (JPN)",
-      "score": "0 : 0",
+      "score": "0 : 1 (LIVE)",
       "done": false
     },
     {
@@ -2152,8 +2152,8 @@
     {
       "ev": "WS",
       "stage": "1/16 финала (Round of 32 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–8",
+      "time": "23.10 • 17:15",
+      "table": "Стол 1",
       "a": "🇯🇵 Мива Харимото (JPN)",
       "b": "🇭🇰 Нг Вин Лам (HKG)",
       "score": "0 : 0",
@@ -2162,8 +2162,8 @@
     {
       "ev": "WS",
       "stage": "1/16 финала (Round of 32 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–8",
+      "time": "23.10 • 17:15",
+      "table": "Стол 6",
       "a": "🇲🇾 Карен Лайн (MAS)",
       "b": "🇸🇬 Цзэн Цзянь (SGP)",
       "score": "0 : 0",
@@ -2172,8 +2172,8 @@
     {
       "ev": "WS",
       "stage": "1/16 финала (Round of 32 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–8",
+      "time": "23.10 • 17:15",
+      "table": "Стол 3",
       "a": "🇹🇭 Ораван Парананг (THA)",
       "b": "🇹🇼 У Ин-Сюань (TPE)",
       "score": "0 : 0",
@@ -2182,8 +2182,8 @@
     {
       "ev": "WS",
       "stage": "1/16 финала (Round of 32 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–8",
+      "time": "23.10 • 17:15",
+      "table": "Стол 4",
       "a": "🇰🇷 Ли Даын (KOR)",
       "b": "🇨🇳 Ши Сюньяо (CHN)",
       "score": "0 : 0",
@@ -2192,8 +2192,8 @@
     {
       "ev": "WS",
       "stage": "1/16 финала (Round of 32 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–8",
+      "time": "23.10 • 17:15",
+      "table": "Стол 5",
       "a": "🇯🇵 Хонока Хасимото (JPN)",
       "b": "🇸🇬 Тань Чжао Юнь (SGP)",
       "score": "0 : 0",
@@ -2202,8 +2202,8 @@
     {
       "ev": "WS",
       "stage": "1/16 финала (Round of 32 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–8",
+      "time": "23.10 • 17:15",
+      "table": "Стол 2",
       "a": "🇰🇷 Пак Гахён (KOR)",
       "b": "🇭🇰 Ду Хой Кем (HKG)",
       "score": "0 : 0",
@@ -2212,8 +2212,8 @@
     {
       "ev": "WS",
       "stage": "1/16 финала (Round of 32 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–8",
+      "time": "23.10 • 17:15",
+      "table": "Стол 7",
       "a": "🇹🇼 Пэн Юй-Хань (TPE)",
       "b": "🇮🇳 Синдрела Дас (IND)",
       "score": "0 : 0",
@@ -2222,8 +2222,8 @@
     {
       "ev": "WS",
       "stage": "1/16 финала (Round of 32 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–8",
+      "time": "23.10 • 17:15",
+      "table": "Стол 8",
       "a": "🇲🇾 Ти Ай Синь (MAS)",
       "b": "🇨🇳 Куай Мань (CHN)",
       "score": "0 : 0",
@@ -2232,8 +2232,8 @@
     {
       "ev": "WS",
       "stage": "1/16 финала (Round of 32 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–8",
+      "time": "23.10 • 17:45",
+      "table": "Стол 3",
       "a": "🇯🇵 Хина Хаята (JPN)",
       "b": "🇮🇳 Свастика Гхош (IND)",
       "score": "0 : 0",
@@ -2252,8 +2252,8 @@
     {
       "ev": "WS",
       "stage": "1/16 финала (Round of 32 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–8",
+      "time": "23.10 • 17:45",
+      "table": "Стол 1",
       "a": "🇨🇳 Цинь Юйсюань (CHN)",
       "b": "🇸🇬 Лой Мин Ин (SGP)",
       "score": "0 : 0",
@@ -2262,8 +2262,8 @@
     {
       "ev": "WS",
       "stage": "1/16 финала (Round of 32 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–8",
+      "time": "23.10 • 17:45",
+      "table": "Стол 4",
       "a": "🇹🇼 Цзянь Тун-Чуань (TPE)",
       "b": "🇨🇳 Чэнь И (CHN)",
       "score": "0 : 0",
@@ -2272,8 +2272,8 @@
     {
       "ev": "WS",
       "stage": "1/16 финала (Round of 32 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–8",
+      "time": "23.10 • 17:45",
+      "table": "Стол 5",
       "a": "🇯🇵 Сацуки Одо (JPN)",
       "b": "🇹🇼 Чэнь Сы-Юй (TPE)",
       "score": "0 : 0",
@@ -2282,8 +2282,8 @@
     {
       "ev": "WS",
       "stage": "1/16 финала (Round of 32 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–8",
+      "time": "23.10 • 17:45",
+      "table": "Стол 6",
       "a": "🇲🇾 Чан Ли Сиань (MAS)",
       "b": "🇰🇷 Ли Ынхэ (KOR)",
       "score": "0 : 0",
@@ -2292,8 +2292,8 @@
     {
       "ev": "WS",
       "stage": "1/16 финала (Round of 32 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–8",
+      "time": "23.10 • 17:45",
+      "table": "Стол 7",
       "a": "🇹🇼 Е И-Тянь (TPE)",
       "b": "🇰🇷 Ли Сион (KOR)",
       "score": "0 : 0",
@@ -2302,8 +2302,8 @@
     {
       "ev": "WS",
       "stage": "1/16 финала (Round of 32 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–8",
+      "time": "23.10 • 17:45",
+      "table": "Стол 8",
       "a": "🇮🇷 Махшид Аштари (IRI)",
       "b": "🇨🇳 Ван Иди (CHN)",
       "score": "0 : 0",
@@ -2992,20 +2992,80 @@
     {
       "ev": "MD",
       "stage": "1/8 финала (Round of 16 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–4",
-      "a": "Победитель 1/16 (Верхняя сетка 1)",
-      "b": "Победитель 1/16 (Верхняя сетка 2)",
+      "time": "23.10 • 16:45",
+      "table": "Стол 8",
+      "a": "🇰🇷 KIM Minhyeok / PARK Gyuhyeon (KOR)",
+      "b": "🇨🇳 WEN Ruibo / YUAN Licen (CHN)",
       "score": "0 : 0",
       "done": false
     },
     {
       "ev": "MD",
       "stage": "1/8 финала (Round of 16 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–4",
-      "a": "Победитель 1/16 (Нижняя сетка 1)",
-      "b": "Победитель 1/16 (Нижняя сетка 2)",
+      "time": "23.10 • 16:45",
+      "table": "Стол 7",
+      "a": "🇮🇳 JAIN Payas / THAKKAR Manav (IND)",
+      "b": "🇸🇬 CHEW Clarence / CHUA Josh (SGP)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "23.10 • 16:45",
+      "table": "Стол 6",
+      "a": "🇵🇭 MISAL John Russel / NAYRE Jann Mari (PHI)",
+      "b": "🇮🇷 GHAFFARI Aryan / FARAJI Benyamin (IRI)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "23.10 • 16:45",
+      "table": "Стол 5",
+      "a": "🇭🇰 WONG Chun Ting / CHAN Baldwin (HKG)",
+      "b": "🇸🇦 ALKHADRAWI Ali / BU SHULAYBI Abdulaziz (KSA)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "23.10 • 16:45",
+      "table": "Стол 4",
+      "a": "🇮🇷 ALAMIAN Nima / ALAMIYAN Noshad (IRI)",
+      "b": "🇸🇬 PANG Koen / QUEK Izaac (SGP)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "23.10 • 16:45",
+      "table": "Стол 3",
+      "a": "🇹🇼 FENG Yi-Hsin / KUO Guan-Hong (TPE)",
+      "b": "🇲🇾 WONG Qi Shen / CHOONG Javen (MAS)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "23.10 • 16:45",
+      "table": "Стол 1",
+      "a": "🇨🇳 LIN Shidong / HUANG Youzheng (CHN)",
+      "b": "🇭🇰 LAM Siu Hang / YIU Kwan To (HKG)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "23.10 • 16:45",
+      "table": "Стол 2",
+      "a": "🇰🇿 GERASSIMENKO Kirill / KURMANGALIYEV Alan (KAZ)",
+      "b": "🇯🇵 HARIMOTO Tomokazu / SHINOZUKA Hiroto (JPN)",
       "score": "0 : 0",
       "done": false
     },
@@ -3382,20 +3442,80 @@
     {
       "ev": "WD",
       "stage": "1/8 финала (Round of 16 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–4",
-      "a": "Победитель 1/16 (Верхняя сетка 1)",
-      "b": "Победитель 1/16 (Верхняя сетка 2)",
+      "time": "23.10 • 16:15",
+      "table": "Стол 8",
+      "a": "🇵🇭 CRUZ Kheith / LAUDE Angelou Joyce (PHI)",
+      "b": "🇨🇳 KUAI Man / WANG Yidi (CHN)",
       "score": "0 : 0",
       "done": false
     },
     {
       "ev": "WD",
       "stage": "1/8 финала (Round of 16 • 22 октября)",
-      "time": "22.10 • TBD",
-      "table": "Стол 1–4",
-      "a": "Победитель 1/16 (Нижняя сетка 1)",
-      "b": "Победитель 1/16 (Нижняя сетка 2)",
+      "time": "23.10 • 16:15",
+      "table": "Стол 7",
+      "a": "🇯🇵 HARIMOTO Miwa / HAYATA Hina (JPN)",
+      "b": "🇸🇬 LAI Chloe / TAN Zhao Yun (SGP)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "23.10 • 16:15",
+      "table": "Стол 6",
+      "a": "🇹🇼 CHEN Szu-Yu / WU Ying Syuan (TPE)",
+      "b": "🇸🇬 LOY Ming Ying / SER Lin Qian (SGP)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "23.10 • 16:15",
+      "table": "Стол 5",
+      "a": "🇯🇵 ODO Satsuki / NAGASAKI Miyu (JPN)",
+      "b": "🇭🇰 KONG Tsz Lam / SU Tsz Tung (HKG)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "23.10 • 16:15",
+      "table": "Стол 4",
+      "a": "🇲🇾 LYNE Karen / TEE Ai Xin (MAS)",
+      "b": "🇭🇰 DOO Hoi Kem / NG Wing Lam (HKG)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "23.10 • 16:15",
+      "table": "Стол 1",
+      "a": "🇹🇭 PARANANG Orawan / SAWETTABUT Suthasini (THA)",
+      "b": "🇰🇷 LEE Daeun / PARK Gahyeon (KOR)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "23.10 • 16:15",
+      "table": "Стол 3",
+      "a": "🇰🇷 LEE Zion / YOO Siwoo (KOR)",
+      "b": "🇮🇳 GHORPADE Yashaswini / GHOSH Swastika (IND)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "1/8 финала (Round of 16 • 22 октября)",
+      "time": "23.10 • 16:15",
+      "table": "Стол 2",
+      "a": "🇨🇳 CHEN Yi / JIANG Yiyi (CHN)",
+      "b": "🇹🇼 CHIEN Tung-Chuan / PENG Yu-Han (TPE)",
       "score": "0 : 0",
       "done": false
     },
@@ -4130,6 +4250,6 @@
       "done": false
     }
   ],
-  "lastScrapedMatchesCount": 386,
-  "lastUpdatedMatchesCount": 386
+  "lastScrapedMatchesCount": 482,
+  "lastUpdatedMatchesCount": 482
 }
