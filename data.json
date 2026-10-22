@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T08:19:42.897589+00:00",
+  "updatedAt": "2026-10-22T08:59:46.394472+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -356,8 +356,8 @@
           "label": "1/4 финала • Чт 22.10, 16:00 • Стол 1",
           "a": "Верхняя сетка (Квек/Лой / Пак/Пак)",
           "b": "Верхняя сетка (Искандаров/Камалова / Го/Е)",
-          "scoreA": "—",
-          "scoreB": "—"
+          "scoreA": "0",
+          "scoreB": "0"
         },
         {
           "label": "1/4 финала • Чт 22.10, 16:00 • Стол 2",
@@ -3066,8 +3066,8 @@
       "table": "Стол 8",
       "a": "🇹🇭 PRASONGPOL Nawachet / MEKAMPORN Nawin (THA)",
       "b": "🇸🇬 PANG Koen / QUEK Izaac (SGP)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "MD",
@@ -3076,8 +3076,8 @@
       "table": "Стол 7",
       "a": "🇮🇷 ALAMIAN Nima / ALAMIYAN Noshad (IRI)",
       "b": "🇺🇿 AKHMEDOV Khurshid / TOLIEV Musobek (UZB)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MD",
@@ -3086,8 +3086,8 @@
       "table": "Стол 6",
       "a": "🇧🇭 ABUHAMDA Salman / SALEH Ali (BRN)",
       "b": "🇲🇾 WONG Qi Shen / CHOONG Javen (MAS)",
-      "score": "0 : 0",
-      "done": false
+      "score": "1 : 3",
+      "done": true
     },
     {
       "ev": "MD",
@@ -3096,8 +3096,8 @@
       "table": "Стол 5",
       "a": "🇹🇼 FENG Yi-Hsin / KUO Guan-Hong (TPE)",
       "b": "🇴🇲 AL GHASSANI Ghassan / AL RASHDI Bilal (OMA)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MD",
@@ -3106,8 +3106,8 @@
       "table": "Стол 1",
       "a": "🇨🇳 LIN Shidong / HUANG Youzheng (CHN)",
       "b": "🇰🇷 KANG Dongsoo / LIM Yunoh (KOR)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MD",
@@ -3116,7 +3116,7 @@
       "table": "Стол 2",
       "a": "🇮🇩 PRATAMA Affan / SUSILO Braydon (INA)",
       "b": "🇮🇶 HAMEED Anwer / TAHER Mohammed (IRQ)",
-      "score": "0 : 0",
+      "score": "1 : 2 (LIVE)",
       "done": false
     },
     {
@@ -3126,8 +3126,8 @@
       "table": "Стол 3",
       "a": "🇰🇿 GERASSIMENKO Kirill / KURMANGALIYEV Alan (KAZ)",
       "b": "🇮🇶 HAMEED Anwer / TAHER Mohammed (IRQ)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MD",
@@ -3136,8 +3136,8 @@
       "table": "Стол 4",
       "a": "🇲🇴 MAK Tin Ian / WANG Chun (MAC)",
       "b": "🇯🇵 HARIMOTO Tomokazu / SHINOZUKA Hiroto (JPN)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "MD",
@@ -3624,6 +3624,16 @@
       "stage": "1/4 финала (21 октября)",
       "time": "TBD",
       "table": "Олимп. городок",
+      "a": "🇭🇰 WONG Chun Ting / DOO Hoi Kem (HKG)",
+      "b": "🇰🇷 PARK Gyuhyeon / PARK Gahyeon (KOR)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "XD",
+      "stage": "1/4 финала (21 октября)",
+      "time": "TBD",
+      "table": "Олимп. городок",
       "a": "🇨🇳 YUAN Licen / WANG Yidi (CHN)",
       "b": "🇯🇵 MATSUSHIMA Sora / HARIMOTO Miwa (JPN)",
       "score": "0 : 0",
@@ -3706,8 +3716,8 @@
       "table": "Стол 1",
       "a": "🇭🇰 WONG Chun Ting / DOO Hoi Kem (HKG)",
       "b": "🇸🇬 QUEK Izaac / LOY Ming Ying (SGP)",
-      "score": "2 : 1 (LIVE)",
-      "done": false
+      "score": "3 : 1",
+      "done": true
     },
     {
       "ev": "XD",
@@ -4050,6 +4060,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 275,
-  "lastUpdatedMatchesCount": 275
+  "lastScrapedMatchesCount": 280,
+  "lastUpdatedMatchesCount": 280
 }
