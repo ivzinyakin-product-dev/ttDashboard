@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T09:27:20.493385+00:00",
+  "updatedAt": "2026-10-22T10:02:51.543119+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -3046,8 +3046,8 @@
       "table": "Стол 2",
       "a": "🇹🇼 HSU Hsien-Chia / HUNG Jing-Kai (TPE)",
       "b": "🇨🇳 WEN Ruibo / YUAN Licen (CHN)",
-      "score": "0 : 2 (LIVE)",
-      "done": false
+      "score": "1 : 3",
+      "done": true
     },
     {
       "ev": "MD",
@@ -3376,7 +3376,7 @@
       "table": "Стол 8",
       "a": "🇯🇴 EL-HASANI Rinad / SADAQA Zeina (JOR)",
       "b": "🇭🇰 KONG Tsz Lam / SU Tsz Tung (HKG)",
-      "score": "0 : 0",
+      "score": "0 : 2 (LIVE)",
       "done": false
     },
     {
@@ -3396,7 +3396,7 @@
       "table": "Стол 6",
       "a": "🇰🇿 ROMANOVSKAYA Angelina / ZHAXYLYKOVA Albina (KAZ)",
       "b": "🇰🇷 LEE Daeun / PARK Gahyeon (KOR)",
-      "score": "0 : 0",
+      "score": "0 : 2 (LIVE)",
       "done": false
     },
     {
@@ -3406,7 +3406,7 @@
       "table": "Стол 5",
       "a": "🇹🇭 PARANANG Orawan / SAWETTABUT Suthasini (THA)",
       "b": "🇱🇰 GUSTHIGHGHA WADU Maneesha Shalindi / HALAWATHAGE Shamalsha (SRI)",
-      "score": "0 : 0",
+      "score": "1 : 0 (LIVE)",
       "done": false
     },
     {
@@ -3416,7 +3416,7 @@
       "table": "Стол 4",
       "a": "🇮🇩 NEBUCHADNEZZAR Almaira / AMINAH Siti (INA)",
       "b": "🇸🇬 LOY Ming Ying / SER Lin Qian (SGP)",
-      "score": "0 : 0",
+      "score": "0 : 1 (LIVE)",
       "done": false
     },
     {
@@ -3426,7 +3426,7 @@
       "table": "Стол 3",
       "a": "🇮🇩 SUDARNITA Komang / MALIQA Alisya (INA)",
       "b": "🇮🇳 GHORPADE Yashaswini / GHOSH Swastika (IND)",
-      "score": "0 : 0",
+      "score": "1 : 0 (LIVE)",
       "done": false
     },
     {
@@ -3456,8 +3456,8 @@
       "table": "Стол 8",
       "a": "🇵🇭 FADOL Rose Jean / GUDES Althea (PHI)",
       "b": "🇭🇰 DOO Hoi Kem / NG Wing Lam (HKG)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "WD",
@@ -3466,7 +3466,7 @@
       "table": "Стол 7",
       "a": "🇲🇾 LYNE Karen / TEE Ai Xin (MAS)",
       "b": "🇰🇿 AKASHEVA Zauresh / MIRKADIROVA Sarvinoz (KAZ)",
-      "score": "0 : 0",
+      "score": "2 : 2 (LIVE)",
       "done": false
     },
     {
@@ -3476,8 +3476,8 @@
       "table": "Стол 6",
       "a": "🇰🇬 ABDIMITALIPOVA Ramida / MURATALIEVA Raiana (KGZ)",
       "b": "🇹🇼 CHIEN Tung-Chuan / PENG Yu-Han (TPE)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "WD",
@@ -3486,8 +3486,8 @@
       "table": "Стол 5",
       "a": "🇨🇳 CHEN Yi / JIANG Yiyi (CHN)",
       "b": "🇱🇰 BANDARA Bimandee / ALAGIYAWADU Tamadi Kavindya (SRI)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "WD",
@@ -3496,8 +3496,8 @@
       "table": "Стол 3",
       "a": "🇰🇬 AIAZBEKOVA Nurkyz / KUDUSOVA Saida (KGZ)",
       "b": "🇨🇳 KUAI Man / WANG Yidi (CHN)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "WD",
@@ -3506,8 +3506,8 @@
       "table": "Стол 2",
       "a": "🇯🇵 HARIMOTO Miwa / HAYATA Hina (JPN)",
       "b": "🇮🇷 SHAHSAVARI Neda / YARISERAJI Fatemeh (IRI)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "WD",
@@ -3516,8 +3516,8 @@
       "table": "Стол 1",
       "a": "🇹🇯 AZIZOVA Nargis / ISMAILOVA Dinara (TJK)",
       "b": "🇸🇬 LAI Chloe / TAN Zhao Yun (SGP)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "WD",
@@ -4060,6 +4060,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 281,
-  "lastUpdatedMatchesCount": 281
+  "lastScrapedMatchesCount": 283,
+  "lastUpdatedMatchesCount": 283
 }
