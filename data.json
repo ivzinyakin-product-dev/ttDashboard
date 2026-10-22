@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T08:59:46.394472+00:00",
+  "updatedAt": "2026-10-22T09:27:20.493385+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -2986,8 +2986,8 @@
       "table": "Стол 8",
       "a": "🇲🇴 ZHENG Hong Wai / CHAN Chi In (MAC)",
       "b": "🇸🇦 ALKHADRAWI Ali / BU SHULAYBI Abdulaziz (KSA)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "MD",
@@ -2996,8 +2996,8 @@
       "table": "Стол 7",
       "a": "🇰🇷 KIM Minhyeok / PARK Gyuhyeon (KOR)",
       "b": "🇧🇭 RASHED Rashed / SALEH Mohamed (BRN)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MD",
@@ -3006,8 +3006,8 @@
       "table": "Стол 6",
       "a": "🇭🇰 WONG Chun Ting / CHAN Baldwin (HKG)",
       "b": "🇮🇩 JUNINDRA Muhammad / NEGARA Muhammad (INA)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 1",
+      "done": true
     },
     {
       "ev": "MD",
@@ -3016,8 +3016,8 @@
       "table": "Стол 5",
       "a": "🇮🇳 JAIN Payas / THAKKAR Manav (IND)",
       "b": "🇰🇿 KENZHIGULOV Aidos / ZHUBANOV Sanzhar (KAZ)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 1",
+      "done": true
     },
     {
       "ev": "MD",
@@ -3036,8 +3036,8 @@
       "table": "Стол 3",
       "a": "🇵🇭 MISAL John Russel / NAYRE Jann Mari (PHI)",
       "b": "🇰🇼 ALMKEEMY Abdullah / ALKANDERI Meshal (KUW)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MD",
@@ -3046,7 +3046,7 @@
       "table": "Стол 2",
       "a": "🇹🇼 HSU Hsien-Chia / HUNG Jing-Kai (TPE)",
       "b": "🇨🇳 WEN Ruibo / YUAN Licen (CHN)",
-      "score": "0 : 0",
+      "score": "0 : 2 (LIVE)",
       "done": false
     },
     {
@@ -3056,8 +3056,8 @@
       "table": "Стол 1",
       "a": "🇲🇾 IM Jin Zhen / YAP Rui Zhe (MAS)",
       "b": "🇸🇬 CHEW Clarence / CHUA Josh (SGP)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "MD",
@@ -3116,8 +3116,8 @@
       "table": "Стол 2",
       "a": "🇮🇩 PRATAMA Affan / SUSILO Braydon (INA)",
       "b": "🇮🇶 HAMEED Anwer / TAHER Mohammed (IRQ)",
-      "score": "1 : 2 (LIVE)",
-      "done": false
+      "score": "1 : 3",
+      "done": true
     },
     {
       "ev": "MD",
@@ -4060,6 +4060,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 280,
-  "lastUpdatedMatchesCount": 280
+  "lastScrapedMatchesCount": 281,
+  "lastUpdatedMatchesCount": 281
 }
