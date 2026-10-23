@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T15:17:51.122966+00:00",
+  "updatedAt": "2026-10-23T15:41:09.715873+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -402,7 +402,7 @@
           "label": "🥇 ФИНАЛ • Сб 24.10, 18:00 • Стол 1",
           "a": "🇨🇳 HUANG Youzheng / CHEN Yi (CHN)",
           "b": "🇯🇵 MATSUSHIMA Sora / HARIMOTO Miwa (JPN)",
-          "scoreA": "0",
+          "scoreA": "1",
           "scoreB": "0"
         }
       ]
@@ -1126,8 +1126,8 @@
       "table": "Стол 2",
       "a": "🇰🇷 KIM Minhyeok (KOR)",
       "b": "🇯🇵 HARIMOTO Tomokazu (JPN)",
-      "score": "1 : 2 (LIVE)",
-      "done": false
+      "score": "2 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -2068,6 +2068,86 @@
       "b": "🇰🇿 Кирилл Герасименко (KAZ)",
       "score": "1 : 3",
       "done": true
+    },
+    {
+      "ev": "MS",
+      "stage": "Матчи (23 октября)",
+      "time": "23.10 • 19:30",
+      "table": "Стол 10",
+      "a": "🇱🇰 SILVA Senura (SRI)",
+      "b": "🇭🇰 YIU Kwan To (HKG)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MS",
+      "stage": "Матчи (23 октября)",
+      "time": "23.10 • 19:30",
+      "table": "Стол 9",
+      "a": "🇮🇳 DESAI Harmeet (IND)",
+      "b": "🇰🇷 KIM Minhyeok (KOR)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MS",
+      "stage": "Матчи (23 октября)",
+      "time": "23.10 • 19:30",
+      "table": "Стол 8",
+      "a": "🇯🇵 TANAKA Yuta (JPN)",
+      "b": "🇭🇰 CHAN Baldwin (HKG)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MS",
+      "stage": "Матчи (23 октября)",
+      "time": "23.10 • 19:30",
+      "table": "Стол 7",
+      "a": "🇮🇩 PRATAMA Affan (INA)",
+      "b": "🇯🇵 SHINOZUKA Hiroto (JPN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MS",
+      "stage": "Матчи (23 октября)",
+      "time": "23.10 • 19:30",
+      "table": "Стол 6",
+      "a": "🇭🇰 LAM Siu Hang (HKG)",
+      "b": "🇸🇬 CHEW Clarence (SGP)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MS",
+      "stage": "Матчи (23 октября)",
+      "time": "23.10 • 19:30",
+      "table": "Стол 5",
+      "a": "🇸🇬 CHUA Josh (SGP)",
+      "b": "🇨🇳 ZHOU Qihao (CHN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MS",
+      "stage": "Матчи (23 октября)",
+      "time": "23.10 • 19:30",
+      "table": "Стол 4",
+      "a": "🇹🇭 PRASONGPOL Nawachet (THA)",
+      "b": "🇮🇷 ALAMIYAN Noshad (IRI)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MS",
+      "stage": "Матчи (23 октября)",
+      "time": "23.10 • 19:30",
+      "table": "Стол 3",
+      "a": "🇸🇬 PANG Koen (SGP)",
+      "b": "🇹🇼 HUNG Jing-Kai (TPE)",
+      "score": "0 : 0",
+      "done": false
     },
     {
       "ev": "WS",
@@ -3776,7 +3856,7 @@
       "table": "Стол 1",
       "a": "🇨🇳 HUANG Youzheng / CHEN Yi (CHN)",
       "b": "🇯🇵 MATSUSHIMA Sora / HARIMOTO Miwa (JPN)",
-      "score": "0 : 0",
+      "score": "1 : 0 (LIVE)",
       "done": false
     },
     {
@@ -4300,6 +4380,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 546,
-  "lastUpdatedMatchesCount": 546
+  "lastScrapedMatchesCount": 570,
+  "lastUpdatedMatchesCount": 570
 }
