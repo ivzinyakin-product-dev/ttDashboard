@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T04:26:25.284067+00:00",
+  "updatedAt": "2026-10-23T05:06:16.597635+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -4236,7 +4236,7 @@
       "table": "Стол 6",
       "a": "🇹🇼 KUO Guan-Hong / YEH Yi-Tian (TPE)",
       "b": "🇹🇭 PREECHAYAN Thitaphat / VIJITVIRIYAGUL Kulapassr (THA)",
-      "score": "0 : 0",
+      "score": "1 : 0 (LIVE)",
       "done": false
     },
     {
@@ -4250,6 +4250,6 @@
       "done": false
     }
   ],
-  "lastScrapedMatchesCount": 482,
-  "lastUpdatedMatchesCount": 482
+  "lastScrapedMatchesCount": 470,
+  "lastUpdatedMatchesCount": 470
 }
