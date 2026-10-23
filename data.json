@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T16:54:50.862834+00:00",
+  "updatedAt": "2026-10-23T17:20:18.682542+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -2126,8 +2126,8 @@
       "table": "Стол 5",
       "a": "🇸🇬 CHUA Josh (SGP)",
       "b": "🇨🇳 ZHOU Qihao (CHN)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MS",
@@ -2146,8 +2146,8 @@
       "table": "Стол 3",
       "a": "🇸🇬 PANG Koen (SGP)",
       "b": "🇹🇼 HUNG Jing-Kai (TPE)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "WS",
