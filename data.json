@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T07:54:11.814601+00:00",
+  "updatedAt": "2026-10-23T08:23:51.471283+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -386,24 +386,24 @@
           "label": "1/2 финала • Пт 23.10, 15:00 • Стол 1",
           "a": "🇰🇷 PARK Gyuhyeon / PARK Gahyeon (KOR)",
           "b": "🇨🇳 HUANG Youzheng / CHEN Yi (CHN)",
-          "scoreA": "0",
-          "scoreB": "1"
+          "scoreA": "1",
+          "scoreB": "3"
         },
         {
           "label": "1/2 финала • Пт 23.10, 15:40 • Стол 1",
           "a": "🇮🇳 DESAI Harmeet / GHORPADE Yashaswini (IND)",
           "b": "🇯🇵 MATSUSHIMA Sora / HARIMOTO Miwa (JPN)",
           "scoreA": "0",
-          "scoreB": "0"
+          "scoreB": "3"
         }
       ],
       "final": [
         {
           "label": "🥇 ФИНАЛ • Сб 24.10, 18:00 • Стол 1",
-          "a": "Победитель ПФ 1",
-          "b": "Победитель ПФ 2",
-          "scoreA": "—",
-          "scoreB": "—"
+          "a": "🇨🇳 HUANG Youzheng / CHEN Yi (CHN)",
+          "b": "🇯🇵 MATSUSHIMA Sora / HARIMOTO Miwa (JPN)",
+          "scoreA": "0",
+          "scoreB": "0"
         }
       ]
     }
@@ -1124,8 +1124,8 @@
       "stage": "1/16 финала (Round of 32 • 22 октября)",
       "time": "22.10 • TBD",
       "table": "Стол 1–8",
-      "a": "Победитель Ким Минхёк / Ы. Алланазаров",
-      "b": "Победитель Квань Мань Хо / Т. Харимото",
+      "a": "🇰🇷 KIM Minhyeok (KOR)",
+      "b": "🇯🇵 HARIMOTO Tomokazu (JPN)",
       "score": "0 : 0",
       "done": false
     },
@@ -1456,8 +1456,8 @@
       "table": "Стол 6",
       "a": "🇰🇷 Ким Минхёк (KOR)",
       "b": "🇹🇲 Ыляс Алланазаров (TKM)",
-      "score": "2 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1466,8 +1466,8 @@
       "table": "Стол 7",
       "a": "🇭🇰 Квань Мань Хо (HKG)",
       "b": "🇯🇵 Томокадзу Харимото (JPN)",
-      "score": "0 : 1 (LIVE)",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -3771,10 +3771,10 @@
     },
     {
       "ev": "XD",
-      "stage": "1/2 финала (23 октября)",
-      "time": "23.10 • 12:45",
-      "table": "Стол 2",
-      "a": "🇮🇳 DESAI Harmeet / GHORPADE Yashaswini (IND)",
+      "stage": "Финал (23 октября)",
+      "time": "23.10 • 19:30",
+      "table": "Стол 1",
+      "a": "🇨🇳 HUANG Youzheng / CHEN Yi (CHN)",
       "b": "🇯🇵 MATSUSHIMA Sora / HARIMOTO Miwa (JPN)",
       "score": "0 : 0",
       "done": false
@@ -3783,11 +3783,21 @@
       "ev": "XD",
       "stage": "1/2 финала (23 октября)",
       "time": "23.10 • 12:45",
+      "table": "Стол 2",
+      "a": "🇮🇳 DESAI Harmeet / GHORPADE Yashaswini (IND)",
+      "b": "🇯🇵 MATSUSHIMA Sora / HARIMOTO Miwa (JPN)",
+      "score": "0 : 3",
+      "done": true
+    },
+    {
+      "ev": "XD",
+      "stage": "1/2 финала (23 октября)",
+      "time": "23.10 • 12:45",
       "table": "Стол 1",
       "a": "🇰🇷 PARK Gyuhyeon / PARK Gahyeon (KOR)",
       "b": "🇨🇳 HUANG Youzheng / CHEN Yi (CHN)",
-      "score": "0 : 1 (LIVE)",
-      "done": false
+      "score": "1 : 3",
+      "done": true
     },
     {
       "ev": "XD",
@@ -4236,8 +4246,8 @@
       "table": "Стол 4",
       "a": "🇹🇼 HSU Hsien-Chia / WU Ying Syuan (TPE)",
       "b": "🇺🇿 DILSHODOV Diyorbek / KHASANOVA Adelina (UZB)",
-      "score": "1 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "XD",
@@ -4246,8 +4256,8 @@
       "table": "Стол 3",
       "a": "🇸🇬 QUEK Izaac / LOY Ming Ying (SGP)",
       "b": "🇹🇭 PREECHAYAN Thitaphat / VIJITVIRIYAGUL Kulapassr (THA)",
-      "score": "1 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "XD",
