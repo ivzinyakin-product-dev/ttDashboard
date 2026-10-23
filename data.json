@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T15:41:09.715873+00:00",
+  "updatedAt": "2026-10-23T16:19:19.479988+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -402,8 +402,8 @@
           "label": "🥇 ФИНАЛ • Сб 24.10, 18:00 • Стол 1",
           "a": "🇨🇳 HUANG Youzheng / CHEN Yi (CHN)",
           "b": "🇯🇵 MATSUSHIMA Sora / HARIMOTO Miwa (JPN)",
-          "scoreA": "1",
-          "scoreB": "0"
+          "scoreA": "2",
+          "scoreB": "3"
         }
       ]
     }
@@ -2076,7 +2076,7 @@
       "table": "Стол 10",
       "a": "🇱🇰 SILVA Senura (SRI)",
       "b": "🇭🇰 YIU Kwan To (HKG)",
-      "score": "0 : 0",
+      "score": "1 : 1 (LIVE)",
       "done": false
     },
     {
@@ -2096,7 +2096,7 @@
       "table": "Стол 8",
       "a": "🇯🇵 TANAKA Yuta (JPN)",
       "b": "🇭🇰 CHAN Baldwin (HKG)",
-      "score": "0 : 0",
+      "score": "0 : 2 (LIVE)",
       "done": false
     },
     {
@@ -2106,7 +2106,7 @@
       "table": "Стол 7",
       "a": "🇮🇩 PRATAMA Affan (INA)",
       "b": "🇯🇵 SHINOZUKA Hiroto (JPN)",
-      "score": "0 : 0",
+      "score": "2 : 1 (LIVE)",
       "done": false
     },
     {
@@ -2116,7 +2116,7 @@
       "table": "Стол 6",
       "a": "🇭🇰 LAM Siu Hang (HKG)",
       "b": "🇸🇬 CHEW Clarence (SGP)",
-      "score": "0 : 0",
+      "score": "2 : 0 (LIVE)",
       "done": false
     },
     {
@@ -2136,8 +2136,8 @@
       "table": "Стол 4",
       "a": "🇹🇭 PRASONGPOL Nawachet (THA)",
       "b": "🇮🇷 ALAMIYAN Noshad (IRI)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -3856,8 +3856,8 @@
       "table": "Стол 1",
       "a": "🇨🇳 HUANG Youzheng / CHEN Yi (CHN)",
       "b": "🇯🇵 MATSUSHIMA Sora / HARIMOTO Miwa (JPN)",
-      "score": "1 : 0 (LIVE)",
-      "done": false
+      "score": "2 : 3",
+      "done": true
     },
     {
       "ev": "XD",
