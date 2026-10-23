@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T11:06:40.977903+00:00",
+  "updatedAt": "2026-10-23T11:36:31.298377+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -3446,8 +3446,8 @@
       "table": "Стол 8",
       "a": "🇵🇭 CRUZ Kheith / LAUDE Angelou Joyce (PHI)",
       "b": "🇨🇳 KUAI Man / WANG Yidi (CHN)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "WD",
@@ -3456,8 +3456,8 @@
       "table": "Стол 7",
       "a": "🇯🇵 HARIMOTO Miwa / HAYATA Hina (JPN)",
       "b": "🇸🇬 LAI Chloe / TAN Zhao Yun (SGP)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "WD",
@@ -3466,7 +3466,7 @@
       "table": "Стол 6",
       "a": "🇹🇼 CHEN Szu-Yu / WU Ying Syuan (TPE)",
       "b": "🇸🇬 LOY Ming Ying / SER Lin Qian (SGP)",
-      "score": "0 : 0",
+      "score": "1 : 2 (LIVE)",
       "done": false
     },
     {
@@ -3476,7 +3476,7 @@
       "table": "Стол 5",
       "a": "🇯🇵 ODO Satsuki / NAGASAKI Miyu (JPN)",
       "b": "🇭🇰 KONG Tsz Lam / SU Tsz Tung (HKG)",
-      "score": "0 : 0",
+      "score": "2 : 1 (LIVE)",
       "done": false
     },
     {
@@ -3496,7 +3496,7 @@
       "table": "Стол 1",
       "a": "🇹🇭 PARANANG Orawan / SAWETTABUT Suthasini (THA)",
       "b": "🇰🇷 LEE Daeun / PARK Gahyeon (KOR)",
-      "score": "0 : 0",
+      "score": "1 : 1 (LIVE)",
       "done": false
     },
     {
@@ -3506,7 +3506,7 @@
       "table": "Стол 3",
       "a": "🇰🇷 LEE Zion / YOO Siwoo (KOR)",
       "b": "🇮🇳 GHORPADE Yashaswini / GHOSH Swastika (IND)",
-      "score": "0 : 0",
+      "score": "0 : 2 (LIVE)",
       "done": false
     },
     {
@@ -3516,7 +3516,7 @@
       "table": "Стол 2",
       "a": "🇨🇳 CHEN Yi / JIANG Yiyi (CHN)",
       "b": "🇹🇼 CHIEN Tung-Chuan / PENG Yu-Han (TPE)",
-      "score": "0 : 0",
+      "score": "2 : 0 (LIVE)",
       "done": false
     },
     {
@@ -4300,6 +4300,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 545,
-  "lastUpdatedMatchesCount": 545
+  "lastScrapedMatchesCount": 551,
+  "lastUpdatedMatchesCount": 551
 }
