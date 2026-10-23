@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T16:19:19.479988+00:00",
+  "updatedAt": "2026-10-23T16:54:50.862834+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -2076,8 +2076,8 @@
       "table": "Стол 10",
       "a": "🇱🇰 SILVA Senura (SRI)",
       "b": "🇭🇰 YIU Kwan To (HKG)",
-      "score": "1 : 1 (LIVE)",
-      "done": false
+      "score": "3 : 2",
+      "done": true
     },
     {
       "ev": "MS",
@@ -2096,8 +2096,8 @@
       "table": "Стол 8",
       "a": "🇯🇵 TANAKA Yuta (JPN)",
       "b": "🇭🇰 CHAN Baldwin (HKG)",
-      "score": "0 : 2 (LIVE)",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -2106,8 +2106,8 @@
       "table": "Стол 7",
       "a": "🇮🇩 PRATAMA Affan (INA)",
       "b": "🇯🇵 SHINOZUKA Hiroto (JPN)",
-      "score": "2 : 1 (LIVE)",
-      "done": false
+      "score": "2 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -2116,8 +2116,8 @@
       "table": "Стол 6",
       "a": "🇭🇰 LAM Siu Hang (HKG)",
       "b": "🇸🇬 CHEW Clarence (SGP)",
-      "score": "2 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 1",
+      "done": true
     },
     {
       "ev": "MS",
@@ -4380,6 +4380,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 570,
-  "lastUpdatedMatchesCount": 570
+  "lastScrapedMatchesCount": 566,
+  "lastUpdatedMatchesCount": 566
 }
