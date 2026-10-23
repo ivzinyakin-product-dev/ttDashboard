@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T05:22:26.996344+00:00",
+  "updatedAt": "2026-10-23T05:57:30.813417+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -357,7 +357,7 @@
           "a": "Верхняя сетка (Квек/Лой / Пак/Пак)",
           "b": "Верхняя сетка (Искандаров/Камалова / Го/Е)",
           "scoreA": "2",
-          "scoreB": "1"
+          "scoreB": "3"
         },
         {
           "label": "1/4 финала • Чт 22.10, 16:00 • Стол 2",
@@ -370,31 +370,31 @@
           "label": "1/4 финала • Чт 22.10, 16:40 • Стол 1",
           "a": "Сетка 3",
           "b": "Сетка 3",
-          "scoreA": "1",
-          "scoreB": "1"
+          "scoreA": "3",
+          "scoreB": "2"
         },
         {
           "label": "1/4 финала • Чт 22.10, 16:40 • Стол 2",
           "a": "Нижняя сетка",
           "b": "Нижняя сетка",
           "scoreA": "1",
-          "scoreB": "0"
+          "scoreB": "3"
         }
       ],
       "sf": [
         {
           "label": "1/2 финала • Пт 23.10, 15:00 • Стол 1",
-          "a": "Победитель ЧФ 1",
-          "b": "Победитель ЧФ 2",
-          "scoreA": "—",
-          "scoreB": "—"
+          "a": "🇰🇷 PARK Gyuhyeon / PARK Gahyeon (KOR)",
+          "b": "🇨🇳 HUANG Youzheng / CHEN Yi (CHN)",
+          "scoreA": "0",
+          "scoreB": "0"
         },
         {
           "label": "1/2 финала • Пт 23.10, 15:40 • Стол 1",
-          "a": "Победитель ЧФ 3",
-          "b": "Победитель ЧФ 4",
-          "scoreA": "—",
-          "scoreB": "—"
+          "a": "🇮🇳 DESAI Harmeet / GHORPADE Yashaswini (IND)",
+          "b": "🇯🇵 MATSUSHIMA Sora / HARIMOTO Miwa (JPN)",
+          "scoreA": "0",
+          "scoreB": "0"
         }
       ],
       "final": [
@@ -1146,7 +1146,7 @@
       "table": "Стол 9",
       "a": "🇹🇭 PRASONGPOL Nawachet (THA)",
       "b": "🇱🇰 GINIGE Chameera (SRI)",
-      "score": "0 : 0",
+      "score": "2 : 0 (LIVE)",
       "done": false
     },
     {
@@ -1176,8 +1176,8 @@
       "table": "Стол 3",
       "a": "🇭🇰 Йиу Кван То (HKG)",
       "b": "🇲🇾 Джавен Чун (MAS)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1196,7 +1196,7 @@
       "table": "Стол 5",
       "a": "🇮🇳 Манав Тхаккар (IND)",
       "b": "🇮🇩 Мухаммад Джуниндра (INA)",
-      "score": "0 : 0",
+      "score": "1 : 0 (LIVE)",
       "done": false
     },
     {
@@ -1206,7 +1206,7 @@
       "table": "Стол 6",
       "a": "🇰🇿 Санжар Жубанов (KAZ)",
       "b": "🇸🇬 Коэн Пан (SGP)",
-      "score": "0 : 0",
+      "score": "0 : 1 (LIVE)",
       "done": false
     },
     {
@@ -1216,7 +1216,7 @@
       "table": "Стол 7",
       "a": "🇹🇼 Хун Цзин-Кай (TPE)",
       "b": "🇹🇲 Дортгулы Алланазаров (TKM)",
-      "score": "0 : 0",
+      "score": "1 : 0 (LIVE)",
       "done": false
     },
     {
@@ -1226,7 +1226,7 @@
       "table": "Стол 8",
       "a": "🇺🇿 Хуршид Ахмедов (UZB)",
       "b": "🇨🇳 Сян Пэн (CHN)",
-      "score": "0 : 0",
+      "score": "0 : 1 (LIVE)",
       "done": false
     },
     {
@@ -1246,7 +1246,7 @@
       "table": "Стол 10",
       "a": "🇹🇯 Абдулло Абдукодиров (TJK)",
       "b": "🇰🇿 Алан Курмангалиев (KAZ)",
-      "score": "0 : 0",
+      "score": "0 : 2 (LIVE)",
       "done": false
     },
     {
@@ -1256,7 +1256,7 @@
       "table": "Стол 1",
       "a": "🇮🇷 Ношад Аламиян (IRI)",
       "b": "🇮🇩 Тауфик Зикри (INA)",
-      "score": "0 : 0",
+      "score": "0 : 1 (LIVE)",
       "done": false
     },
     {
@@ -3771,13 +3771,33 @@
     },
     {
       "ev": "XD",
+      "stage": "1/2 финала (23 октября)",
+      "time": "23.10 • 12:45",
+      "table": "Стол 2",
+      "a": "🇮🇳 DESAI Harmeet / GHORPADE Yashaswini (IND)",
+      "b": "🇯🇵 MATSUSHIMA Sora / HARIMOTO Miwa (JPN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "XD",
+      "stage": "1/2 финала (23 октября)",
+      "time": "23.10 • 12:45",
+      "table": "Стол 1",
+      "a": "🇰🇷 PARK Gyuhyeon / PARK Gahyeon (KOR)",
+      "b": "🇨🇳 HUANG Youzheng / CHEN Yi (CHN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "XD",
       "stage": "1/4 финала (21 октября)",
       "time": "23.10 • 10:00",
       "table": "Стол 4",
       "a": "🇭🇰 WONG Chun Ting / DOO Hoi Kem (HKG)",
       "b": "🇰🇷 PARK Gyuhyeon / PARK Gahyeon (KOR)",
-      "score": "2 : 1 (LIVE)",
-      "done": false
+      "score": "2 : 3",
+      "done": true
     },
     {
       "ev": "XD",
@@ -3786,8 +3806,8 @@
       "table": "Стол 1",
       "a": "🇨🇳 YUAN Licen / WANG Yidi (CHN)",
       "b": "🇯🇵 MATSUSHIMA Sora / HARIMOTO Miwa (JPN)",
-      "score": "1 : 0 (LIVE)",
-      "done": false
+      "score": "1 : 3",
+      "done": true
     },
     {
       "ev": "XD",
@@ -3796,8 +3816,8 @@
       "table": "Стол 2",
       "a": "🇮🇳 DESAI Harmeet / GHORPADE Yashaswini (IND)",
       "b": "🇰🇷 PARK Ganghyeon / LEE Daeun (KOR)",
-      "score": "1 : 1 (LIVE)",
-      "done": false
+      "score": "3 : 2",
+      "done": true
     },
     {
       "ev": "XD",
@@ -4212,6 +4232,26 @@
     {
       "ev": "XD",
       "stage": "Матчи (23 октября)",
+      "time": "23.10 • 12:45",
+      "table": "Стол 4",
+      "a": "🇹🇼 HSU Hsien-Chia / WU Ying Syuan (TPE)",
+      "b": "🇺🇿 DILSHODOV Diyorbek / KHASANOVA Adelina (UZB)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "XD",
+      "stage": "Матчи (23 октября)",
+      "time": "23.10 • 12:45",
+      "table": "Стол 3",
+      "a": "🇸🇬 QUEK Izaac / LOY Ming Ying (SGP)",
+      "b": "🇹🇭 PREECHAYAN Thitaphat / VIJITVIRIYAGUL Kulapassr (THA)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "XD",
+      "stage": "Матчи (23 октября)",
       "time": "23.10 • 10:00",
       "table": "Стол 8",
       "a": "🇹🇼 HSU Hsien-Chia / WU Ying Syuan (TPE)",
@@ -4226,8 +4266,8 @@
       "table": "Стол 7",
       "a": "🇭🇰 YIU Kwan To / NG Wing Lam (HKG)",
       "b": "🇺🇿 DILSHODOV Diyorbek / KHASANOVA Adelina (UZB)",
-      "score": "2 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "XD",
@@ -4246,10 +4286,10 @@
       "table": "Стол 5",
       "a": "🇸🇬 QUEK Izaac / LOY Ming Ying (SGP)",
       "b": "🇲🇾 CHOONG Javen / LYNE Karen (MAS)",
-      "score": "1 : 2 (LIVE)",
-      "done": false
+      "score": "1 : 3",
+      "done": true
     }
   ],
-  "lastScrapedMatchesCount": 488,
-  "lastUpdatedMatchesCount": 488
+  "lastScrapedMatchesCount": 502,
+  "lastUpdatedMatchesCount": 502
 }
