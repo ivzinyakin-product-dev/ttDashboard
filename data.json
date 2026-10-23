@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T05:57:30.813417+00:00",
+  "updatedAt": "2026-10-23T06:24:18.185463+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -1004,8 +1004,8 @@
       "stage": "1/16 финала (Round of 32 • 22 октября)",
       "time": "22.10 • TBD",
       "table": "Стол 1–8",
-      "a": "Победитель Хун Цзин-Кай / Д. Алланазаров",
-      "b": "Победитель Ахмедов / Сян Пэн",
+      "a": "🇹🇼 HUNG Jing-Kai (TPE)",
+      "b": "🇨🇳 XIANG Peng (CHN)",
       "score": "0 : 0",
       "done": false
     },
@@ -1014,8 +1014,8 @@
       "stage": "1/16 финала (Round of 32 • 22 октября)",
       "time": "22.10 • TBD",
       "table": "Стол 1–8",
-      "a": "Победитель Тогами / Гиниге",
-      "b": "Победитель Абдукодиров / Курмангалиев",
+      "a": "🇹🇭 PRASONGPOL Nawachet (THA)",
+      "b": "🇰🇿 KURMANGALIYEV Alan (KAZ)",
       "score": "0 : 0",
       "done": false
     },
@@ -1024,8 +1024,8 @@
       "stage": "1/16 финала (Round of 32 • 22 октября)",
       "time": "22.10 • TBD",
       "table": "Стол 1–8",
-      "a": "Победитель Ношад Аламиян / Зикри",
-      "b": "Победитель Лим Юно / Го Гуань-Хун",
+      "a": "🇮🇷 ALAMIYAN Noshad (IRI)",
+      "b": "🇹🇼 KUO Guan-Hong (TPE)",
       "score": "0 : 0",
       "done": false
     },
@@ -1136,7 +1136,7 @@
       "table": "Стол 10",
       "a": "🇰🇬 SAGYNDYKOV Talgat (KGZ)",
       "b": "🇰🇿 GERASSIMENKO Kirill (KAZ)",
-      "score": "0 : 0",
+      "score": "0 : 2 (LIVE)",
       "done": false
     },
     {
@@ -1146,8 +1146,8 @@
       "table": "Стол 9",
       "a": "🇹🇭 PRASONGPOL Nawachet (THA)",
       "b": "🇱🇰 GINIGE Chameera (SRI)",
-      "score": "2 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 1",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1156,7 +1156,7 @@
       "table": "Стол 1",
       "a": "🇯🇵 Сора Мацусима (JPN)",
       "b": "🇱🇰 Сенура Силва (SRI)",
-      "score": "0 : 0",
+      "score": "0 : 1 (LIVE)",
       "done": false
     },
     {
@@ -1196,7 +1196,7 @@
       "table": "Стол 5",
       "a": "🇮🇳 Манав Тхаккар (IND)",
       "b": "🇮🇩 Мухаммад Джуниндра (INA)",
-      "score": "1 : 0 (LIVE)",
+      "score": "2 : 2 (LIVE)",
       "done": false
     },
     {
@@ -1206,8 +1206,8 @@
       "table": "Стол 6",
       "a": "🇰🇿 Санжар Жубанов (KAZ)",
       "b": "🇸🇬 Коэн Пан (SGP)",
-      "score": "0 : 1 (LIVE)",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1216,8 +1216,8 @@
       "table": "Стол 7",
       "a": "🇹🇼 Хун Цзин-Кай (TPE)",
       "b": "🇹🇲 Дортгулы Алланазаров (TKM)",
-      "score": "1 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1226,8 +1226,8 @@
       "table": "Стол 8",
       "a": "🇺🇿 Хуршид Ахмедов (UZB)",
       "b": "🇨🇳 Сян Пэн (CHN)",
-      "score": "0 : 1 (LIVE)",
-      "done": false
+      "score": "3 : 1",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1246,8 +1246,8 @@
       "table": "Стол 10",
       "a": "🇹🇯 Абдулло Абдукодиров (TJK)",
       "b": "🇰🇿 Алан Курмангалиев (KAZ)",
-      "score": "0 : 2 (LIVE)",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1256,8 +1256,8 @@
       "table": "Стол 1",
       "a": "🇮🇷 Ношад Аламиян (IRI)",
       "b": "🇮🇩 Тауфик Зикри (INA)",
-      "score": "0 : 1 (LIVE)",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1266,8 +1266,8 @@
       "table": "Стол 2",
       "a": "🇰🇷 Лим Юно (KOR)",
       "b": "🇹🇼 Го Гуань-Хун (TPE)",
-      "score": "0 : 0",
-      "done": false
+      "score": "1 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1306,7 +1306,7 @@
       "table": "Стол 6",
       "a": "🇲🇾 Яп Жуй Чжэ (MAS)",
       "b": "🇨🇳 Чжоу Цихао (CHN)",
-      "score": "0 : 0",
+      "score": "0 : 2 (LIVE)",
       "done": false
     },
     {
@@ -1326,7 +1326,7 @@
       "table": "Стол 8",
       "a": "🇧🇩 Рамхимлиан Бавм (BAN)",
       "b": "🇭🇰 Лам Сиу Хан (HKG)",
-      "score": "0 : 0",
+      "score": "0 : 1 (LIVE)",
       "done": false
     },
     {
@@ -1336,7 +1336,7 @@
       "table": "Стол 9",
       "a": "🇸🇬 Кларенс Чу (SGP)",
       "b": "🇧🇭 Салман Абухамда (BRN)",
-      "score": "0 : 0",
+      "score": "1 : 0 (LIVE)",
       "done": false
     },
     {
@@ -1436,7 +1436,7 @@
       "table": "Стол 3",
       "a": "🇨🇳 Хуан Ючжэн (CHN)",
       "b": "🇮🇶 Анвер Хамид (IRQ)",
-      "score": "0 : 0",
+      "score": "2 : 0 (LIVE)",
       "done": false
     },
     {
@@ -4290,6 +4290,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 502,
-  "lastUpdatedMatchesCount": 502
+  "lastScrapedMatchesCount": 510,
+  "lastUpdatedMatchesCount": 510
 }
