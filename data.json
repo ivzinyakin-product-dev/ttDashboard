@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T13:59:11.962251+00:00",
+  "updatedAt": "2026-10-23T14:41:51.377766+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -976,8 +976,8 @@
       "table": "Стол 1",
       "a": "🇱🇰 SILVA Senura (SRI)",
       "b": "🇰🇷 PARK Gyuhyeon (KOR)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1006,8 +1006,8 @@
       "table": "Стол 4",
       "a": "🇹🇼 HUNG Jing-Kai (TPE)",
       "b": "🇨🇳 XIANG Peng (CHN)",
-      "score": "1 : 1 (LIVE)",
-      "done": false
+      "score": "1 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1026,8 +1026,8 @@
       "table": "Стол 6",
       "a": "🇮🇷 ALAMIYAN Noshad (IRI)",
       "b": "🇹🇼 KUO Guan-Hong (TPE)",
-      "score": "1 : 0 (LIVE)",
-      "done": false
+      "score": "2 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1036,7 +1036,7 @@
       "table": "Стол 7",
       "a": "🇭🇰 WONG Chun Ting (HKG)",
       "b": "🇸🇬 CHUA Josh (SGP)",
-      "score": "0 : 0",
+      "score": "0 : 1 (LIVE)",
       "done": false
     },
     {
@@ -1056,7 +1056,7 @@
       "table": "Стол 2",
       "a": "🇨🇳 WEN Ruibo (CHN)",
       "b": "🇭🇰 LAM Siu Hang (HKG)",
-      "score": "0 : 0",
+      "score": "1 : 0 (LIVE)",
       "done": false
     },
     {
@@ -1066,8 +1066,8 @@
       "table": "Стол 8",
       "a": "🇸🇬 CHEW Clarence (SGP)",
       "b": "🇰🇿 GERASSIMENKO Kirill (KAZ)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1076,8 +1076,8 @@
       "table": "Стол 3",
       "a": "🇰🇷 PARK Ganghyeon (KOR)",
       "b": "🇮🇩 PRATAMA Affan (INA)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1086,7 +1086,7 @@
       "table": "Стол 4",
       "a": "🇮🇷 FARAJI Benyamin (IRI)",
       "b": "🇯🇵 SHINOZUKA Hiroto (JPN)",
-      "score": "0 : 0",
+      "score": "2 : 0 (LIVE)",
       "done": false
     },
     {
@@ -1096,8 +1096,8 @@
       "table": "Стол 5",
       "a": "🇹🇼 FENG Yi-Hsin (TPE)",
       "b": "🇯🇵 TANAKA Yuta (JPN)",
-      "score": "2 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 2",
+      "done": true
     },
     {
       "ev": "MS",
@@ -1116,8 +1116,8 @@
       "table": "Стол 9",
       "a": "🇨🇳 HUANG Youzheng (CHN)",
       "b": "🇮🇳 DESAI Harmeet (IND)",
-      "score": "2 : 2 (LIVE)",
-      "done": false
+      "score": "3 : 2",
+      "done": true
     },
     {
       "ev": "MS",
@@ -4300,6 +4300,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 553,
-  "lastUpdatedMatchesCount": 553
+  "lastScrapedMatchesCount": 549,
+  "lastUpdatedMatchesCount": 549
 }
