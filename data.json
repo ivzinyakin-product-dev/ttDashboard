@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T13:23:26.793005+00:00",
+  "updatedAt": "2026-10-24T13:52:18.547597+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -124,14 +124,14 @@
           "label": "1/4 финала • Сб 24.10, 14:00 • Стол 1",
           "a": "🇨🇳 LI Tianyang (CHN)",
           "b": "🇨🇳 XIANG Peng (CHN)",
-          "scoreA": "0",
+          "scoreA": "2",
           "scoreB": "0"
         },
         {
           "label": "1/4 финала • Сб 24.10, 14:45 • Стол 1",
           "a": "🇹🇼 KUO Guan-Hong (TPE)",
           "b": "🇭🇰 WONG Chun Ting (HKG)",
-          "scoreA": "0",
+          "scoreA": "1",
           "scoreB": "0"
         },
         {
@@ -197,7 +197,7 @@
           "a": "🇯🇵 HAYATA Hina (JPN)",
           "b": "🇨🇳 CHEN Yi (CHN)",
           "scoreA": "0",
-          "scoreB": "1"
+          "scoreB": "3"
         },
         {
           "label": "1/4 финала • Сб 24.10, 16:15 • Стол 2",
@@ -916,7 +916,7 @@
       "table": "Стол 1",
       "a": "🇹🇼 KUO Guan-Hong (TPE)",
       "b": "🇭🇰 WONG Chun Ting (HKG)",
-      "score": "0 : 0",
+      "score": "1 : 0 (LIVE)",
       "done": false
     },
     {
@@ -926,7 +926,7 @@
       "table": "Стол 2",
       "a": "🇨🇳 LI Tianyang (CHN)",
       "b": "🇨🇳 XIANG Peng (CHN)",
-      "score": "0 : 0",
+      "score": "2 : 0 (LIVE)",
       "done": false
     },
     {
@@ -2112,6 +2112,16 @@
     {
       "ev": "MS",
       "stage": "Матчи (23 октября)",
+      "time": "24.10 • 19:20",
+      "table": "Стол 3",
+      "a": "🇹🇭 PRASONGPOL Nawachet (THA)",
+      "b": "🇸🇬 CHEW Clarence (SGP)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MS",
+      "stage": "Матчи (23 октября)",
       "time": "24.10 • 18:00",
       "table": "Стол 4",
       "a": "🇮🇩 PRATAMA Affan (INA)",
@@ -2266,8 +2276,8 @@
       "table": "Стол 1",
       "a": "🇯🇵 HASHIMOTO Honoka (JPN)",
       "b": "🇨🇳 KUAI Man (CHN)",
-      "score": "0 : 1 (LIVE)",
-      "done": false
+      "score": "1 : 3",
+      "done": true
     },
     {
       "ev": "WS",
@@ -4750,6 +4760,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 424,
-  "lastUpdatedMatchesCount": 424
+  "lastScrapedMatchesCount": 426,
+  "lastUpdatedMatchesCount": 426
 }
