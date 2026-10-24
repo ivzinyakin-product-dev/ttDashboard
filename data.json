@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T05:45:33.787477+00:00",
+  "updatedAt": "2026-10-24T06:10:19.909386+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -240,29 +240,29 @@
           "label": "1/4 финала • Пт 23.10, 16:00 • Стол 1",
           "a": "Пара ЧФ 1 (Кан/Лим / Лам/Йиу)",
           "b": "Пара ЧФ 2 (Аламиан/Аламиян / Ахмедов/Толиев)",
-          "scoreA": "0",
-          "scoreB": "0"
+          "scoreA": "1",
+          "scoreB": "1"
         },
         {
           "label": "1/4 финала • Пт 23.10, 16:00 • Стол 2",
           "a": "Пара ЧФ 3 (Дилшодов/Искандаров / KSA)",
           "b": "Пара ЧФ 4 (Кенжигулов/Жубанов / Ким/Пак)",
           "scoreA": "0",
-          "scoreB": "0"
+          "scoreB": "3"
         },
         {
           "label": "1/4 финала • Пт 23.10, 16:30 • Стол 1",
           "a": "Пара ЧФ 5 (Сюй/Хун / Вон/Чун)",
           "b": "Пара ЧФ 6 (Гаффари/Фараджи)",
-          "scoreA": "0",
-          "scoreB": "0"
+          "scoreA": "1",
+          "scoreB": "2"
         },
         {
           "label": "1/4 финала • Пт 23.10, 16:30 • Стол 2",
           "a": "Пара ЧФ 7",
           "b": "Пара ЧФ 8",
-          "scoreA": "0",
-          "scoreB": "0"
+          "scoreA": "1",
+          "scoreB": "3"
         }
       ],
       "sf": [
@@ -3106,8 +3106,8 @@
       "table": "Стол 4",
       "a": "🇮🇳 JAIN Payas / THAKKAR Manav (IND)",
       "b": "🇨🇳 WEN Ruibo / YUAN Licen (CHN)",
-      "score": "0 : 0",
-      "done": false
+      "score": "1 : 3",
+      "done": true
     },
     {
       "ev": "MD",
@@ -3116,7 +3116,7 @@
       "table": "Стол 3",
       "a": "🇭🇰 WONG Chun Ting / CHAN Baldwin (HKG)",
       "b": "🇵🇭 MISAL John Russel / NAYRE Jann Mari (PHI)",
-      "score": "0 : 0",
+      "score": "1 : 2 (LIVE)",
       "done": false
     },
     {
@@ -3126,8 +3126,8 @@
       "table": "Стол 2",
       "a": "🇲🇾 WONG Qi Shen / CHOONG Javen (MAS)",
       "b": "🇸🇬 PANG Koen / QUEK Izaac (SGP)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "MD",
@@ -3136,7 +3136,7 @@
       "table": "Стол 1",
       "a": "🇨🇳 LIN Shidong / HUANG Youzheng (CHN)",
       "b": "🇯🇵 HARIMOTO Tomokazu / SHINOZUKA Hiroto (JPN)",
-      "score": "0 : 0",
+      "score": "1 : 1 (LIVE)",
       "done": false
     },
     {
@@ -3596,7 +3596,7 @@
       "table": "Стол 8",
       "a": "🇸🇬 CHEW Clarence / CHUA Josh (SGP)",
       "b": "🇰🇷 KIM Minhyeok / PARK Gyuhyeon (KOR)",
-      "score": "0 : 0",
+      "score": "1 : 2 (LIVE)",
       "done": false
     },
     {
@@ -3606,7 +3606,7 @@
       "table": "Стол 7",
       "a": "🇸🇦 ALKHADRAWI Ali / BU SHULAYBI Abdulaziz (KSA)",
       "b": "🇮🇷 GHAFFARI Aryan / FARAJI Benyamin (IRI)",
-      "score": "0 : 0",
+      "score": "1 : 2 (LIVE)",
       "done": false
     },
     {
@@ -3616,8 +3616,8 @@
       "table": "Стол 6",
       "a": "🇹🇼 FENG Yi-Hsin / KUO Guan-Hong (TPE)",
       "b": "🇮🇷 ALAMIAN Nima / ALAMIYAN Noshad (IRI)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MD",
@@ -3626,7 +3626,7 @@
       "table": "Стол 5",
       "a": "🇭🇰 LAM Siu Hang / YIU Kwan To (HKG)",
       "b": "🇰🇿 GERASSIMENKO Kirill / KURMANGALIYEV Alan (KAZ)",
-      "score": "0 : 0",
+      "score": "1 : 1 (LIVE)",
       "done": false
     },
     {
@@ -4012,6 +4012,26 @@
     {
       "ev": "WD",
       "stage": "Матчи (24 октября)",
+      "time": "24.10 • 16:00",
+      "table": "Стол 2",
+      "a": "🇹🇼 CHEN Szu-Yu / WU Ying Syuan (TPE)",
+      "b": "🇵🇭 CRUZ Kheith / LAUDE Angelou Joyce (PHI)",
+      "score": "0 : 3",
+      "done": true
+    },
+    {
+      "ev": "WD",
+      "stage": "Матчи (24 октября)",
+      "time": "24.10 • 16:00",
+      "table": "Стол 1",
+      "a": "🇸🇬 LAI Chloe / TAN Zhao Yun (SGP)",
+      "b": "🇹🇼 CHIEN Tung-Chuan / PENG Yu-Han (TPE)",
+      "score": "3 : 0",
+      "done": true
+    },
+    {
+      "ev": "WD",
+      "stage": "Матчи (24 октября)",
       "time": "24.10 • 10:00",
       "table": "Стол 8",
       "a": "🇰🇷 LEE Daeun / PARK Gahyeon (KOR)",
@@ -4036,8 +4056,8 @@
       "table": "Стол 5",
       "a": "🇸🇬 LAI Chloe / TAN Zhao Yun (SGP)",
       "b": "🇰🇷 LEE Zion / YOO Siwoo (KOR)",
-      "score": "2 : 2 (LIVE)",
-      "done": false
+      "score": "2 : 3",
+      "done": true
     },
     {
       "ev": "XD",
@@ -4570,6 +4590,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 411,
-  "lastUpdatedMatchesCount": 411
+  "lastScrapedMatchesCount": 412,
+  "lastUpdatedMatchesCount": 412
 }
