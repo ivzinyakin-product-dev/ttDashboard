@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T07:55:46.998487+00:00",
+  "updatedAt": "2026-10-24T08:16:14.631026+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -136,10 +136,10 @@
         },
         {
           "label": "1/4 финала • Сб 24.10, 15:30 • Стол 1",
-          "a": "Четвертьфинал 3 (Сетка 3)",
-          "b": "Четвертьфинал 3 (Сетка 3)",
-          "scoreA": "—",
-          "scoreB": "—"
+          "a": "🇨🇳 WEN Ruibo (CHN)",
+          "b": "🇰🇷 PARK Ganghyeon (KOR)",
+          "scoreA": "0",
+          "scoreB": "0"
         },
         {
           "label": "1/4 финала • Сб 24.10, 16:15 • Стол 1",
@@ -894,6 +894,16 @@
       "stage": "1/4 финала (21 октября)",
       "time": "TBD",
       "table": "Олимп. городок",
+      "a": "🇨🇳 WEN Ruibo (CHN)",
+      "b": "🇰🇷 PARK Ganghyeon (KOR)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MS",
+      "stage": "1/4 финала (21 октября)",
+      "time": "TBD",
+      "table": "Олимп. городок",
       "a": "🇹🇼 FENG Yi-Hsin (TPE)",
       "b": "🇯🇵 HARIMOTO Tomokazu (JPN)",
       "score": "0 : 0",
@@ -966,8 +976,8 @@
       "table": "Стол 5",
       "a": "🇨🇳 WEN Ruibo (CHN)",
       "b": "🇰🇿 GERASSIMENKO Kirill (KAZ)",
-      "score": "1 : 1 (LIVE)",
-      "done": false
+      "score": "3 : 1",
+      "done": true
     },
     {
       "ev": "MS",
