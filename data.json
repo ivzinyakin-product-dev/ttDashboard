@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T11:53:22.774280+00:00",
+  "updatedAt": "2026-10-24T12:15:31.925413+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -2112,6 +2112,26 @@
     {
       "ev": "MS",
       "stage": "Матчи (23 октября)",
+      "time": "24.10 • 18:00",
+      "table": "Стол 4",
+      "a": "🇮🇩 PRATAMA Affan (INA)",
+      "b": "🇰🇷 KIM Minhyeok (KOR)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MS",
+      "stage": "Матчи (23 октября)",
+      "time": "24.10 • 18:00",
+      "table": "Стол 3",
+      "a": "🇹🇼 HUNG Jing-Kai (TPE)",
+      "b": "🇨🇳 ZHOU Qihao (CHN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MS",
+      "stage": "Матчи (23 октября)",
       "time": "24.10 • 16:00",
       "table": "Стол 2",
       "a": "🇯🇵 TANAKA Yuta (JPN)",
@@ -3686,8 +3706,8 @@
       "table": "Стол 2",
       "a": "🇸🇦 ALKHADRAWI Ali / BU SHULAYBI Abdulaziz (KSA)",
       "b": "🇸🇬 CHEW Clarence / CHUA Josh (SGP)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MD",
@@ -4118,6 +4138,26 @@
       "b": "🇵🇭 Роуз Джин Фадол / Алтея Гудес (PHI)",
       "score": "1 : 3",
       "done": true
+    },
+    {
+      "ev": "WD",
+      "stage": "Матчи (24 октября)",
+      "time": "24.10 • 17:20",
+      "table": "Стол 4",
+      "a": "🇹🇼 CHIEN Tung-Chuan / PENG Yu-Han (TPE)",
+      "b": "🇹🇼 CHEN Szu-Yu / WU Ying Syuan (TPE)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
+      "stage": "Матчи (24 октября)",
+      "time": "24.10 • 17:20",
+      "table": "Стол 3",
+      "a": "🇸🇬 LAI Chloe / TAN Zhao Yun (SGP)",
+      "b": "🇵🇭 CRUZ Kheith / LAUDE Angelou Joyce (PHI)",
+      "score": "0 : 0",
+      "done": false
     },
     {
       "ev": "WD",
@@ -4700,6 +4740,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 419,
-  "lastUpdatedMatchesCount": 419
+  "lastScrapedMatchesCount": 423,
+  "lastUpdatedMatchesCount": 423
 }
