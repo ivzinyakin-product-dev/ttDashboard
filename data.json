@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T14:13:57.266342+00:00",
+  "updatedAt": "2026-10-24T14:43:51.328417+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -138,15 +138,15 @@
           "label": "1/4 финала • Сб 24.10, 15:30 • Стол 1",
           "a": "🇨🇳 WEN Ruibo (CHN)",
           "b": "🇰🇷 PARK Ganghyeon (KOR)",
-          "scoreA": "1",
+          "scoreA": "3",
           "scoreB": "0"
         },
         {
           "label": "1/4 финала • Сб 24.10, 16:15 • Стол 1",
           "a": "🇹🇼 FENG Yi-Hsin (TPE)",
           "b": "🇯🇵 HARIMOTO Tomokazu (JPN)",
-          "scoreA": "0",
-          "scoreB": "0"
+          "scoreA": "2",
+          "scoreB": "3"
         }
       ],
       "sf": [
@@ -159,10 +159,10 @@
         },
         {
           "label": "1/2 финала • Вс 25.10, 12:15 • Стол 1",
-          "a": "Победитель ЧФ 3",
-          "b": "Победитель ЧФ 4",
-          "scoreA": "—",
-          "scoreB": "—"
+          "a": "🇨🇳 WEN Ruibo (CHN)",
+          "b": "🇯🇵 HARIMOTO Tomokazu (JPN)",
+          "scoreA": "0",
+          "scoreB": "0"
         }
       ],
       "final": [
@@ -892,8 +892,18 @@
     {
       "ev": "MS",
       "stage": "1/2 финала (21 октября)",
-      "time": "TBD",
-      "table": "Олимп. городок",
+      "time": "25.10 • 12:15",
+      "table": "Стол 2",
+      "a": "🇨🇳 WEN Ruibo (CHN)",
+      "b": "🇯🇵 HARIMOTO Tomokazu (JPN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MS",
+      "stage": "1/2 финала (21 октября)",
+      "time": "25.10 • 12:15",
+      "table": "Стол 1",
       "a": "🇨🇳 LI Tianyang (CHN)",
       "b": "🇹🇼 KUO Guan-Hong (TPE)",
       "score": "0 : 0",
@@ -906,8 +916,8 @@
       "table": "Стол 1",
       "a": "🇨🇳 WEN Ruibo (CHN)",
       "b": "🇰🇷 PARK Ganghyeon (KOR)",
-      "score": "1 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MS",
@@ -916,8 +926,8 @@
       "table": "Стол 2",
       "a": "🇹🇼 FENG Yi-Hsin (TPE)",
       "b": "🇯🇵 HARIMOTO Tomokazu (JPN)",
-      "score": "0 : 0",
-      "done": false
+      "score": "2 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -2126,8 +2136,8 @@
       "table": "Стол 3",
       "a": "🇹🇭 PRASONGPOL Nawachet (THA)",
       "b": "🇸🇬 CHEW Clarence (SGP)",
-      "score": "2 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 1",
+      "done": true
     },
     {
       "ev": "MS",
@@ -2272,8 +2282,8 @@
     {
       "ev": "WS",
       "stage": "1/2 финала (21 октября)",
-      "time": "TBD",
-      "table": "Олимп. городок",
+      "time": "25.10 • 11:30",
+      "table": "Стол 2",
       "a": "🇨🇳 CHEN Yi (CHN)",
       "b": "🇨🇳 WANG Yidi (CHN)",
       "score": "0 : 0",
@@ -2282,8 +2292,8 @@
     {
       "ev": "WS",
       "stage": "1/2 финала (21 октября)",
-      "time": "TBD",
-      "table": "Олимп. городок",
+      "time": "25.10 • 11:30",
+      "table": "Стол 1",
       "a": "🇯🇵 HARIMOTO Miwa (JPN)",
       "b": "🇨🇳 KUAI Man (CHN)",
       "score": "0 : 0",
@@ -4780,6 +4790,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 429,
-  "lastUpdatedMatchesCount": 429
+  "lastScrapedMatchesCount": 427,
+  "lastUpdatedMatchesCount": 427
 }
