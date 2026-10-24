@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T04:44:56.194476+00:00",
+  "updatedAt": "2026-10-24T05:11:55.539897+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -298,21 +298,21 @@
           "label": "1/4 финала • Пт 23.10, 17:00 • Стол 1",
           "a": "Пара ЧФ 1 (Шахсавари / Ярисераджи)",
           "b": "Пара ЧФ 2 (Камалова / Гулимова / INA)",
-          "scoreA": "0",
+          "scoreA": "1",
           "scoreB": "0"
         },
         {
           "label": "1/4 финала • Пт 23.10, 17:00 • Стол 2",
           "a": "Пара ЧФ 3 (Аштари / Илухани)",
           "b": "Пара ЧФ 4 (Фадол / Гудес)",
-          "scoreA": "0",
+          "scoreA": "1",
           "scoreB": "0"
         },
         {
           "label": "1/4 финала • Пт 23.10, 17:30 • Стол 1",
           "a": "Пара ЧФ 5 (Аязбекова / Кудусова)",
           "b": "Пара ЧФ 6",
-          "scoreA": "0",
+          "scoreA": "1",
           "scoreB": "0"
         },
         {
@@ -320,7 +320,7 @@
           "a": "Пара ЧФ 7",
           "b": "Пара ЧФ 8",
           "scoreA": "0",
-          "scoreB": "0"
+          "scoreB": "1"
         }
       ],
       "sf": [
@@ -2096,8 +2096,8 @@
       "table": "Стол 3",
       "a": "🇭🇰 YIU Kwan To (HKG)",
       "b": "🇹🇼 HUNG Jing-Kai (TPE)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MS",
@@ -3636,7 +3636,7 @@
       "table": "Стол 4",
       "a": "🇨🇳 CHEN Yi / JIANG Yiyi (CHN)",
       "b": "🇲🇾 LYNE Karen / TEE Ai Xin (MAS)",
-      "score": "0 : 0",
+      "score": "1 : 0 (LIVE)",
       "done": false
     },
     {
@@ -3646,7 +3646,7 @@
       "table": "Стол 3",
       "a": "🇯🇵 ODO Satsuki / NAGASAKI Miyu (JPN)",
       "b": "🇸🇬 LOY Ming Ying / SER Lin Qian (SGP)",
-      "score": "0 : 0",
+      "score": "1 : 0 (LIVE)",
       "done": false
     },
     {
@@ -3656,7 +3656,7 @@
       "table": "Стол 2",
       "a": "🇹🇭 PARANANG Orawan / SAWETTABUT Suthasini (THA)",
       "b": "🇨🇳 KUAI Man / WANG Yidi (CHN)",
-      "score": "0 : 0",
+      "score": "0 : 1 (LIVE)",
       "done": false
     },
     {
@@ -3666,7 +3666,7 @@
       "table": "Стол 1",
       "a": "🇯🇵 HARIMOTO Miwa / HAYATA Hina (JPN)",
       "b": "🇮🇳 GHORPADE Yashaswini / GHOSH Swastika (IND)",
-      "score": "0 : 0",
+      "score": "1 : 0 (LIVE)",
       "done": false
     },
     {
@@ -4006,7 +4006,7 @@
       "table": "Стол 8",
       "a": "🇰🇷 LEE Daeun / PARK Gahyeon (KOR)",
       "b": "🇵🇭 CRUZ Kheith / LAUDE Angelou Joyce (PHI)",
-      "score": "0 : 0",
+      "score": "1 : 0 (LIVE)",
       "done": false
     },
     {
@@ -4016,8 +4016,8 @@
       "table": "Стол 6",
       "a": "🇹🇼 CHIEN Tung-Chuan / PENG Yu-Han (TPE)",
       "b": "🇭🇰 DOO Hoi Kem / NG Wing Lam (HKG)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "WD",
@@ -4026,7 +4026,7 @@
       "table": "Стол 5",
       "a": "🇸🇬 LAI Chloe / TAN Zhao Yun (SGP)",
       "b": "🇰🇷 LEE Zion / YOO Siwoo (KOR)",
-      "score": "0 : 0",
+      "score": "0 : 1 (LIVE)",
       "done": false
     },
     {
@@ -4560,6 +4560,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 402,
-  "lastUpdatedMatchesCount": 402
+  "lastScrapedMatchesCount": 408,
+  "lastUpdatedMatchesCount": 408
 }
