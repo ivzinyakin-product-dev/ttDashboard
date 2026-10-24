@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T13:52:18.547597+00:00",
+  "updatedAt": "2026-10-24T14:13:57.266342+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -124,21 +124,21 @@
           "label": "1/4 финала • Сб 24.10, 14:00 • Стол 1",
           "a": "🇨🇳 LI Tianyang (CHN)",
           "b": "🇨🇳 XIANG Peng (CHN)",
-          "scoreA": "2",
+          "scoreA": "3",
           "scoreB": "0"
         },
         {
           "label": "1/4 финала • Сб 24.10, 14:45 • Стол 1",
           "a": "🇹🇼 KUO Guan-Hong (TPE)",
           "b": "🇭🇰 WONG Chun Ting (HKG)",
-          "scoreA": "1",
+          "scoreA": "3",
           "scoreB": "0"
         },
         {
           "label": "1/4 финала • Сб 24.10, 15:30 • Стол 1",
           "a": "🇨🇳 WEN Ruibo (CHN)",
           "b": "🇰🇷 PARK Ganghyeon (KOR)",
-          "scoreA": "0",
+          "scoreA": "1",
           "scoreB": "0"
         },
         {
@@ -152,10 +152,10 @@
       "sf": [
         {
           "label": "1/2 финала • Вс 25.10, 11:30 • Стол 1",
-          "a": "Победитель ЧФ 1",
-          "b": "Победитель ЧФ 2",
-          "scoreA": "—",
-          "scoreB": "—"
+          "a": "🇨🇳 LI Tianyang (CHN)",
+          "b": "🇹🇼 KUO Guan-Hong (TPE)",
+          "scoreA": "0",
+          "scoreB": "0"
         },
         {
           "label": "1/2 финала • Вс 25.10, 12:15 • Стол 1",
@@ -217,10 +217,10 @@
         },
         {
           "label": "1/2 финала • Вс 25.10, 10:45 • Стол 1",
-          "a": "Победитель ЧФ 3",
-          "b": "Победитель ЧФ 4",
-          "scoreA": "—",
-          "scoreB": "—"
+          "a": "🇨🇳 CHEN Yi (CHN)",
+          "b": "🇨🇳 WANG Yidi (CHN)",
+          "scoreA": "0",
+          "scoreB": "0"
         }
       ],
       "final": [
@@ -891,12 +891,22 @@
     },
     {
       "ev": "MS",
+      "stage": "1/2 финала (21 октября)",
+      "time": "TBD",
+      "table": "Олимп. городок",
+      "a": "🇨🇳 LI Tianyang (CHN)",
+      "b": "🇹🇼 KUO Guan-Hong (TPE)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MS",
       "stage": "1/4 финала (21 октября)",
       "time": "24.10 • 19:20",
       "table": "Стол 1",
       "a": "🇨🇳 WEN Ruibo (CHN)",
       "b": "🇰🇷 PARK Ganghyeon (KOR)",
-      "score": "0 : 0",
+      "score": "1 : 0 (LIVE)",
       "done": false
     },
     {
@@ -916,8 +926,8 @@
       "table": "Стол 1",
       "a": "🇹🇼 KUO Guan-Hong (TPE)",
       "b": "🇭🇰 WONG Chun Ting (HKG)",
-      "score": "1 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MS",
@@ -926,8 +936,8 @@
       "table": "Стол 2",
       "a": "🇨🇳 LI Tianyang (CHN)",
       "b": "🇨🇳 XIANG Peng (CHN)",
-      "score": "2 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MS",
@@ -2116,7 +2126,7 @@
       "table": "Стол 3",
       "a": "🇹🇭 PRASONGPOL Nawachet (THA)",
       "b": "🇸🇬 CHEW Clarence (SGP)",
-      "score": "0 : 0",
+      "score": "2 : 0 (LIVE)",
       "done": false
     },
     {
@@ -2258,6 +2268,16 @@
       "b": "🇹🇼 HUNG Jing-Kai (TPE)",
       "score": "3 : 0",
       "done": true
+    },
+    {
+      "ev": "WS",
+      "stage": "1/2 финала (21 октября)",
+      "time": "TBD",
+      "table": "Олимп. городок",
+      "a": "🇨🇳 CHEN Yi (CHN)",
+      "b": "🇨🇳 WANG Yidi (CHN)",
+      "score": "0 : 0",
+      "done": false
     },
     {
       "ev": "WS",
@@ -4760,6 +4780,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 426,
-  "lastUpdatedMatchesCount": 426
+  "lastScrapedMatchesCount": 429,
+  "lastUpdatedMatchesCount": 429
 }
