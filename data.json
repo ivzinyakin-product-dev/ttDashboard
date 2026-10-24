@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T10:35:10.037244+00:00",
+  "updatedAt": "2026-10-24T11:02:03.496941+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -892,8 +892,8 @@
     {
       "ev": "MS",
       "stage": "1/4 финала (21 октября)",
-      "time": "TBD",
-      "table": "Олимп. городок",
+      "time": "24.10 • 19:20",
+      "table": "Стол 1",
       "a": "🇨🇳 WEN Ruibo (CHN)",
       "b": "🇰🇷 PARK Ganghyeon (KOR)",
       "score": "0 : 0",
@@ -902,8 +902,8 @@
     {
       "ev": "MS",
       "stage": "1/4 финала (21 октября)",
-      "time": "TBD",
-      "table": "Олимп. городок",
+      "time": "24.10 • 19:20",
+      "table": "Стол 2",
       "a": "🇹🇼 FENG Yi-Hsin (TPE)",
       "b": "🇯🇵 HARIMOTO Tomokazu (JPN)",
       "score": "0 : 0",
@@ -912,8 +912,8 @@
     {
       "ev": "MS",
       "stage": "1/4 финала (21 октября)",
-      "time": "TBD",
-      "table": "Олимп. городок",
+      "time": "24.10 • 18:40",
+      "table": "Стол 1",
       "a": "🇹🇼 KUO Guan-Hong (TPE)",
       "b": "🇭🇰 WONG Chun Ting (HKG)",
       "score": "0 : 0",
@@ -922,8 +922,8 @@
     {
       "ev": "MS",
       "stage": "1/4 финала (21 октября)",
-      "time": "TBD",
-      "table": "Олимп. городок",
+      "time": "24.10 • 18:40",
+      "table": "Стол 2",
       "a": "🇨🇳 LI Tianyang (CHN)",
       "b": "🇨🇳 XIANG Peng (CHN)",
       "score": "0 : 0",
@@ -4700,6 +4700,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 419,
-  "lastUpdatedMatchesCount": 419
+  "lastScrapedMatchesCount": 420,
+  "lastUpdatedMatchesCount": 420
 }
