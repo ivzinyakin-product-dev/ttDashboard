@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T11:02:03.496941+00:00",
+  "updatedAt": "2026-10-24T11:22:19.423138+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -2116,7 +2116,7 @@
       "table": "Стол 2",
       "a": "🇯🇵 TANAKA Yuta (JPN)",
       "b": "🇰🇷 KIM Minhyeok (KOR)",
-      "score": "0 : 0",
+      "score": "1 : 1 (LIVE)",
       "done": false
     },
     {
@@ -2126,7 +2126,7 @@
       "table": "Стол 5",
       "a": "🇸🇬 CHEW Clarence (SGP)",
       "b": "🇮🇩 PRATAMA Affan (INA)",
-      "score": "0 : 0",
+      "score": "2 : 0 (LIVE)",
       "done": false
     },
     {
@@ -4700,6 +4700,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 420,
-  "lastUpdatedMatchesCount": 420
+  "lastScrapedMatchesCount": 421,
+  "lastUpdatedMatchesCount": 421
 }
