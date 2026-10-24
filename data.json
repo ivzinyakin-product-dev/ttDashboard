@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T06:42:14.723818+00:00",
+  "updatedAt": "2026-10-24T07:23:20.268076+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -180,31 +180,31 @@
       "qf": [
         {
           "label": "1/4 финала • Сб 24.10, 14:00 • Стол 2",
-          "a": "Четвертьфинал 1 (Харимото / Ши Сюньяо)",
-          "b": "Четвертьфинал 1 (Хасимото / Камалова / Куай Мань)",
-          "scoreA": "—",
-          "scoreB": "—"
+          "a": "🇯🇵 HARIMOTO Miwa (JPN)",
+          "b": "🇰🇷 LEE Daeun (KOR)",
+          "scoreA": "0",
+          "scoreB": "0"
         },
         {
           "label": "1/4 финала • Сб 24.10, 14:45 • Стол 2",
-          "a": "Четвертьфинал 2 (Хаята / Еркебаева)",
-          "b": "Четвертьфинал 2 (Чэнь И / Цинь Юйсюань)",
-          "scoreA": "—",
-          "scoreB": "—"
+          "a": "🇯🇵 HASHIMOTO Honoka (JPN)",
+          "b": "🇨🇳 KUAI Man (CHN)",
+          "scoreA": "0",
+          "scoreB": "0"
         },
         {
           "label": "1/4 финала • Сб 24.10, 15:30 • Стол 2",
-          "a": "Четвертьфинал 3 (Одо / Чэнь Сы-Юй)",
-          "b": "Четвертьфинал 3 (Ван Иди / Элмуродова)",
-          "scoreA": "—",
-          "scoreB": "—"
+          "a": "🇯🇵 HAYATA Hina (JPN)",
+          "b": "🇨🇳 CHEN Yi (CHN)",
+          "scoreA": "0",
+          "scoreB": "0"
         },
         {
           "label": "1/4 финала • Сб 24.10, 16:15 • Стол 2",
-          "a": "Четвертьфинал 4 (Нижняя сетка)",
-          "b": "Четвертьфинал 4 (Нижняя сетка)",
-          "scoreA": "—",
-          "scoreB": "—"
+          "a": "🇯🇵 ODO Satsuki (JPN)",
+          "b": "🇨🇳 WANG Yidi (CHN)",
+          "scoreA": "0",
+          "scoreB": "0"
         }
       ],
       "sf": [
@@ -896,7 +896,7 @@
       "table": "Стол 1",
       "a": "🇰🇷 PARK Gyuhyeon (KOR)",
       "b": "🇨🇳 LI Tianyang (CHN)",
-      "score": "0 : 0",
+      "score": "1 : 1 (LIVE)",
       "done": false
     },
     {
@@ -906,7 +906,7 @@
       "table": "Стол 8",
       "a": "🇮🇳 THAKKAR Manav (IND)",
       "b": "🇨🇳 XIANG Peng (CHN)",
-      "score": "0 : 0",
+      "score": "1 : 2 (LIVE)",
       "done": false
     },
     {
@@ -916,8 +916,8 @@
       "table": "Стол 3",
       "a": "🇰🇿 KURMANGALIYEV Alan (KAZ)",
       "b": "🇹🇼 KUO Guan-Hong (TPE)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -926,7 +926,7 @@
       "table": "Стол 4",
       "a": "🇭🇰 WONG Chun Ting (HKG)",
       "b": "🇰🇷 KANG Dongsoo (KOR)",
-      "score": "0 : 0",
+      "score": "2 : 1 (LIVE)",
       "done": false
     },
     {
@@ -946,7 +946,7 @@
       "table": "Стол 6",
       "a": "🇰🇷 PARK Ganghyeon (KOR)",
       "b": "🇮🇷 FARAJI Benyamin (IRI)",
-      "score": "0 : 0",
+      "score": "2 : 0 (LIVE)",
       "done": false
     },
     {
@@ -956,7 +956,7 @@
       "table": "Стол 7",
       "a": "🇹🇼 FENG Yi-Hsin (TPE)",
       "b": "🇸🇬 QUEK Izaac (SGP)",
-      "score": "0 : 0",
+      "score": "1 : 0 (LIVE)",
       "done": false
     },
     {
@@ -966,7 +966,7 @@
       "table": "Стол 2",
       "a": "🇨🇳 HUANG Youzheng (CHN)",
       "b": "🇯🇵 HARIMOTO Tomokazu (JPN)",
-      "score": "0 : 0",
+      "score": "0 : 2 (LIVE)",
       "done": false
     },
     {
@@ -2116,7 +2116,7 @@
       "table": "Стол 9",
       "a": "🇮🇳 DESAI Harmeet (IND)",
       "b": "🇰🇷 KIM Minhyeok (KOR)",
-      "score": "0 : 0",
+      "score": "1 : 2 (LIVE)",
       "done": false
     },
     {
@@ -2181,13 +2181,33 @@
     },
     {
       "ev": "WS",
+      "stage": "1/4 финала (21 октября)",
+      "time": "TBD",
+      "table": "Олимп. городок",
+      "a": "🇯🇵 HASHIMOTO Honoka (JPN)",
+      "b": "🇨🇳 KUAI Man (CHN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WS",
+      "stage": "1/4 финала (21 октября)",
+      "time": "TBD",
+      "table": "Олимп. городок",
+      "a": "🇯🇵 HARIMOTO Miwa (JPN)",
+      "b": "🇰🇷 LEE Daeun (KOR)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WS",
       "stage": "1/8 финала (Round of 16 • 23 октября)",
       "time": "24.10 • 11:20",
       "table": "Стол 3",
       "a": "🇯🇵 HARIMOTO Miwa (JPN)",
       "b": "🇸🇬 ZENG Jian (SGP)",
-      "score": "1 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "WS",
@@ -2196,8 +2216,8 @@
       "table": "Стол 4",
       "a": "🇹🇭 PARANANG Orawan (THA)",
       "b": "🇰🇷 LEE Daeun (KOR)",
-      "score": "1 : 1 (LIVE)",
-      "done": false
+      "score": "1 : 3",
+      "done": true
     },
     {
       "ev": "WS",
@@ -2206,8 +2226,8 @@
       "table": "Стол 1",
       "a": "🇯🇵 HASHIMOTO Honoka (JPN)",
       "b": "🇰🇷 PARK Gahyeon (KOR)",
-      "score": "1 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 1",
+      "done": true
     },
     {
       "ev": "WS",
@@ -2226,8 +2246,8 @@
       "table": "Стол 5",
       "a": "🇯🇵 HAYATA Hina (JPN)",
       "b": "🇯🇵 NAGASAKI Miyu (JPN)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 1",
+      "done": true
     },
     {
       "ev": "WS",
@@ -2236,8 +2256,8 @@
       "table": "Стол 6",
       "a": "🇨🇳 QIN Yuxuan (CHN)",
       "b": "🇨🇳 CHEN Yi (CHN)",
-      "score": "0 : 2 (LIVE)",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "WS",
@@ -2256,8 +2276,8 @@
       "table": "Стол 8",
       "a": "🇰🇷 LEE Zion (KOR)",
       "b": "🇨🇳 WANG Yidi (CHN)",
-      "score": "0 : 1 (LIVE)",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "WS",
@@ -4630,6 +4650,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 417,
-  "lastUpdatedMatchesCount": 417
+  "lastScrapedMatchesCount": 421,
+  "lastUpdatedMatchesCount": 421
 }
