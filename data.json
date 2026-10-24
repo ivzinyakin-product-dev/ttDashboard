@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T12:15:31.925413+00:00",
+  "updatedAt": "2026-10-24T12:53:35.891669+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -182,7 +182,7 @@
           "label": "1/4 финала • Сб 24.10, 14:00 • Стол 2",
           "a": "🇯🇵 HARIMOTO Miwa (JPN)",
           "b": "🇰🇷 LEE Daeun (KOR)",
-          "scoreA": "0",
+          "scoreA": "3",
           "scoreB": "0"
         },
         {
@@ -190,7 +190,7 @@
           "a": "🇯🇵 HASHIMOTO Honoka (JPN)",
           "b": "🇨🇳 KUAI Man (CHN)",
           "scoreA": "0",
-          "scoreB": "0"
+          "scoreB": "2"
         },
         {
           "label": "1/4 финала • Сб 24.10, 15:30 • Стол 2",
@@ -2266,8 +2266,8 @@
       "table": "Стол 2",
       "a": "🇯🇵 HARIMOTO Miwa (JPN)",
       "b": "🇰🇷 LEE Daeun (KOR)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "WS",
@@ -3716,8 +3716,8 @@
       "table": "Стол 1",
       "a": "🇰🇿 GERASSIMENKO Kirill / KURMANGALIYEV Alan (KAZ)",
       "b": "🇮🇷 ALAMIAN Nima / ALAMIYAN Noshad (IRI)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MD",
@@ -4740,6 +4740,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 423,
-  "lastUpdatedMatchesCount": 423
+  "lastScrapedMatchesCount": 425,
+  "lastUpdatedMatchesCount": 425
 }
