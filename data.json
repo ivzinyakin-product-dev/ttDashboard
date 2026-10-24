@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T11:22:19.423138+00:00",
+  "updatedAt": "2026-10-24T11:53:22.774280+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -2116,8 +2116,8 @@
       "table": "Стол 2",
       "a": "🇯🇵 TANAKA Yuta (JPN)",
       "b": "🇰🇷 KIM Minhyeok (KOR)",
-      "score": "1 : 1 (LIVE)",
-      "done": false
+      "score": "3 : 2",
+      "done": true
     },
     {
       "ev": "MS",
@@ -2126,8 +2126,8 @@
       "table": "Стол 5",
       "a": "🇸🇬 CHEW Clarence (SGP)",
       "b": "🇮🇩 PRATAMA Affan (INA)",
-      "score": "2 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MS",
@@ -2136,8 +2136,8 @@
       "table": "Стол 4",
       "a": "🇹🇭 PRASONGPOL Nawachet (THA)",
       "b": "🇨🇳 ZHOU Qihao (CHN)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MS",
@@ -3172,8 +3172,8 @@
     {
       "ev": "MD",
       "stage": "1/2 финала (21 октября)",
-      "time": "TBD",
-      "table": "Олимп. городок",
+      "time": "25.10 • 10:45",
+      "table": "Стол 2",
       "a": "🇭🇰 WONG Chun Ting / CHAN Baldwin (HKG)",
       "b": "🇨🇳 WEN Ruibo / YUAN Licen (CHN)",
       "score": "0 : 0",
@@ -3182,8 +3182,8 @@
     {
       "ev": "MD",
       "stage": "1/2 финала (21 октября)",
-      "time": "TBD",
-      "table": "Олимп. городок",
+      "time": "25.10 • 10:45",
+      "table": "Стол 1",
       "a": "🇨🇳 LIN Shidong / HUANG Youzheng (CHN)",
       "b": "🇸🇬 PANG Koen / QUEK Izaac (SGP)",
       "score": "0 : 0",
@@ -3742,8 +3742,8 @@
     {
       "ev": "WD",
       "stage": "1/2 финала (21 октября)",
-      "time": "TBD",
-      "table": "Олимп. городок",
+      "time": "25.10 • 10:00",
+      "table": "Стол 1",
       "a": "🇯🇵 HARIMOTO Miwa / HAYATA Hina (JPN)",
       "b": "🇨🇳 CHEN Yi / JIANG Yiyi (CHN)",
       "score": "0 : 0",
@@ -4700,6 +4700,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 421,
-  "lastUpdatedMatchesCount": 421
+  "lastScrapedMatchesCount": 419,
+  "lastUpdatedMatchesCount": 419
 }
