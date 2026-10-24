@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T12:53:35.891669+00:00",
+  "updatedAt": "2026-10-24T13:23:26.793005+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -189,31 +189,31 @@
           "label": "1/4 финала • Сб 24.10, 14:45 • Стол 2",
           "a": "🇯🇵 HASHIMOTO Honoka (JPN)",
           "b": "🇨🇳 KUAI Man (CHN)",
-          "scoreA": "0",
-          "scoreB": "2"
+          "scoreA": "1",
+          "scoreB": "3"
         },
         {
           "label": "1/4 финала • Сб 24.10, 15:30 • Стол 2",
           "a": "🇯🇵 HAYATA Hina (JPN)",
           "b": "🇨🇳 CHEN Yi (CHN)",
           "scoreA": "0",
-          "scoreB": "0"
+          "scoreB": "1"
         },
         {
           "label": "1/4 финала • Сб 24.10, 16:15 • Стол 2",
           "a": "🇯🇵 ODO Satsuki (JPN)",
           "b": "🇨🇳 WANG Yidi (CHN)",
-          "scoreA": "0",
-          "scoreB": "0"
+          "scoreA": "1",
+          "scoreB": "3"
         }
       ],
       "sf": [
         {
           "label": "1/2 финала • Вс 25.10, 10:00 • Стол 1",
-          "a": "Победитель ЧФ 1",
-          "b": "Победитель ЧФ 2",
-          "scoreA": "—",
-          "scoreB": "—"
+          "a": "🇯🇵 HARIMOTO Miwa (JPN)",
+          "b": "🇨🇳 KUAI Man (CHN)",
+          "scoreA": "0",
+          "scoreB": "0"
         },
         {
           "label": "1/2 финала • Вс 25.10, 10:45 • Стол 1",
@@ -2251,12 +2251,22 @@
     },
     {
       "ev": "WS",
+      "stage": "1/2 финала (21 октября)",
+      "time": "TBD",
+      "table": "Олимп. городок",
+      "a": "🇯🇵 HARIMOTO Miwa (JPN)",
+      "b": "🇨🇳 KUAI Man (CHN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WS",
       "stage": "1/4 финала (21 октября)",
       "time": "24.10 • 17:20",
       "table": "Стол 1",
       "a": "🇯🇵 HASHIMOTO Honoka (JPN)",
       "b": "🇨🇳 KUAI Man (CHN)",
-      "score": "0 : 0",
+      "score": "0 : 1 (LIVE)",
       "done": false
     },
     {
@@ -4740,6 +4750,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 425,
-  "lastUpdatedMatchesCount": 425
+  "lastScrapedMatchesCount": 424,
+  "lastUpdatedMatchesCount": 424
 }
