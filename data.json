@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T11:52:40.868171+00:00",
+  "updatedAt": "2026-10-25T12:15:02.020210+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -229,7 +229,7 @@
           "a": "🇯🇵 HARIMOTO Miwa (JPN)",
           "b": "🇨🇳 CHEN Yi (CHN)",
           "scoreA": "0",
-          "scoreB": "0"
+          "scoreB": "2"
         }
       ]
     },
@@ -2296,7 +2296,7 @@
       "table": "Стол 1",
       "a": "🇯🇵 HARIMOTO Miwa (JPN)",
       "b": "🇨🇳 CHEN Yi (CHN)",
-      "score": "0 : 0",
+      "score": "0 : 2 (LIVE)",
       "done": false
     },
     {
