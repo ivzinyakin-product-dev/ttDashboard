@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T12:52:51.930477+00:00",
+  "updatedAt": "2026-10-25T13:23:23.628124+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -171,7 +171,7 @@
           "a": "🇨🇳 LI Tianyang (CHN)",
           "b": "🇯🇵 HARIMOTO Tomokazu (JPN)",
           "scoreA": "2",
-          "scoreB": "0"
+          "scoreB": "3"
         }
       ]
     },
@@ -896,8 +896,8 @@
       "table": "Стол 1",
       "a": "🇨🇳 LI Tianyang (CHN)",
       "b": "🇯🇵 HARIMOTO Tomokazu (JPN)",
-      "score": "2 : 0 (LIVE)",
-      "done": false
+      "score": "2 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -4830,6 +4830,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 433,
-  "lastUpdatedMatchesCount": 433
+  "lastScrapedMatchesCount": 432,
+  "lastUpdatedMatchesCount": 432
 }
