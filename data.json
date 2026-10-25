@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T11:22:22.167635+00:00",
+  "updatedAt": "2026-10-25T11:52:40.868171+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -286,7 +286,7 @@
           "label": "🥇 ФИНАЛ • Сб 24.10, 19:30 • Стол 1",
           "a": "🇨🇳 LIN Shidong / HUANG Youzheng (CHN)",
           "b": "🇨🇳 WEN Ruibo / YUAN Licen (CHN)",
-          "scoreA": "1",
+          "scoreA": "3",
           "scoreB": "1"
         }
       ]
@@ -3266,8 +3266,8 @@
       "table": "Стол 1",
       "a": "🇨🇳 LIN Shidong / HUANG Youzheng (CHN)",
       "b": "🇨🇳 WEN Ruibo / YUAN Licen (CHN)",
-      "score": "1 : 1 (LIVE)",
-      "done": false
+      "score": "3 : 1",
+      "done": true
     },
     {
       "ev": "MD",
