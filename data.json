@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T05:47:37.683842+00:00",
+  "updatedAt": "2026-10-25T06:12:09.690080+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -270,15 +270,15 @@
           "label": "1/2 финала • Сб 24.10, 11:00 • Стол 1",
           "a": "🇨🇳 LIN Shidong / HUANG Youzheng (CHN)",
           "b": "🇸🇬 PANG Koen / QUEK Izaac (SGP)",
-          "scoreA": "0",
+          "scoreA": "1",
           "scoreB": "0"
         },
         {
           "label": "1/2 финала • Сб 24.10, 11:40 • Стол 1",
           "a": "🇭🇰 WONG Chun Ting / CHAN Baldwin (HKG)",
           "b": "🇨🇳 WEN Ruibo / YUAN Licen (CHN)",
-          "scoreA": "0",
-          "scoreB": "1"
+          "scoreA": "1",
+          "scoreB": "3"
         }
       ],
       "final": [
@@ -328,7 +328,7 @@
           "label": "1/2 финала • Сб 24.10, 12:20 • Стол 1",
           "a": "🇯🇵 HARIMOTO Miwa / HAYATA Hina (JPN)",
           "b": "🇨🇳 CHEN Yi / JIANG Yiyi (CHN)",
-          "scoreA": "2",
+          "scoreA": "3",
           "scoreB": "1"
         },
         {
@@ -342,10 +342,10 @@
       "final": [
         {
           "label": "🥇 ФИНАЛ • Вс 25.10, 14:30 • Стол 1",
-          "a": "Победитель ПФ 1",
-          "b": "Победитель ПФ 2",
-          "scoreA": "—",
-          "scoreB": "—"
+          "a": "🇯🇵 HARIMOTO Miwa / HAYATA Hina (JPN)",
+          "b": "🇨🇳 KUAI Man / WANG Yidi (CHN)",
+          "scoreA": "0",
+          "scoreB": "0"
         }
       ]
     },
@@ -3246,8 +3246,8 @@
       "table": "Стол 2",
       "a": "🇭🇰 WONG Chun Ting / CHAN Baldwin (HKG)",
       "b": "🇨🇳 WEN Ruibo / YUAN Licen (CHN)",
-      "score": "0 : 1 (LIVE)",
-      "done": false
+      "score": "1 : 3",
+      "done": true
     },
     {
       "ev": "MD",
@@ -3256,7 +3256,7 @@
       "table": "Стол 1",
       "a": "🇨🇳 LIN Shidong / HUANG Youzheng (CHN)",
       "b": "🇸🇬 PANG Koen / QUEK Izaac (SGP)",
-      "score": "0 : 0",
+      "score": "1 : 0 (LIVE)",
       "done": false
     },
     {
@@ -3811,13 +3811,23 @@
     },
     {
       "ev": "WD",
+      "stage": "Финал (25 октября)",
+      "time": "25.10 • 15:00",
+      "table": "Стол 1",
+      "a": "🇯🇵 HARIMOTO Miwa / HAYATA Hina (JPN)",
+      "b": "🇨🇳 KUAI Man / WANG Yidi (CHN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "WD",
       "stage": "1/2 финала (21 октября)",
       "time": "25.10 • 10:00",
       "table": "Стол 1",
       "a": "🇯🇵 HARIMOTO Miwa / HAYATA Hina (JPN)",
       "b": "🇨🇳 CHEN Yi / JIANG Yiyi (CHN)",
-      "score": "2 : 1 (LIVE)",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "WD",
