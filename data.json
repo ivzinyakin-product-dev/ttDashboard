@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T06:56:18.984220+00:00",
+  "updatedAt": "2026-10-25T07:28:13.572216+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -162,7 +162,7 @@
           "a": "🇨🇳 WEN Ruibo (CHN)",
           "b": "🇯🇵 HARIMOTO Tomokazu (JPN)",
           "scoreA": "0",
-          "scoreB": "0"
+          "scoreB": "3"
         }
       ],
       "final": [
@@ -212,8 +212,8 @@
           "label": "1/2 финала • Вс 25.10, 10:00 • Стол 1",
           "a": "🇯🇵 HARIMOTO Miwa (JPN)",
           "b": "🇨🇳 KUAI Man (CHN)",
-          "scoreA": "0",
-          "scoreB": "1"
+          "scoreA": "2",
+          "scoreB": "2"
         },
         {
           "label": "1/2 финала • Вс 25.10, 10:45 • Стол 1",
@@ -896,8 +896,8 @@
       "table": "Стол 2",
       "a": "🇨🇳 WEN Ruibo (CHN)",
       "b": "🇯🇵 HARIMOTO Tomokazu (JPN)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "MS",
@@ -2296,7 +2296,7 @@
       "table": "Стол 1",
       "a": "🇯🇵 HARIMOTO Miwa (JPN)",
       "b": "🇨🇳 KUAI Man (CHN)",
-      "score": "0 : 1 (LIVE)",
+      "score": "2 : 2 (LIVE)",
       "done": false
     },
     {
