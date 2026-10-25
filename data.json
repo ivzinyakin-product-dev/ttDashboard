@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T12:15:02.020210+00:00",
+  "updatedAt": "2026-10-25T12:52:51.930477+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -170,7 +170,7 @@
           "label": "🥇 ФИНАЛ • Вс 25.10, 17:30 • Стол 1",
           "a": "🇨🇳 LI Tianyang (CHN)",
           "b": "🇯🇵 HARIMOTO Tomokazu (JPN)",
-          "scoreA": "0",
+          "scoreA": "2",
           "scoreB": "0"
         }
       ]
@@ -229,7 +229,7 @@
           "a": "🇯🇵 HARIMOTO Miwa (JPN)",
           "b": "🇨🇳 CHEN Yi (CHN)",
           "scoreA": "0",
-          "scoreB": "2"
+          "scoreB": "3"
         }
       ]
     },
@@ -896,7 +896,7 @@
       "table": "Стол 1",
       "a": "🇨🇳 LI Tianyang (CHN)",
       "b": "🇯🇵 HARIMOTO Tomokazu (JPN)",
-      "score": "0 : 0",
+      "score": "2 : 0 (LIVE)",
       "done": false
     },
     {
@@ -2296,8 +2296,8 @@
       "table": "Стол 1",
       "a": "🇯🇵 HARIMOTO Miwa (JPN)",
       "b": "🇨🇳 CHEN Yi (CHN)",
-      "score": "0 : 2 (LIVE)",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "WS",
