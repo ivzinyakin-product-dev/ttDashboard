@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T04:54:05.232549+00:00",
+  "updatedAt": "2026-10-25T05:18:27.938419+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -328,7 +328,7 @@
           "label": "1/2 финала • Сб 24.10, 12:20 • Стол 1",
           "a": "🇯🇵 HARIMOTO Miwa / HAYATA Hina (JPN)",
           "b": "🇨🇳 CHEN Yi / JIANG Yiyi (CHN)",
-          "scoreA": "0",
+          "scoreA": "1",
           "scoreB": "0"
         },
         {
@@ -336,7 +336,7 @@
           "a": "🇯🇵 ODO Satsuki / NAGASAKI Miyu (JPN)",
           "b": "🇨🇳 KUAI Man / WANG Yidi (CHN)",
           "scoreA": "0",
-          "scoreB": "0"
+          "scoreB": "2"
         }
       ],
       "final": [
@@ -3816,7 +3816,7 @@
       "table": "Стол 1",
       "a": "🇯🇵 HARIMOTO Miwa / HAYATA Hina (JPN)",
       "b": "🇨🇳 CHEN Yi / JIANG Yiyi (CHN)",
-      "score": "0 : 0",
+      "score": "0 : 2 (LIVE)",
       "done": false
     },
     {
@@ -4790,6 +4790,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 428,
-  "lastUpdatedMatchesCount": 428
+  "lastScrapedMatchesCount": 430,
+  "lastUpdatedMatchesCount": 430
 }
