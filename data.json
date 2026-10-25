@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T06:12:09.690080+00:00",
+  "updatedAt": "2026-10-25T06:56:18.984220+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -213,13 +213,13 @@
           "a": "🇯🇵 HARIMOTO Miwa (JPN)",
           "b": "🇨🇳 KUAI Man (CHN)",
           "scoreA": "0",
-          "scoreB": "0"
+          "scoreB": "1"
         },
         {
           "label": "1/2 финала • Вс 25.10, 10:45 • Стол 1",
           "a": "🇨🇳 CHEN Yi (CHN)",
           "b": "🇨🇳 WANG Yidi (CHN)",
-          "scoreA": "0",
+          "scoreA": "3",
           "scoreB": "0"
         }
       ],
@@ -270,7 +270,7 @@
           "label": "1/2 финала • Сб 24.10, 11:00 • Стол 1",
           "a": "🇨🇳 LIN Shidong / HUANG Youzheng (CHN)",
           "b": "🇸🇬 PANG Koen / QUEK Izaac (SGP)",
-          "scoreA": "1",
+          "scoreA": "3",
           "scoreB": "0"
         },
         {
@@ -284,10 +284,10 @@
       "final": [
         {
           "label": "🥇 ФИНАЛ • Сб 24.10, 19:30 • Стол 1",
-          "a": "Победитель ПФ 1",
-          "b": "Победитель ПФ 2",
-          "scoreA": "—",
-          "scoreB": "—"
+          "a": "🇨🇳 LIN Shidong / HUANG Youzheng (CHN)",
+          "b": "🇨🇳 WEN Ruibo / YUAN Licen (CHN)",
+          "scoreA": "0",
+          "scoreB": "0"
         }
       ]
     },
@@ -2286,8 +2286,8 @@
       "table": "Стол 2",
       "a": "🇨🇳 CHEN Yi (CHN)",
       "b": "🇨🇳 WANG Yidi (CHN)",
-      "score": "0 : 0",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "WS",
@@ -2296,7 +2296,7 @@
       "table": "Стол 1",
       "a": "🇯🇵 HARIMOTO Miwa (JPN)",
       "b": "🇨🇳 KUAI Man (CHN)",
-      "score": "0 : 0",
+      "score": "0 : 1 (LIVE)",
       "done": false
     },
     {
@@ -3241,6 +3241,16 @@
     },
     {
       "ev": "MD",
+      "stage": "Финал (25 октября)",
+      "time": "25.10 • 16:00",
+      "table": "Стол 1",
+      "a": "🇨🇳 LIN Shidong / HUANG Youzheng (CHN)",
+      "b": "🇨🇳 WEN Ruibo / YUAN Licen (CHN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MD",
       "stage": "1/2 финала (21 октября)",
       "time": "25.10 • 10:45",
       "table": "Стол 2",
@@ -3256,8 +3266,8 @@
       "table": "Стол 1",
       "a": "🇨🇳 LIN Shidong / HUANG Youzheng (CHN)",
       "b": "🇸🇬 PANG Koen / QUEK Izaac (SGP)",
-      "score": "1 : 0 (LIVE)",
-      "done": false
+      "score": "3 : 0",
+      "done": true
     },
     {
       "ev": "MD",
@@ -4216,8 +4226,8 @@
       "table": "Стол 3",
       "a": "🇸🇬 LAI Chloe / TAN Zhao Yun (SGP)",
       "b": "🇵🇭 CRUZ Kheith / LAUDE Angelou Joyce (PHI)",
-      "score": "0 : 0",
-      "done": false
+      "score": "0 : 3",
+      "done": true
     },
     {
       "ev": "WD",
@@ -4800,6 +4810,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 430,
-  "lastUpdatedMatchesCount": 430
+  "lastScrapedMatchesCount": 431,
+  "lastUpdatedMatchesCount": 431
 }
