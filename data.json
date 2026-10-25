@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T05:18:27.938419+00:00",
+  "updatedAt": "2026-10-25T05:47:37.683842+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -278,7 +278,7 @@
           "a": "🇭🇰 WONG Chun Ting / CHAN Baldwin (HKG)",
           "b": "🇨🇳 WEN Ruibo / YUAN Licen (CHN)",
           "scoreA": "0",
-          "scoreB": "0"
+          "scoreB": "1"
         }
       ],
       "final": [
@@ -328,15 +328,15 @@
           "label": "1/2 финала • Сб 24.10, 12:20 • Стол 1",
           "a": "🇯🇵 HARIMOTO Miwa / HAYATA Hina (JPN)",
           "b": "🇨🇳 CHEN Yi / JIANG Yiyi (CHN)",
-          "scoreA": "1",
-          "scoreB": "0"
+          "scoreA": "2",
+          "scoreB": "1"
         },
         {
           "label": "1/2 финала • Сб 24.10, 13:00 • Стол 1",
           "a": "🇯🇵 ODO Satsuki / NAGASAKI Miyu (JPN)",
           "b": "🇨🇳 KUAI Man / WANG Yidi (CHN)",
           "scoreA": "0",
-          "scoreB": "2"
+          "scoreB": "3"
         }
       ],
       "final": [
@@ -3246,7 +3246,7 @@
       "table": "Стол 2",
       "a": "🇭🇰 WONG Chun Ting / CHAN Baldwin (HKG)",
       "b": "🇨🇳 WEN Ruibo / YUAN Licen (CHN)",
-      "score": "0 : 0",
+      "score": "0 : 1 (LIVE)",
       "done": false
     },
     {
@@ -3816,7 +3816,7 @@
       "table": "Стол 1",
       "a": "🇯🇵 HARIMOTO Miwa / HAYATA Hina (JPN)",
       "b": "🇨🇳 CHEN Yi / JIANG Yiyi (CHN)",
-      "score": "0 : 2 (LIVE)",
+      "score": "2 : 1 (LIVE)",
       "done": false
     },
     {
