@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T10:34:45.190997+00:00",
+  "updatedAt": "2026-10-25T11:00:57.076346+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -345,7 +345,7 @@
           "a": "🇯🇵 HARIMOTO Miwa / HAYATA Hina (JPN)",
           "b": "🇨🇳 KUAI Man / WANG Yidi (CHN)",
           "scoreA": "1",
-          "scoreB": "1"
+          "scoreB": "3"
         }
       ]
     },
@@ -3846,8 +3846,8 @@
       "table": "Стол 1",
       "a": "🇯🇵 HARIMOTO Miwa / HAYATA Hina (JPN)",
       "b": "🇨🇳 KUAI Man / WANG Yidi (CHN)",
-      "score": "1 : 1 (LIVE)",
-      "done": false
+      "score": "1 : 3",
+      "done": true
     },
     {
       "ev": "WD",
@@ -4830,6 +4830,6 @@
       "done": true
     }
   ],
-  "lastScrapedMatchesCount": 433,
-  "lastUpdatedMatchesCount": 433
+  "lastScrapedMatchesCount": 432,
+  "lastUpdatedMatchesCount": 432
 }
