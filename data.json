@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T07:59:08.154065+00:00",
+  "updatedAt": "2026-10-25T08:19:54.943813+00:00",
   "brackets": {
     "MT": {
       "title": "Мужские команды",
@@ -154,8 +154,8 @@
           "label": "1/2 финала • Вс 25.10, 11:30 • Стол 1",
           "a": "🇨🇳 LI Tianyang (CHN)",
           "b": "🇹🇼 KUO Guan-Hong (TPE)",
-          "scoreA": "1",
-          "scoreB": "1"
+          "scoreA": "3",
+          "scoreB": "2"
         },
         {
           "label": "1/2 финала • Вс 25.10, 12:15 • Стол 1",
@@ -168,10 +168,10 @@
       "final": [
         {
           "label": "🥇 ФИНАЛ • Вс 25.10, 17:30 • Стол 1",
-          "a": "Победитель ПФ 1",
-          "b": "Победитель ПФ 2",
-          "scoreA": "—",
-          "scoreB": "—"
+          "a": "🇨🇳 LI Tianyang (CHN)",
+          "b": "🇯🇵 HARIMOTO Tomokazu (JPN)",
+          "scoreA": "0",
+          "scoreB": "0"
         }
       ]
     },
@@ -891,6 +891,16 @@
     },
     {
       "ev": "MS",
+      "stage": "Финал (25 октября)",
+      "time": "25.10 • 18:00",
+      "table": "Стол 1",
+      "a": "🇨🇳 LI Tianyang (CHN)",
+      "b": "🇯🇵 HARIMOTO Tomokazu (JPN)",
+      "score": "0 : 0",
+      "done": false
+    },
+    {
+      "ev": "MS",
       "stage": "1/2 финала (21 октября)",
       "time": "25.10 • 12:15",
       "table": "Стол 2",
@@ -906,8 +916,8 @@
       "table": "Стол 1",
       "a": "🇨🇳 LI Tianyang (CHN)",
       "b": "🇹🇼 KUO Guan-Hong (TPE)",
-      "score": "1 : 1 (LIVE)",
-      "done": false
+      "score": "3 : 2",
+      "done": true
     },
     {
       "ev": "MS",
